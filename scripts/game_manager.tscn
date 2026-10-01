@@ -2,8 +2,10 @@
 
 [ext_resource type="Script" uid="uid://cc63c1d2f4qg3" path="res://scripts/game_manager.gd" id="1_76guv"]
 [ext_resource type="FontFile" uid="uid://dhu8h3xy6spkl" path="res://fonts/BoldPixels.ttf" id="2_g6lxj"]
+[ext_resource type="Texture2D" uid="uid://cu5r4agft5xbp" path="res://sprites/White/1x/forward.png" id="2_rnjp5"]
 [ext_resource type="Texture2D" uid="uid://dn0i8lilbx560" path="res://sprites/FantasyCoinsSpritesheet.png" id="3_l1cpo"]
 [ext_resource type="Texture2D" uid="uid://dj45qkt1ga638" path="res://sprites/Royal Heart.png" id="4_2mxnn"]
+[ext_resource type="Texture2D" uid="uid://blewldu5e1ngr" path="res://sprites/White/1x/fastForward.png" id="6_tvohv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r4pc6"]
 atlas = ExtResource("3_l1cpo")
@@ -22,10 +24,22 @@ zoom = Vector2(2, 2)
 [node name="GameManager" type="Node" parent="." unique_id=590811306]
 script = ExtResource("1_76guv")
 
-[node name="CoinContainer" type="HBoxContainer" parent="GameManager" unique_id=760260073]
-offset_left = 213.0
+[node name="SpeedUpButton" type="TextureButton" parent="GameManager" unique_id=375626273]
+offset_left = -216.0
 offset_top = -160.0
-offset_right = 282.0
+offset_right = -193.0
+offset_bottom = -138.0
+toggle_mode = true
+action_mode = 0
+texture_normal = ExtResource("2_rnjp5")
+texture_pressed = ExtResource("6_tvohv")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="CoinContainer" type="HBoxContainer" parent="GameManager" unique_id=760260073]
+offset_left = 218.0
+offset_top = -160.0
+offset_right = 287.0
 offset_bottom = -136.0
 
 [node name="TextureRect" type="TextureRect" parent="GameManager/CoinContainer" unique_id=180728534]
@@ -41,9 +55,9 @@ text = "999"
 horizontal_alignment = 1
 
 [node name="LivesContainer" type="HBoxContainer" parent="GameManager" unique_id=1414834629]
-offset_left = 145.0
+offset_left = 150.0
 offset_top = -161.0
-offset_right = 201.0
+offset_right = 206.0
 offset_bottom = -135.0
 
 [node name="TextureRect" type="TextureRect" parent="GameManager/LivesContainer" unique_id=1188795410]
@@ -57,3 +71,14 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("2_g6lxj")
 text = "999"
 horizontal_alignment = 1
+
+[node name="WavesContainer" type="HBoxContainer" parent="GameManager" unique_id=1953434093]
+offset_left = -273.0
+offset_top = -163.0
+offset_right = -228.0
+offset_bottom = -135.0
+
+[node name="WavesUI" type="Label" parent="GameManager/WavesContainer" unique_id=1438544613]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_g6lxj")
+text = "Wave 1"
