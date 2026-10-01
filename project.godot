@@ -11,12 +11,12 @@ config_version=5
 [application]
 
 config/name="Waterloo Gamejam 2026"
+run/main_scene="uid://cv2idbg1iux2x"
 config/features=PackedStringArray("4.7", "GL Compatibility")
-config/icon="res://icon.svg"
 
 [display]
 
-window/stretch/mode="canvas_items"
+window/stretch/mode="viewport"
 window/stretch/aspect="expand"
 
 [physics]

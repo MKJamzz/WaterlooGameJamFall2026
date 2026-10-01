@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://cv2idbg1iux2x"]
+
+[ext_resource type="Script" uid="uid://cc63c1d2f4qg3" path="res://scripts/game_manager.gd" id="1_76guv"]
+[ext_resource type="FontFile" uid="uid://dhu8h3xy6spkl" path="res://fonts/BoldPixels.ttf" id="2_g6lxj"]
+[ext_resource type="Texture2D" uid="uid://dn0i8lilbx560" path="res://sprites/FantasyCoinsSpritesheet.png" id="3_l1cpo"]
+[ext_resource type="Texture2D" uid="uid://dj45qkt1ga638" path="res://sprites/Royal Heart.png" id="4_2mxnn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r4pc6"]
+atlas = ExtResource("3_l1cpo")
+region = Rect2(94.96037, 62.999996, 34.039627, 33.686283)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lmtjq"]
+atlas = ExtResource("4_2mxnn")
+region = Rect2(0, 0, 20.222687, 21)
+
+[node name="Game" type="Node2D" unique_id=275451288]
+position = Vector2(0, -4)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=570275099]
+zoom = Vector2(2, 2)
+
+[node name="GameManager" type="Node" parent="." unique_id=590811306]
+script = ExtResource("1_76guv")
+
+[node name="CoinContainer" type="HBoxContainer" parent="GameManager" unique_id=760260073]
+offset_left = 213.0
+offset_top = -160.0
+offset_right = 282.0
+offset_bottom = -136.0
+
+[node name="TextureRect" type="TextureRect" parent="GameManager/CoinContainer" unique_id=180728534]
+layout_mode = 2
+texture = SubResource("AtlasTexture_r4pc6")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="CoinsUI" type="Label" parent="GameManager/CoinContainer" unique_id=1097813433]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_g6lxj")
+text = "999"
+horizontal_alignment = 1
+
+[node name="LivesContainer" type="HBoxContainer" parent="GameManager" unique_id=1414834629]
+offset_left = 145.0
+offset_top = -161.0
+offset_right = 201.0
+offset_bottom = -135.0
+
+[node name="TextureRect" type="TextureRect" parent="GameManager/LivesContainer" unique_id=1188795410]
+layout_mode = 2
+texture = SubResource("AtlasTexture_lmtjq")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="LivesUI" type="Label" parent="GameManager/LivesContainer" unique_id=2114538969]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_g6lxj")
+text = "999"
+horizontal_alignment = 1
