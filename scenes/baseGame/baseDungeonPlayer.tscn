@@ -1,14 +1,14 @@
 [gd_scene format=3 uid="uid://ecwedvcndgh6"]
 
+[ext_resource type="Script" uid="uid://cydjtb1mqevbq" path="res://classes/player.gd" id="1_ebgwh"]
 [ext_resource type="Texture2D" uid="uid://ch8ak7wffapf4" path="res://sprites/dungeonPlaceholder/Potion 1.png" id="1_ji301"]
-[ext_resource type="Script" uid="uid://cqk6bbvqhl5ur" path="res://scripts/PlayerMovement.gd" id="1_jq7oj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cg0a3"]
 radius = 5.0
 
-[node name="Player" type="CharacterBody2D" unique_id=1264333707]
+[node name="Player" type="CharacterBody2D" unique_id=1264333707 groups=["baseDungeonPlayer"]]
 z_index = 100
-script = ExtResource("1_jq7oj")
+script = ExtResource("1_ebgwh")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1828114650]
 texture_filter = 1
