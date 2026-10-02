@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" uid="uid://i7mvryyfyyin" path="res://scripts/dungeon_generation_manager.gd" id="1_0muje"]
 [ext_resource type="Script" uid="uid://dm2620a76sjfn" path="res://scripts/dungeon_builder.gd" id="2_3n6r7"]
-[ext_resource type="PackedScene" path="res://scenes/spawn_room_1.tscn" id="3_6ql6x"]
-[ext_resource type="PackedScene" path="res://scenes/dungeon_room_1.tscn" id="4_xv7sc"]
-[ext_resource type="PackedScene" path="res://scenes/dungeon_room_2.tscn" id="5_d5f4e"]
-[ext_resource type="PackedScene" path="res://scenes/exit_room_1.tscn" id="6_pean0"]
-[ext_resource type="PackedScene" path="res://scenes/bonus_room_1.tscn" id="7_eedw3"]
+[ext_resource type="PackedScene" uid="uid://c5nluw7g00i2x" path="res://scenes/baseGame/spawn_room_1.tscn" id="3_6ql6x"]
+[ext_resource type="PackedScene" uid="uid://3qigeug4hhnv" path="res://scenes/baseGame/dungeon_room_1.tscn" id="4_xv7sc"]
+[ext_resource type="PackedScene" uid="uid://gsivabqn4k4g" path="res://scenes/baseGame/dungeon_room_2.tscn" id="5_d5f4e"]
+[ext_resource type="PackedScene" uid="uid://bj6q17rkn8axf" path="res://scenes/baseGame/exit_room_1.tscn" id="6_pean0"]
+[ext_resource type="PackedScene" uid="uid://duvaia8o6rws8" path="res://scenes/bonus_room_1.tscn" id="7_eedw3"]
 
 [node name="dungeonGeneration" type="Node2D" unique_id=419241453]
 

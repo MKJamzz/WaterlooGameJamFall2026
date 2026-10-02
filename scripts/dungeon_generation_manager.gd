@@ -11,6 +11,7 @@ extends Node
 ## Drag your DungeonBuilder node here so the layout gets built in the scene.
 @export var builder: DungeonBuilder
 
+
 const DIRS := {
 	"top": Vector2i.UP,
 	"bottom": Vector2i.DOWN,
@@ -202,25 +203,25 @@ func print_layout() -> void:
 		min_p = Vector2i(mini(min_p.x, pos.x), mini(min_p.y, pos.y))
 		max_p = Vector2i(maxi(max_p.x, pos.x), maxi(max_p.y, pos.y))
 
-	const H_DOOR := [" ", "-", "="]
-	const V_DOOR := ["   ", " | ", "| |"]
+	#const H_DOOR := [" ", "-", "="]
+	#const V_DOOR := ["   ", " | ", "| |"]
 
-	print("--- Dungeon: %d rooms ---" % rooms.size())
-	for y in range(min_p.y, max_p.y + 1):
-		var row := ""
-		var below := ""
-		for x in range(min_p.x, max_p.x + 1):
-			var pos := Vector2i(x, y)
-			if rooms.has(pos):
-				var room: RoomData = rooms[pos]
-				row += "[%s]" % _room_letter(room) + H_DOOR[room.doors["right"]]
-				below += V_DOOR[room.doors["bottom"]] + " "
-			else:
-				row += "    "
-				below += "    "
-		print(row)
-		if y < max_p.y:
-			print(below)
+	#print("--- Dungeon: %d rooms ---" % rooms.size())
+	#for y in range(min_p.y, max_p.y + 1):
+		#var row := ""
+		#var below := ""
+		#for x in range(min_p.x, max_p.x + 1):
+			#var pos := Vector2i(x, y)
+			#if rooms.has(pos):
+				#var room: RoomData = rooms[pos]
+				#row += "[%s]" % _room_letter(room) + H_DOOR[room.doors["right"]]
+				#below += V_DOOR[room.doors["bottom"]] + " "
+			#else:
+				#row += "    "
+				#below += "    "
+		#print(row)
+		#if y < max_p.y:
+			#print(below)
 
 
 func _room_letter(room: RoomData) -> String:
@@ -229,6 +230,3 @@ func _room_letter(room: RoomData) -> String:
 	# First letter of the enum name, so new types show up automatically.
 	return RoomData.Type.keys()[room.type][0]
 	
-	
-func _ready() -> void:
-	generate_dungeon()
