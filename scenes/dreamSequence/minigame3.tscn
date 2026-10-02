@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://d20kbct1c08v7"]
 
 [ext_resource type="Texture2D" uid="uid://tj83hsn4w3aj" path="res://sprites/kenney_pixel-platformer/Tilemap/tilemap_packed.png" id="1_abwr8"]
-[ext_resource type="PackedScene" uid="uid://4h21r1onpk65" path="res://scenes/dream_player.tscn" id="2_6jila"]
-[ext_resource type="PackedScene" uid="uid://can5qwfsooq6q" path="res://scenes/moving spikes.tscn" id="5_abwr8"]
+[ext_resource type="PackedScene" uid="uid://4h21r1onpk65" path="res://scenes/dreamSequence/dream_player.tscn" id="2_6jila"]
+[ext_resource type="PackedScene" uid="uid://can5qwfsooq6q" path="res://scenes/dreamSequence/moving spikes.tscn" id="5_abwr8"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_r4pc6"]
 

@@ -1,14 +1,13 @@
-[gd_scene format=4 uid="uid://b7l68f7lqhdd"]
+[gd_scene format=4 uid="uid://bbx2d2rjghoxc"]
 
-[ext_resource type="PackedScene" uid="uid://4h21r1onpk65" path="res://scenes/dream_player.tscn" id="1_4ufrt"]
-[ext_resource type="Texture2D" uid="uid://tj83hsn4w3aj" path="res://sprites/kenney_pixel-platformer/Tilemap/tilemap_packed.png" id="1_m8678"]
-[ext_resource type="PackedScene" uid="uid://brqb70bbbda4t" path="res://scenes/dream_killzone.tscn" id="3_n37d3"]
-[ext_resource type="PackedScene" uid="uid://ci7nb8hsuaexo" path="res://scenes/back_to_reality_portal.tscn" id="4_ijcn8"]
-[ext_resource type="PackedScene" uid="uid://cv2idbg1iux2x" path="res://scenes/game_manager.tscn" id="5_s8n4e"]
-[ext_resource type="Script" uid="uid://b85w5xyrnlu86" path="res://scripts/dream_killzone.gd" id="6_bpqab"]
+[ext_resource type="Texture2D" uid="uid://tj83hsn4w3aj" path="res://sprites/kenney_pixel-platformer/Tilemap/tilemap_packed.png" id="1_jk64j"]
+[ext_resource type="PackedScene" uid="uid://4h21r1onpk65" path="res://scenes/dreamSequence/dream_player.tscn" id="2_qdnvj"]
+[ext_resource type="PackedScene" uid="uid://ci7nb8hsuaexo" path="res://scenes/dreamSequence/back_to_reality_portal.tscn" id="3_1wv3r"]
+[ext_resource type="PackedScene" uid="uid://cv2idbg1iux2x" path="res://scenes/game_manager.tscn" id="4_sdbaw"]
+[ext_resource type="PackedScene" uid="uid://brqb70bbbda4t" path="res://scenes/dreamSequence/dream_killzone.tscn" id="5_uwweg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n37d3"]
-texture = ExtResource("1_m8678")
+texture = ExtResource("1_jk64j")
 texture_region_size = Vector2i(18, 18)
 0:0/0 = 0
 1:0/0 = 0
@@ -205,18 +204,17 @@ sources/0 = SubResource("TileSetAtlasSource_n37d3")
 [node name="DreamPlatformer" type="Node2D" unique_id=1195749194]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1693356447]
-tile_map_data = PackedByteArray("AAD//wAAAAANAAcAAAAAAAAAAAAOAAcAAAABAAAAAAAPAAcAAAAFAP//AAAQAAcAAAAJAP7/AAAQAAcAAAAOAAAAAAAQAAcAAAAUAP//AAANAAcAAAAVAP//AAAOAAcAAAAWAP//AAAPAAcAAAAaAAIAAAAQAAcAAAAgAAUAAAAQAAcAAAAlAAQAAAANAAcAAAAmAAQAAAAOAAcAAAAnAAQAAAAPAAcAAAAtAAMAAAANAAcAAAAuAAMAAAAOAAcAAAAvAAMAAAAPAAcAAAA3AAMAAAANAAcAAAA4AAMAAAAOAAcAAAA5AAMAAAAPAAcAAAA9AAEAAAAQAAcAAABBAP//AAAQAAcAAABHAP7/AAANAAcAAABIAP7/AAAOAAcAAABJAP7/AAAPAAcAAAA=")
+tile_map_data = PackedByteArray("AAD//wAAAAANAAcAAAAAAAAAAAAOAAcAAAABAAAAAAAPAAcAAAD8//7/AAAQAAcAAAAAAPz/AAAQAAcAAAAEAPv/AAAQAAcAAAAiAOb/AAAPAAcAAAAhAOb/AAAOAAcAAAAgAOb/AAANAAcAAAAdAOj/AAAQAAcAAAAHAPH/AAAQAAcAAAAHAPn/AAAQAAcAAAAJAPP/AAAQAAcAAAAKAO//AAAQAAcAAAAKAPf/AAANAAcAAAALAPf/AAAOAAcAAAAMAO3/AAANAAcAAAAMAPX/AAAQAAcAAAAMAPf/AAAPAAcAAAANAO3/AAAOAAcAAAAOAO3/AAAPAAcAAAASAOv/AAAQAAcAAAAWAOz/AAAQAAcAAAAaAOr/AAAQAAcAAAA=")
 tile_set = SubResource("TileSet_emcct")
 
-[node name="DreamPlayer" parent="." unique_id=1483510926 instance=ExtResource("1_4ufrt")]
+[node name="DreamPlayer" parent="." unique_id=1483510926 instance=ExtResource("2_qdnvj")]
 position = Vector2(0, -12)
 
-[node name="BackToRealityPortal" parent="." unique_id=153807126 instance=ExtResource("4_ijcn8")]
-position = Vector2(1306, -49)
-target_scene = ExtResource("5_s8n4e")
+[node name="BackToRealityPortal" parent="." unique_id=153807126 instance=ExtResource("3_1wv3r")]
+position = Vector2(603, -480)
+target_scene = ExtResource("4_sdbaw")
 
-[node name="DreamKillzone" parent="." unique_id=243065009 instance=ExtResource("3_n37d3")]
-script = ExtResource("6_bpqab")
+[node name="DreamKillzone" parent="." unique_id=243065009 instance=ExtResource("5_uwweg")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DreamKillzone" unique_id=1582010267]
 position = Vector2(281, 121)
