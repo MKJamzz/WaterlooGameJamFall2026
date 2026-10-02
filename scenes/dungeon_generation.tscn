@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://dw74tlw6i1xmf"]
+
+[ext_resource type="Script" uid="uid://i7mvryyfyyin" path="res://scripts/dungeon_generation_manager.gd" id="1_0muje"]
+[ext_resource type="Script" uid="uid://dm2620a76sjfn" path="res://scripts/dungeon_builder.gd" id="2_3n6r7"]
+[ext_resource type="PackedScene" uid="uid://c5nluw7g00i2x" path="res://scenes/spawn_room_1.tscn" id="3_6ql6x"]
+[ext_resource type="PackedScene" uid="uid://3qigeug4hhnv" path="res://scenes/dungeon_room_1.tscn" id="4_xv7sc"]
+[ext_resource type="PackedScene" uid="uid://gsivabqn4k4g" path="res://scenes/dungeon_room_2.tscn" id="5_d5f4e"]
+[ext_resource type="PackedScene" uid="uid://bj6q17rkn8axf" path="res://scenes/exit_room_1.tscn" id="6_pean0"]
+[ext_resource type="PackedScene" uid="uid://cmgmrrkql7mhy" path="res://scenes/bonus_room_1.tscn" id="7_eedw3"]
+
+[node name="dungeonGeneration" type="Node2D" unique_id=419241453]
+
+[node name="dungeonBuilder" type="Node2D" parent="." unique_id=1605095385]
+script = ExtResource("2_3n6r7")
+start_rooms = Array[PackedScene]([ExtResource("3_6ql6x")])
+normal_rooms = Array[PackedScene]([ExtResource("4_xv7sc"), ExtResource("5_d5f4e")])
+exit_rooms = Array[PackedScene]([ExtResource("6_pean0")])
+bonus_rooms = Array[PackedScene]([ExtResource("7_eedw3")])
+
+[node name="dungeonGeneration" type="Node" parent="." unique_id=793466661 node_paths=PackedStringArray("builder")]
+script = ExtResource("1_0muje")
+room_count = 20
+builder = NodePath("../dungeonBuilder")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1942113542]
+zoom = Vector2(0.135, 0.135)
