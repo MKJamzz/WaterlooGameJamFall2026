@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://cscvhb2oeu5fp" path="res://sprites/dungeonPlaceholder/Set 1.0.png" id="1_1l7q1"]
 [ext_resource type="PackedScene" uid="uid://ecwedvcndgh6" path="res://scenes/baseGame/baseDungeonPlayer.tscn" id="1_5ale6"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5ale6"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nymr6"]
 texture = ExtResource("1_1l7q1")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -103,7 +103,7 @@ texture = ExtResource("1_1l7q1")
 
 [sub_resource type="TileSet" id="TileSet_b3wef"]
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_5ale6")
+sources/0 = SubResource("TileSetAtlasSource_nymr6")
 
 [node name="BaseDungeon" type="Node2D" unique_id=768959765]
 

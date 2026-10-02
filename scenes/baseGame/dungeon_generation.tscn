@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://bj6q17rkn8axf" path="res://scenes/baseGame/exit_room_1.tscn" id="5_ss387"]
 [ext_resource type="PackedScene" uid="uid://cmgmrrkql7mhy" path="res://scenes/baseGame/bonus_room_1.tscn" id="6_85qub"]
 [ext_resource type="Script" uid="uid://i7mvryyfyyin" path="res://scripts/dungeon_generation_manager.gd" id="7_8i62c"]
+[ext_resource type="PackedScene" uid="uid://b5ggnx3lxeq38" path="res://scenes/baseGame/v_bridge_1.tscn" id="7_fy1qi"]
+[ext_resource type="PackedScene" uid="uid://2uqkrwtv2hnk" path="res://scenes/baseGame/h_bridge_1.tscn" id="7_yas74"]
 
 [node name="dungeonGeneration" type="Node2D" unique_id=419241453]
 
@@ -16,11 +18,11 @@ start_rooms = Array[PackedScene]([ExtResource("2_ss387")])
 normal_rooms = Array[PackedScene]([ExtResource("3_fy1qi"), ExtResource("4_s4rwi")])
 exit_rooms = Array[PackedScene]([ExtResource("5_ss387")])
 bonus_rooms = Array[PackedScene]([ExtResource("6_85qub")])
+bridge_horizontal = ExtResource("7_fy1qi")
+bridge_vertical = ExtResource("7_yas74")
+bridge_length_tiles = 0
 
 [node name="dungeonGeneration" type="Node" parent="." unique_id=793466661 node_paths=PackedStringArray("builder")]
 script = ExtResource("7_8i62c")
 room_count = 20
 builder = NodePath("../dungeonBuilder")
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1942113542]
-zoom = Vector2(0.3, 0.3)
