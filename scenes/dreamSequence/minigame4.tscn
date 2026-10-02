@@ -1,0 +1,327 @@
+[gd_scene format=4 uid="uid://dculaud6tp6ob"]
+
+[ext_resource type="Texture2D" uid="uid://tj83hsn4w3aj" path="res://sprites/kenney_pixel-platformer/Tilemap/tilemap_packed.png" id="1_r54qu"]
+[ext_resource type="PackedScene" uid="uid://4h21r1onpk65" path="res://scenes/dreamSequence/dream_player.tscn" id="2_d4lrk"]
+[ext_resource type="PackedScene" uid="uid://ci7nb8hsuaexo" path="res://scenes/dreamSequence/back_to_reality_portal.tscn" id="3_vsudi"]
+[ext_resource type="PackedScene" uid="uid://cv2idbg1iux2x" path="res://scenes/game_manager.tscn" id="4_fcx3c"]
+[ext_resource type="PackedScene" uid="uid://brqb70bbbda4t" path="res://scenes/dreamSequence/dream_killzone.tscn" id="5_fgfqh"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n37d3"]
+texture = ExtResource("1_r54qu")
+texture_region_size = Vector2i(18, 18)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+11:0/0 = 0
+12:0/0 = 0
+13:0/0 = 0
+14:0/0 = 0
+15:0/0 = 0
+16:0/0 = 0
+17:0/0 = 0
+18:0/0 = 0
+19:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+10:1/0 = 0
+11:1/0 = 0
+12:1/0 = 0
+13:1/0 = 0
+14:1/0 = 0
+15:1/0 = 0
+16:1/0 = 0
+17:1/0 = 0
+18:1/0 = 0
+19:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+10:2/0 = 0
+11:2/0 = 0
+12:2/0 = 0
+13:2/0 = 0
+14:2/0 = 0
+15:2/0 = 0
+16:2/0 = 0
+17:2/0 = 0
+18:2/0 = 0
+19:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+10:3/0 = 0
+11:3/0 = 0
+12:3/0 = 0
+13:3/0 = 0
+14:3/0 = 0
+15:3/0 = 0
+16:3/0 = 0
+17:3/0 = 0
+18:3/0 = 0
+19:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+11:4/0 = 0
+12:4/0 = 0
+13:4/0 = 0
+14:4/0 = 0
+15:4/0 = 0
+16:4/0 = 0
+17:4/0 = 0
+18:4/0 = 0
+19:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+10:5/0 = 0
+11:5/0 = 0
+12:5/0 = 0
+13:5/0 = 0
+14:5/0 = 0
+15:5/0 = 0
+16:5/0 = 0
+17:5/0 = 0
+18:5/0 = 0
+19:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+9:6/0 = 0
+10:6/0 = 0
+11:6/0 = 0
+12:6/0 = 0
+13:6/0 = 0
+14:6/0 = 0
+15:6/0 = 0
+16:6/0 = 0
+17:6/0 = 0
+18:6/0 = 0
+19:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+8:7/0 = 0
+9:7/0 = 0
+10:7/0 = 0
+11:7/0 = 0
+12:7/0 = 0
+13:7/0 = 0
+13:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-9, -9, 9, -9, 9, 9, -9, 9)
+14:7/0 = 0
+14:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-9, -9, 9, -9, 9, 9, -9, 9)
+15:7/0 = 0
+15:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-9, -9, 9, -9, 9, 9, -9, 9)
+16:7/0 = 0
+16:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-9, -9, 9, -9, 9, 9, -9, 9)
+17:7/0 = 0
+18:7/0 = 0
+19:7/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+6:8/0 = 0
+7:8/0 = 0
+8:8/0 = 0
+9:8/0 = 0
+10:8/0 = 0
+11:8/0 = 0
+12:8/0 = 0
+13:8/0 = 0
+14:8/0 = 0
+15:8/0 = 0
+16:8/0 = 0
+17:8/0 = 0
+18:8/0 = 0
+19:8/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_emcct"]
+tile_size = Vector2i(18, 18)
+physics_layer_0/collision_layer = 2
+physics_layer_0/collision_mask = 0
+sources/0 = SubResource("TileSetAtlasSource_n37d3")
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_emcct"]
+
+[sub_resource type="Animation" id="Animation_vsudi"]
+resource_name = "MovePlatformsUp"
+length = 3.0000000000000004
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(24, -10), Vector2(24, -551)]
+}
+
+[sub_resource type="Animation" id="Animation_fcx3c"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(24, -77)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fgfqh"]
+_data = {
+&"MovePlatformsUp": SubResource("Animation_vsudi"),
+&"RESET": SubResource("Animation_fcx3c")
+}
+
+[sub_resource type="Animation" id="Animation_r54qu"]
+length = 3.0000000000000004
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(138, -391), Vector2(138, -121)]
+}
+
+[sub_resource type="Animation" id="Animation_d4lrk"]
+resource_name = "movePlatformsUp"
+length = 20.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 20),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -1302)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vsudi"]
+_data = {
+&"RESET": SubResource("Animation_r54qu"),
+&"movePlatformsUp": SubResource("Animation_d4lrk")
+}
+
+[node name="DreamPlatformer" type="Node2D" unique_id=1195749194]
+
+[node name="StaticPlatforms" type="TileMapLayer" parent="." unique_id=443220340]
+tile_map_data = PackedByteArray("AAD//wAAAAANAAcAAAAAAAAAAAAOAAcAAAABAAAAAAAPAAcAAAAlAPv/AAANAAcAAAAmAPv/AAAOAAcAAAAnAPv/AAAPAAcAAAA=")
+tile_set = SubResource("TileSet_emcct")
+
+[node name="DreamPlayer" parent="." unique_id=1483510926 instance=ExtResource("2_d4lrk")]
+position = Vector2(0, -12)
+
+[node name="BackToRealityPortal" parent="." unique_id=153807126 instance=ExtResource("3_vsudi")]
+position = Vector2(694, -111)
+target_scene = ExtResource("4_fcx3c")
+
+[node name="DreamKillzone" parent="." unique_id=243065009 instance=ExtResource("5_fgfqh")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DreamKillzone" unique_id=1582010267]
+position = Vector2(281, 317)
+shape = SubResource("WorldBoundaryShape2D_emcct")
+
+[node name="MovingUpPlatforms" type="Node2D" parent="." unique_id=1324388776]
+visibility_layer = 2
+position = Vector2(24, -77)
+
+[node name="UpPlatforms" type="TileMapLayer" parent="MovingUpPlatforms" unique_id=1693356447]
+position = Vector2(-2, 2)
+tile_map_data = PackedByteArray("AAAGAP7/AAAQAAcAAAAGAAMAAAAQAAcAAAAGAPT/AAAQAAcAAAAGAPn/AAAQAAcAAAAGAAgAAAAQAAcAAAAGAA0AAAAQAAcAAAAGABIAAAAQAAcAAAAGABcAAAAQAAcAAAAGABwAAAAQAAcAAAAGACEAAAAQAAcAAAATAPX/AAAQAAcAAAATAPr/AAAQAAcAAAATAP//AAAQAAcAAAATAAQAAAAQAAcAAAATAAkAAAAQAAcAAAATAA4AAAAQAAcAAAATABMAAAAQAAcAAAATABgAAAAQAAcAAAATAB0AAAAQAAcAAAATACIAAAAQAAcAAAAgAPf/AAAQAAcAAAAgAPz/AAAQAAcAAAAgAAEAAAAQAAcAAAAgAAYAAAAQAAcAAAAgAAsAAAAQAAcAAAAgABAAAAAQAAcAAAAgABUAAAAQAAcAAAAgABoAAAAQAAcAAAAgAB8AAAAQAAcAAAA=")
+tile_set = SubResource("TileSet_emcct")
+
+[node name="MovePlatformsUp" type="AnimationPlayer" parent="MovingUpPlatforms" unique_id=444630408]
+libraries/ = SubResource("AnimationLibrary_fgfqh")
+autoplay = &"MovePlatformsUp"
+
+[node name="MovingDownPlatforms" type="Node2D" parent="." unique_id=355856039]
+visibility_layer = 2
+position = Vector2(138, -391)
+
+[node name="DownPlatforms" type="TileMapLayer" parent="MovingDownPlatforms" unique_id=831896611]
+position = Vector2(-1, 2)
+tile_map_data = PackedByteArray("AAAGAP7/AAAQAAcAAAAGAAMAAAAQAAcAAAAGAPT/AAAQAAcAAAAGAPn/AAAQAAcAAAAGAAgAAAAQAAcAAAAGAA0AAAAQAAcAAAAGABIAAAAQAAcAAAAGABcAAAAQAAcAAAAGABwAAAAQAAcAAAAGACEAAAAQAAcAAAATAPT/AAAQAAcAAAATAPn/AAAQAAcAAAATAP7/AAAQAAcAAAATAAMAAAAQAAcAAAATAAgAAAAQAAcAAAATAA0AAAAQAAcAAAATABIAAAAQAAcAAAATABcAAAAQAAcAAAATABwAAAAQAAcAAAATACEAAAAQAAcAAAA=")
+tile_set = SubResource("TileSet_emcct")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MovingDownPlatforms" unique_id=1551943188]
+libraries/ = SubResource("AnimationLibrary_vsudi")
+autoplay = &"RESET"
+
+[connection signal="body_entered" from="DreamKillzone" to="BackToRealityPortal" method="_on_dream_killzone_body_entered"]
+[connection signal="body_entered" from="DreamKillzone" to="DreamKillzone" method="_on_body_entered"]

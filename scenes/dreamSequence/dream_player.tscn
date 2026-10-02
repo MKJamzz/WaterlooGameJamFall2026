@@ -31,6 +31,8 @@ radius = 9.0
 [node name="DreamPlayer" type="Node2D" unique_id=1483510926]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1930452343]
+collision_mask = 2
+floor_snap_length = 24.5
 script = ExtResource("1_boayo")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=1527955286]
