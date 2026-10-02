@@ -6,6 +6,6 @@
 script = ExtResource("1_liws7")
 
 [node name="Timer" type="Timer" parent="." unique_id=1372830138]
-wait_time = 0.5
+wait_time = 0.256
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
