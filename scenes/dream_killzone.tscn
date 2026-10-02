@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://brqb70bbbda4t"]
+
+[ext_resource type="Script" uid="uid://b85w5xyrnlu86" path="res://scripts/dream_killzone.gd" id="1_liws7"]
+
+[node name="DreamKillzone" type="Area2D" unique_id=243065009]
+script = ExtResource("1_liws7")
+
+[node name="Timer" type="Timer" parent="." unique_id=1372830138]
+wait_time = 0.5
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
