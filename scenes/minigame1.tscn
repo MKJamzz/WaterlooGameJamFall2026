@@ -5,7 +5,6 @@
 [ext_resource type="PackedScene" uid="uid://brqb70bbbda4t" path="res://scenes/dream_killzone.tscn" id="3_n37d3"]
 [ext_resource type="PackedScene" uid="uid://ci7nb8hsuaexo" path="res://scenes/back_to_reality_portal.tscn" id="4_ijcn8"]
 [ext_resource type="PackedScene" uid="uid://cv2idbg1iux2x" path="res://scenes/game_manager.tscn" id="5_s8n4e"]
-[ext_resource type="Script" uid="uid://b85w5xyrnlu86" path="res://scripts/dream_killzone.gd" id="6_bpqab"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n37d3"]
 texture = ExtResource("1_m8678")
@@ -216,7 +215,6 @@ position = Vector2(1306, -49)
 target_scene = ExtResource("5_s8n4e")
 
 [node name="DreamKillzone" parent="." unique_id=243065009 instance=ExtResource("3_n37d3")]
-script = ExtResource("6_bpqab")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DreamKillzone" unique_id=1582010267]
 position = Vector2(281, 121)
