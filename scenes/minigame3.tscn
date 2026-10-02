@@ -2,10 +2,13 @@
 
 [ext_resource type="Texture2D" uid="uid://tj83hsn4w3aj" path="res://sprites/kenney_pixel-platformer/Tilemap/tilemap_packed.png" id="1_abwr8"]
 [ext_resource type="PackedScene" uid="uid://4h21r1onpk65" path="res://scenes/dream_player.tscn" id="2_6jila"]
-[ext_resource type="PackedScene" uid="uid://ci7nb8hsuaexo" path="res://scenes/back_to_reality_portal.tscn" id="3_etvmn"]
-[ext_resource type="PackedScene" uid="uid://cv2idbg1iux2x" path="res://scenes/game_manager.tscn" id="4_af3j4"]
+[ext_resource type="PackedScene" uid="uid://can5qwfsooq6q" path="res://scenes/moving spikes.tscn" id="5_abwr8"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_r4pc6"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ci86a"]
+normal = Vector2(1, 0)
+distance = 54.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n37d3"]
 texture = ExtResource("1_abwr8")
@@ -200,7 +203,52 @@ tile_size = Vector2i(18, 18)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_n37d3")
 
-[node name="DreamPlatformer" type="Node2D" unique_id=1195749194]
+[sub_resource type="Animation" id="Animation_abwr8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_etvmn"]
+resource_name = "moveSpikes"
+length = 16.033333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -323)]
+}
+
+[sub_resource type="Animation" id="Animation_6jila"]
+resource_name = "movingSpikes"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_etvmn"]
+_data = {
+&"RESET": SubResource("Animation_abwr8"),
+&"moveSpikes": SubResource("Animation_etvmn"),
+&"movingSpikes": SubResource("Animation_6jila")
+}
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_yg8hr"]
+normal = Vector2(-1, 0)
+distance = 8.0
+
+[node name="DreamDropper" type="Node2D" unique_id=1195749194]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1829841585]
 
@@ -208,12 +256,84 @@ sources/0 = SubResource("TileSetAtlasSource_n37d3")
 position = Vector2(0, 5)
 shape = SubResource("WorldBoundaryShape2D_r4pc6")
 
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=687909430]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1130640981]
+position = Vector2(-114, 0)
+shape = SubResource("WorldBoundaryShape2D_ci86a")
+
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1693356447]
 tile_set = SubResource("TileSet_emcct")
+
+[node name="Area2D" type="Area2D" parent="TileMapLayer" unique_id=2022060739]
 
 [node name="DreamPlayer" parent="." unique_id=1483510926 instance=ExtResource("2_6jila")]
 position = Vector2(0, -12)
 
-[node name="BackToRealityPortal" parent="." unique_id=153807126 instance=ExtResource("3_etvmn")]
-position = Vector2(86, -26)
-target_scene = ExtResource("4_af3j4")
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1827452839]
+root_node = NodePath("../MovingSpikes2/Spikes")
+libraries/ = SubResource("AnimationLibrary_etvmn")
+autoplay = &"moveSpikes"
+
+[node name="MovingSpikes2" type="Node2D" parent="." unique_id=779955355]
+
+[node name="Spikes18" parent="MovingSpikes2" unique_id=719473974 instance=ExtResource("5_abwr8")]
+position = Vector2(-6, 412)
+
+[node name="Spikes17" parent="MovingSpikes2" unique_id=725713159 instance=ExtResource("5_abwr8")]
+position = Vector2(91, 409)
+
+[node name="Spikes16" parent="MovingSpikes2" unique_id=1351564952 instance=ExtResource("5_abwr8")]
+position = Vector2(89, 495)
+
+[node name="Spikes15" parent="MovingSpikes2" unique_id=97744625 instance=ExtResource("5_abwr8")]
+position = Vector2(-20, 506)
+
+[node name="Spikes14" parent="MovingSpikes2" unique_id=1918463844 instance=ExtResource("5_abwr8")]
+position = Vector2(32, 492)
+
+[node name="Spikes13" parent="MovingSpikes2" unique_id=1368804733 instance=ExtResource("5_abwr8")]
+position = Vector2(56, 454)
+
+[node name="Spikes12" parent="MovingSpikes2" unique_id=2006103294 instance=ExtResource("5_abwr8")]
+position = Vector2(61, 556)
+
+[node name="Spikes11" parent="MovingSpikes2" unique_id=815652329 instance=ExtResource("5_abwr8")]
+position = Vector2(-30, 456)
+
+[node name="Spikes10" parent="MovingSpikes2" unique_id=821511447 instance=ExtResource("5_abwr8")]
+position = Vector2(77, 297)
+
+[node name="Spikes8" parent="MovingSpikes2" unique_id=554234309 instance=ExtResource("5_abwr8")]
+position = Vector2(37, 356)
+
+[node name="Spikes7" parent="MovingSpikes2" unique_id=1757429022 instance=ExtResource("5_abwr8")]
+position = Vector2(80, 171)
+
+[node name="Spikes9" parent="MovingSpikes2" unique_id=635208883 instance=ExtResource("5_abwr8")]
+position = Vector2(47, 228)
+
+[node name="Spikes6" parent="MovingSpikes2" unique_id=1246102000 instance=ExtResource("5_abwr8")]
+position = Vector2(3, 262)
+
+[node name="Spikes5" parent="MovingSpikes2" unique_id=624433825 instance=ExtResource("5_abwr8")]
+position = Vector2(-26, 339)
+
+[node name="Spikes2" parent="MovingSpikes2" unique_id=648173512 instance=ExtResource("5_abwr8")]
+position = Vector2(-23, 66)
+
+[node name="Spikes" parent="MovingSpikes2" unique_id=652433254 instance=ExtResource("5_abwr8")]
+position = Vector2(126, 115)
+
+[node name="Spikes3" parent="MovingSpikes2" unique_id=806433202 instance=ExtResource("5_abwr8")]
+position = Vector2(22, 128)
+
+[node name="Spikes4" parent="MovingSpikes2" unique_id=938142352 instance=ExtResource("5_abwr8")]
+position = Vector2(-44, 193)
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=2100249844]
+position = Vector2(167, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3" unique_id=1385646111]
+position = Vector2(-22, 0)
+shape = SubResource("WorldBoundaryShape2D_yg8hr")
