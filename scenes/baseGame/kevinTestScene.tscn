@@ -2,7 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://b8x3hnsyfadxa" path="res://scenes/baseGame/chudBomberEnemy.tscn" id="1_spv60"]
 [ext_resource type="PackedScene" uid="uid://ecwedvcndgh6" path="res://scenes/baseGame/baseDungeonPlayer.tscn" id="2_42opk"]
-[ext_resource type="Script" uid="uid://c424onj7jjrdm" path="res://classes/bomberChudEnemy.gd" id="2_vxh4v"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_r4pc6"]
 
@@ -17,8 +16,7 @@ zoom = Vector2(2, 2)
 shape = SubResource("WorldBoundaryShape2D_r4pc6")
 
 [node name="ChudBomberEnemy" parent="." unique_id=1965983404 instance=ExtResource("1_spv60")]
-position = Vector2(28, -23)
-script = ExtResource("2_vxh4v")
+position = Vector2(180, -85)
 
 [node name="Player" parent="." unique_id=1264333707 instance=ExtResource("2_42opk")]
 position = Vector2(-24, -11)

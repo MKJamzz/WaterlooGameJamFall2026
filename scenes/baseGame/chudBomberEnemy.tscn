@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://b8x3hnsyfadxa"]
 
+[ext_resource type="Script" uid="uid://c424onj7jjrdm" path="res://classes/bomberChudEnemy.gd" id="1_ro7w7"]
 [ext_resource type="Texture2D" uid="uid://coeku3rru68dx" path="res://sprites/kenney_pixel-platformer/Tiles/Characters/tile_0024.png" id="1_wkwjx"]
 [ext_resource type="Texture2D" uid="uid://cw4m4x1wdtf5j" path="res://sprites/kenney_pixel-platformer/Tiles/Characters/tile_0025.png" id="2_ro7w7"]
 [ext_resource type="Texture2D" uid="uid://cy1wrrldecrj3" path="res://sprites/kenney_pixel-platformer/Tiles/Characters/tile_0026.png" id="3_oqajs"]
@@ -24,7 +25,13 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_r4pc6"]
 radius = 6.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_emcct"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4th4q"]
+radius = 20.248457
+
 [node name="BomberChudEnemy" type="CharacterBody2D" unique_id=1965983404]
+script = ExtResource("1_ro7w7")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1426468864]
 sprite_frames = SubResource("SpriteFrames_emcct")
@@ -33,3 +40,16 @@ autoplay = "default"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1182157984]
 position = Vector2(0, 1)
 shape = SubResource("CircleShape2D_r4pc6")
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=655379431]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=591248466]
+shape = SubResource("CircleShape2D_emcct")
+
+[node name="ExplosionArea" type="Area2D" parent="." unique_id=600635280]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExplosionArea" unique_id=1999275687]
+shape = SubResource("CircleShape2D_4th4q")
+
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
+[connection signal="body_entered" from="ExplosionArea" to="." method="_on_explosion_area_body_entered"]
