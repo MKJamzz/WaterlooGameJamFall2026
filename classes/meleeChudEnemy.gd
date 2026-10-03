@@ -6,7 +6,7 @@ class_name MeleeChudEnemy
 
 func _ready() -> void:
 	super() #so entity _ready method isn't overwritten
-	speed = 70.0
+	speed = 40.0
 	damage = 20
 	
 
@@ -18,9 +18,8 @@ func meleeAttack() -> void:
 			body.takeDamage(damage)
 			print(body.current_health)
 			
-	speed = 0.0
 	await get_tree().create_timer(wait_time).timeout
-	speed = 70.0
+
 			
 			
 	
@@ -28,5 +27,8 @@ func meleeAttack() -> void:
 func die() -> void:
 	queue_free()
 	
-func _on_hitbox_body_entered(body: Node2D) -> void:
-	meleeAttack()
+
+func _on_attack_range_body_entered(body: Node2D) -> void:
+	speed = 0.0
+	await meleeAttack()
+	speed = 40.0

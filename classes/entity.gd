@@ -10,12 +10,26 @@ var current_health: int
 @export var speed := 100.0
 @export var damage := 1
 
+@export var sprite: CanvasItem
+@export var flash_time := 0.3
+
+var flash_tween: Tween
+
+func flash_red() -> void:
+	var target: CanvasItem = sprite if sprite else self
+	if flash_tween:
+		flash_tween.kill()       # restart the flash if hit again mid-flash
+	target.modulate = Color.RED
+	flash_tween = create_tween()
+	flash_tween.tween_property(target, "modulate", Color.WHITE, flash_time)
+
 func _ready() -> void:
 	current_health = max_health
 
 func takeDamage(amount: int) -> void:
 	current_health = max(current_health - amount, 0)
 	health_changed.emit(current_health, max_health)
+	flash_red()
 	
 	if current_health == 0:
 		die()
