@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://ccqiswcrxl5s0"]
+
+[ext_resource type="Texture2D" uid="uid://dn0i8lilbx560" path="res://sprites/FantasyCoinsSpritesheet.png" id="1_knyho"]
+[ext_resource type="Script" uid="uid://cdiw1qc53dr4v" path="res://scripts/dungeon_escape_level.gd" id="1_pcyl8"]
+[ext_resource type="PackedScene" uid="uid://clkiylnsdasls" path="res://scenes/interactable.tscn" id="2_pcyl8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cg0a3"]
+radius = 41.01219
+
+[node name="DungeonEscapeLevel" type="Node2D" unique_id=1312862242]
+script = ExtResource("1_pcyl8")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1320896570]
+texture = ExtResource("1_knyho")
+region_enabled = true
+region_rect = Rect2(128, 0, 33, 32)
+
+[node name="interactable" parent="." unique_id=530298727 instance=ExtResource("2_pcyl8")]
+interact_name = "Leave Level"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interactable" unique_id=1383478860]
+shape = SubResource("CircleShape2D_cg0a3")

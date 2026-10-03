@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://dljy1stxxlmsd"]
+
+[ext_resource type="Script" uid="uid://b7j5mbj5jqi2h" path="res://scripts/dungeon_exit_interactable.gd" id="1_ipmwv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cg0a3"]
+radius = 36.345562
+
+[sub_resource type="LabelSettings" id="LabelSettings_fhu24"]
+font_size = 10
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+
+[node name="InteractableComponent" type="Node2D" unique_id=673573218]
+script = ExtResource("1_ipmwv")
+
+[node name="InteractRange" type="Area2D" parent="." unique_id=475061922]
+z_index = 100
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractRange" unique_id=539191550]
+shape = SubResource("CircleShape2D_cg0a3")
+
+[node name="Label" type="Label" parent="." unique_id=480372476]
+offset_left = -37.0
+offset_top = -59.0
+offset_right = 38.0
+offset_bottom = -36.0
+size_flags_horizontal = 4
+text = "E to Interact"
+label_settings = SubResource("LabelSettings_fhu24")
+horizontal_alignment = 1
+
+[connection signal="area_entered" from="InteractRange" to="." method="_on_interact_range_area_entered"]
+[connection signal="area_exited" from="InteractRange" to="." method="_on_interact_range_area_exited"]
