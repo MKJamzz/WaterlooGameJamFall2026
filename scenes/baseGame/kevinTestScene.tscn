@@ -24,3 +24,12 @@ position = Vector2(-24, -11)
 
 [node name="MeleeChudEnemy" parent="." unique_id=1335761620 instance=ExtResource("3_vxh4v")]
 position = Vector2(77, -71)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1809106735]
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer" unique_id=1236225488]
+offset_right = 4.0
+offset_bottom = 27.0
+min_value = 100.0
+value = 100.0
+fill_mode = 2

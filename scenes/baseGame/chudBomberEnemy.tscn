@@ -60,8 +60,8 @@ radius = 6.0
 radius = 20.248457
 
 [node name="BomberChudEnemy" type="CharacterBody2D" unique_id=1965983404]
-collision_layer = 4
-collision_mask = 4
+collision_layer = 6
+collision_mask = 6
 script = ExtResource("1_ro7w7")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1426468864]

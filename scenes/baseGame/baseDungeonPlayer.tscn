@@ -196,10 +196,4 @@ libraries/ = SubResource("AnimationLibrary_2iey2")
 position = Vector2(0, 1)
 shape = SubResource("CircleShape2D_cg0a3")
 
-[node name="HUD" type="CanvasLayer" parent="." unique_id=373275078]
-
-[node name="PlayerHealthBar" type="TextureProgressBar" parent="HUD" unique_id=975811763]
-offset_right = 40.0
-offset_bottom = 40.0
-
 [connection signal="animation_finished" from="PlayerSprite/SwordSprite/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

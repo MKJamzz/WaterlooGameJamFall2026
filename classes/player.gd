@@ -15,10 +15,6 @@ func _ready() -> void:
 	speed = 150.0
 	damage = 10
 
-	health_changed.connect(_on_health_changed)
-	$HUD/PlayerHealthBar.max_value = max_health
-	$HUD/PlayerHealthBar.value = current_health
-
 func _physics_process(delta: float) -> void:
 
 	var direction := Input.get_vector("move_left", "move_right", "move_up", "move_down")
@@ -60,7 +56,3 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 		sword_anim.play("sword_return")
 	else:
 		can_slash = true
-
-func _on_health_changed(current: int, max: int) -> void:
-	$HUD/PlayerHealthBar.max_value = max
-	$HUD/PlayerHealthBar.value = current
