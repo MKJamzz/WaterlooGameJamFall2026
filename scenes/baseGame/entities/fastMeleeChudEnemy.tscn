@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://becfa75dk2531"]
 
+[ext_resource type="Script" uid="uid://cwqp7qidhwnu1" path="res://classes/fastMeleeChudEnemy.gd" id="1_m20pp"]
 [ext_resource type="Texture2D" uid="uid://thrl4f0qodk0" path="res://sprites/kenney_pixel-platformer/Tiles/Characters/tile_0013.png" id="2_m20pp"]
 [ext_resource type="Texture2D" uid="uid://w0vs2460ndlj" path="res://sprites/kenney_pixel-platformer/Tiles/Characters/tile_0014.png" id="3_vhu8n"]
 
@@ -29,6 +30,7 @@ radius = 7.0
 [node name="FastMeleeChudEnemy" type="CharacterBody2D" unique_id=1965983404]
 collision_layer = 6
 collision_mask = 6
+script = ExtResource("1_m20pp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1426468864]
 sprite_frames = SubResource("SpriteFrames_emcct")
