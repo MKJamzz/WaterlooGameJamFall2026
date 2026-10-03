@@ -30,6 +30,16 @@ offset_bottom = -167.0
 theme_override_styles/fill = SubResource("StyleBoxFlat_50bth")
 show_percentage = false
 
+[node name="HealthLabel" type="Label" parent="Camera2D/PlayerHealthBar" unique_id=1215730767]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 2.0
+offset_right = 83.0
+offset_bottom = 25.0
+text = "Health"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Label" type="Label" parent="Camera2D" unique_id=637991831]
 offset_left = -85.0
 offset_top = -71.0
