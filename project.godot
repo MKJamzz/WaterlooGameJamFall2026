@@ -31,6 +31,10 @@ dreamPlayer=""
 baseDungeonPlayer=""
 enemies=""
 
+[gui]
+
+theme/custom_font="uid://dhu8h3xy6spkl"
+
 [input]
 
 move_up={
