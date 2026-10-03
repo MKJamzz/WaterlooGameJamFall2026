@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="DungeonPreset" format=3 uid="uid://dvc6tnmujbqig"]
+
+[ext_resource type="PackedScene" uid="uid://cmgmrrkql7mhy" path="res://scenes/baseGame/roomPresets/bonusRooms/bonus_room_1.tscn" id="1_lrfql"]
+[ext_resource type="PackedScene" uid="uid://cvl7ow0squ4uo" path="res://scenes/baseGame/roomPresets/enemyRooms/enemy_room1.tscn" id="2_sdsys"]
+[ext_resource type="PackedScene" uid="uid://bj6q17rkn8axf" path="res://scenes/baseGame/roomPresets/exitRooms/exit_room_1.tscn" id="3_853d0"]
+[ext_resource type="PackedScene" uid="uid://3qigeug4hhnv" path="res://scenes/baseGame/roomPresets/normalRooms/dungeon_room_1.tscn" id="4_q6fse"]
+[ext_resource type="PackedScene" uid="uid://gsivabqn4k4g" path="res://scenes/baseGame/roomPresets/normalRooms/dungeon_room_2.tscn" id="5_dlfei"]
+[ext_resource type="Script" uid="uid://ep7vicllkeib" path="res://scripts/dungeon_preset.gd" id="6_00rli"]
+[ext_resource type="PackedScene" uid="uid://c5nluw7g00i2x" path="res://scenes/baseGame/roomPresets/startRooms/spawn_room_1.tscn" id="7_5jg0j"]
+
+[resource]
+script = ExtResource("6_00rli")
+display_name = "Floor 2"
+enemy_room_count = 3
+start_rooms = Array[PackedScene]([ExtResource("7_5jg0j")])
+normal_rooms = Array[PackedScene]([ExtResource("4_q6fse"), ExtResource("5_dlfei")])
+enemy_rooms = Array[PackedScene]([ExtResource("2_sdsys")])
+exit_rooms = Array[PackedScene]([ExtResource("3_853d0")])
+bonus_rooms = Array[PackedScene]([ExtResource("1_lrfql")])
+metadata/_custom_type_script = "uid://ep7vicllkeib"

@@ -1,15 +1,18 @@
 extends Node2D
 
 @onready var player: CharacterBody2D = %Player
-@onready var dungeon_generation: Node = $dungeonGeneration/dungeonGenerationScript
+@onready var dungeon_generation: DungeonGenerator = $dungeonGeneration/dungeonGenerationScript
 @onready var camera: RoomCamera = $Camera2D
 @onready var label: Label = $Camera2D/Label
 @onready var fade: CanvasLayer = $Camera2D/Fade
+
+var transitioning := false
 
 
 # Game/Level Startup
 func _ready() -> void:
 	RoomTracker.room_entered.connect(_on_room_entered)
+	GameState.next_level_requested.connect(go_to_next_level)
 	start_level()
 
 	SceneManager.returnBaseGame.connect(send_player_to_dream_sequence)
@@ -19,11 +22,34 @@ func _ready() -> void:
 	
 
 
-func start_level():
-	dungeon_generation.generate_dungeon()
+func start_level() -> void:
+	RoomTracker.clear()
+	dungeon_generation.clear_dungeon()
+	await get_tree().process_frame  # let the old rooms free before building new ones
+
+	dungeon_generation.generate_dungeon(GameState.current_preset())
 	RoomTracker.setup(dungeon_generation, player)  # also resets current_room
 	place_player_in_start_room()
 	camera.snap_to(RoomTracker.room_center(dungeon_generation.start_room))
+
+
+func go_to_next_level() -> void:
+	if transitioning:
+		return
+	if not GameState.has_next_level():
+		print("Run complete!")
+		return
+
+	transitioning = true
+	player.set_physics_process(false)
+	await LoadingScreen.fade_in()
+
+	GameState.advance()
+	await start_level()
+
+	player.set_physics_process(true)
+	await LoadingScreen.fade_out()
+	transitioning = false
 
 
 func place_player_in_start_room() -> void:
@@ -53,7 +79,7 @@ func send_player_to_dream_sequence() -> void:
 	reset_stats()
 	
 	var dreamSequenceIndex = randi_range(0, dreamSequences.size() - 1)
-	var randomTime = randf_range(10, 12) #choose a random time from 30 to a minute
+	var randomTime = randf_range(30, 60) #choose a random time from 30 to a minute
 	print("Sleeping in " + str(randomTime) + " seconds....")
 
 	await get_tree().create_timer(randomTime - 5.0).timeout

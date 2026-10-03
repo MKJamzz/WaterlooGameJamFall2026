@@ -7,4 +7,5 @@ func _ready() -> void:
 	interactable.interact = _on_interact
 	
 func _on_interact():
-	print("Imm a chudddd")
+	set_deferred("monitoring", false)  # only trigger once
+	GameState.next_level_requested.emit()

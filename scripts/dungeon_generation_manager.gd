@@ -10,6 +10,8 @@ extends Node
 @export_range(0.0, 1.0) var double_door_chance := 0.2
 ## Drag your DungeonBuilder node here so the layout gets built in the scene.
 @export var builder: DungeonBuilder
+@export var bonus_room_count := 1
+@export var enemy_room_count := 0
 
 
 const DIRS := {
@@ -25,15 +27,39 @@ var start_room: RoomData
 var exit_room: RoomData
 
 
-func generate_dungeon() -> void:
+## Copies a preset's settings onto this generator and its builder.
+func apply_preset(preset: DungeonPreset) -> void:
+	room_count = preset.room_count
+	branch_chance = preset.branch_chance
+	extra_door_chance = preset.extra_door_chance
+	double_door_chance = preset.double_door_chance
+	bonus_room_count = preset.bonus_room_count
+	enemy_room_count = preset.enemy_room_count
+	if builder:
+		builder.apply_preset(preset)
+
+
+func generate_dungeon(preset: DungeonPreset = null) -> void:
+	if preset:
+		apply_preset(preset)
 	generate_layout()
 	place_doors()
 	select_exit_room()
-	place_special_room(RoomData.Type.BONUS)
-	# Call place_special_room() again for each extra special room you want.
+	for i in bonus_room_count:
+		place_special_room(RoomData.Type.BONUS)
+	for i in enemy_room_count:
+		place_special_room(RoomData.Type.ENEMY)
 	print_layout()
 	if builder:
 		builder.build(rooms)
+
+
+func clear_dungeon() -> void:
+	rooms.clear()
+	start_room = null
+	exit_room = null
+	if builder:
+		builder.clear()
 
 
 # ---------------------------------------------------------------- LAYOUT
