@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://ca0avldthqf1s"]
+
+[ext_resource type="Script" uid="uid://1r5yrkx385rt" path="res://classes/meleeChudEnemy.gd" id="1_8ypvg"]
+[ext_resource type="Texture2D" uid="uid://dy15heaejc6a8" path="res://sprites/kenney_pixel-platformer/Tiles/Characters/tile_0015.png" id="2_50qnq"]
+[ext_resource type="Texture2D" uid="uid://br07dmg0v7mnb" path="res://sprites/kenney_pixel-platformer/Tiles/Characters/tile_0016.png" id="3_khop0"]
+[ext_resource type="Texture2D" uid="uid://ct1nynguvaqxf" path="res://sprites/kenney_pixel-platformer/Tiles/Characters/tile_0017.png" id="4_vtodx"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_emcct"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_50qnq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_khop0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_vtodx")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_r4pc6"]
+radius = 6.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_emcct"]
+radius = 6.0827627
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4th4q"]
+radius = 8.246211
+
+[node name="MeleeChudEnemy" type="CharacterBody2D" unique_id=1965983404]
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("1_8ypvg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1426468864]
+sprite_frames = SubResource("SpriteFrames_emcct")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1182157984]
+position = Vector2(0, 5)
+shape = SubResource("CircleShape2D_r4pc6")
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=655379431]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=591248466]
+position = Vector2(0, 5)
+shape = SubResource("CircleShape2D_emcct")
+
+[node name="AttackRange" type="Area2D" parent="." unique_id=600635280]
+position = Vector2(0, -3)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackRange" unique_id=1999275687]
+position = Vector2(0, 8)
+shape = SubResource("CircleShape2D_4th4q")
+
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
+[connection signal="body_entered" from="AttackRange" to="." method="_on_explosion_area_body_entered"]

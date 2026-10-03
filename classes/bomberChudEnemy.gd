@@ -15,11 +15,16 @@ func explode() -> void:
 	speed = 0
 	await get_tree().create_timer(wait_time).timeout
 	
+	$AnimatedSprite2D.play("explosion")
+	print("test")
+	
 	for body in $ExplosionArea.get_overlapping_bodies():
 		if body is Player and body != self:
 			body.takeDamage(damage)
 			print(body.current_health)
 			
+	await get_tree().create_timer(1.0).timeout
+	
 	queue_free()
 
 func die() -> void:
