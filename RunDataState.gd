@@ -1,6 +1,14 @@
 extends Node
 
-var currency = 0
+# Signals
+signal currency_changed(new_amount: int)
+
+# Variables
+var currency: int = 0:
+	set(value):
+		currency = value
+		currency_changed.emit(currency)
+
 var enemiesKilled = 0
 
 var attackSpeed = 1
