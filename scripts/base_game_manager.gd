@@ -72,7 +72,7 @@ var dreamSequences = ["res://scenes/dreamSequence/platformer1.tscn", "res://scen
 
 var dreamTextSayings = ["Your eyes start to feel heavy...", "You feel yourself drifting off...", "You feel the urge to close your eyes..."]
 
-var dreamTextReturnSayings = ["You feel refreshed. +30 health", "Energy flows through your veins. +30 health"]
+var dreamTextReturnSayings = ["You feel refreshed. +30 health, +10 speed", "Energy flows through your veins. +30 health"]
 
 func send_player_to_dream_sequence() -> void:
 	
