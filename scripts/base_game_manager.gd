@@ -114,26 +114,52 @@ func chooseDreamBuff() -> void:
 		player.changeDamage(20)
 		dreamBuffStatSaying = "+20 damage"
 		
-	return_saying_label.text = dreamTextReturnSayings[dreamTextReturnSayingsIndex] + dreamBuffStatSaying
+	return_saying_label.text = dreamTextReturnSayings[dreamTextReturnSayingsIndex] + "\n" + dreamBuffStatSaying
 	return_saying_label.visible = true
 	await get_tree().create_timer(5.0).timeout
 	return_saying_label.visible = false
 	
+var nightmareDebuffStatSaying = ""
+var nightmareTextNightmareDebuffs = ["decreaseMaxHealth", "decreaseSpeed", "decreaseDamage"]
+var nightmareTextReturnSayings = ["A chill flows through your spine ", "A daunting feeling looms over you ", "You feel drained as exhaustion pounds your head "]
 	
+func chooseNightmareDebuff() -> void:
 	
-
+	var nightmareTextReturnSayingsIndex = randi_range(0, nightmareTextReturnSayings.size() - 1)
+	var nightmareBuff = randi_range(0, nightmareTextNightmareDebuffs.size() - 1)
+	var chosenNightmareDebuff = nightmareTextNightmareDebuffs[nightmareBuff]
+	
+	if chosenNightmareDebuff == "decreaseMaxHealth":
+		player.changeMaxHealth(-10)
+		nightmareDebuffStatSaying = "-10 max health"
+	
+	elif chosenNightmareDebuff == "decreaseSpeed":
+		player.changeSpeed(-5)
+		nightmareDebuffStatSaying = "-5 speed"
+		
+	elif chosenNightmareDebuff == "decreaseDamage":
+		player.changeDamage(-10)
+		nightmareDebuffStatSaying = "-10 damage"
+		
+	
+	return_saying_label.text = nightmareTextReturnSayings[nightmareTextReturnSayingsIndex] + "\n" + nightmareDebuffStatSaying
+	return_saying_label.visible = true
+	await get_tree().create_timer(5.0).timeout
+	return_saying_label.visible = false
 
 
 func send_player_to_dream_sequence() -> void:
+		
+	var wasDream := justReturnedFromDream
+	var wasNightmare := justReturnedFromNightmare
 	
-	var regularPlayerSpeed = player.speed
-	
-	var applySleepEffect := justReturnedFromDream or justReturnedFromNightmare
-
 	reset_stats()
 	
-	if applySleepEffect:
+	if wasDream:
 		chooseDreamBuff()
+	
+	elif wasNightmare:
+		chooseNightmareDebuff()
 	
 	var dreamSequenceIndex = randi_range(0, dreamSequences.size() - 1)
 	var randomTime = randf_range(20, 30) #choose a random time from 30 to a minute
@@ -143,8 +169,9 @@ func send_player_to_dream_sequence() -> void:
 	var sleepTextSayingsIndex = randi_range(0, sleepTextSayings.size() - 1)
 	label.visible = true
 	label.text = sleepTextSayings[sleepTextSayingsIndex]
+	
+	var regularPlayerSpeed = player.speed
 	player.speed = 30
-
 	fade.fade(1.0, 5.0)
 
 	await get_tree().create_timer(5.0).timeout
@@ -155,5 +182,6 @@ func send_player_to_dream_sequence() -> void:
 	
 	var dreamSequencesValue = dreamSequences[dreamSequenceIndex]
 	justReturnedFromDream = dreamSequencesValueMap[dreamSequencesValue] == "dream"
+	justReturnedFromNightmare = dreamSequencesValueMap[dreamSequencesValue] == "nightmare"
 	
 	SceneManager.enter_dream_scene(dreamSequencesValue)
