@@ -3,8 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://tj83hsn4w3aj" path="res://sprites/kenney_pixel-platformer/Tilemap/tilemap_packed.png" id="1_r54qu"]
 [ext_resource type="PackedScene" uid="uid://4h21r1onpk65" path="res://scenes/dreamSequence/dream_player.tscn" id="2_d4lrk"]
 [ext_resource type="PackedScene" uid="uid://ci7nb8hsuaexo" path="res://scenes/dreamSequence/back_to_reality_portal.tscn" id="3_vsudi"]
-[ext_resource type="PackedScene" uid="uid://b8lvl314men3" path="res://scenes/baseGame/base_game.tscn" id="4_r54qu"]
 [ext_resource type="PackedScene" uid="uid://brqb70bbbda4t" path="res://scenes/dreamSequence/dream_killzone.tscn" id="5_fgfqh"]
+[ext_resource type="Texture2D" uid="uid://cgxq1o81jqvyj" path="res://sprites/Background-Space-Tools/Background Space Tools/seamless_crimson_nebula_space_background-mas-variaciones-por-favor-ahora-en-tonos-morados.jpg" id="5_pqqxd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n37d3"]
 texture = ExtResource("1_r54qu")
@@ -292,7 +292,6 @@ position = Vector2(0, -12)
 
 [node name="BackToRealityPortal" parent="." unique_id=153807126 instance=ExtResource("3_vsudi")]
 position = Vector2(694, -111)
-target_scene = ExtResource("4_r54qu")
 
 [node name="TopKillzone" parent="." unique_id=243065009 instance=ExtResource("5_fgfqh")]
 position = Vector2(286, -420)
@@ -332,6 +331,21 @@ tile_set = SubResource("TileSet_emcct")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="MovingDownPlatforms" unique_id=1551943188]
 libraries/ = SubResource("AnimationLibrary_vsudi")
 autoplay = &"RESET"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=581771309]
+layer = -1
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer" unique_id=117393228]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+texture = ExtResource("5_pqqxd")
+expand_mode = 1
+stretch_mode = 6
+metadata/_edit_use_anchors_ = true
 
 [connection signal="body_entered" from="TopKillzone" to="TopKillzone" method="_on_body_entered"]
 [connection signal="body_entered" from="BottomDreamKillzone" to="BackToRealityPortal" method="_on_dream_killzone_body_entered"]

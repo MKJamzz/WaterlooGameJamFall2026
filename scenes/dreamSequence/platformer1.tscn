@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://tj83hsn4w3aj" path="res://sprites/kenney_pixel-platformer/Tilemap/tilemap_packed.png" id="1_m8678"]
 [ext_resource type="PackedScene" uid="uid://brqb70bbbda4t" path="res://scenes/dreamSequence/dream_killzone.tscn" id="3_n37d3"]
 [ext_resource type="PackedScene" uid="uid://ci7nb8hsuaexo" path="res://scenes/dreamSequence/back_to_reality_portal.tscn" id="4_ijcn8"]
-[ext_resource type="PackedScene" uid="uid://b8lvl314men3" path="res://scenes/baseGame/base_game.tscn" id="4_ydyeo"]
+[ext_resource type="Texture2D" uid="uid://xyx2u4ydshci" path="res://sprites/Background-Space-Tools/Background Space Tools/seamless_crimson_nebula_space_background-no-tiene-el-mismo-estilo-y-arte-del-anterior-genera-una-mas-2.jpg" id="5_huuc6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n37d3"]
 texture = ExtResource("1_m8678")
@@ -213,13 +213,27 @@ position = Vector2(0, -12)
 
 [node name="BackToRealityPortal" parent="." unique_id=153807126 instance=ExtResource("4_ijcn8")]
 position = Vector2(1306, -49)
-target_scene = ExtResource("4_ydyeo")
 
 [node name="DreamKillzone" parent="." unique_id=243065009 instance=ExtResource("3_n37d3")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DreamKillzone" unique_id=1582010267]
 position = Vector2(281, 121)
 shape = SubResource("WorldBoundaryShape2D_emcct")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=226394395]
+layer = -1
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer" unique_id=1185334934]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+texture = ExtResource("5_huuc6")
+expand_mode = 1
+stretch_mode = 6
+metadata/_edit_use_anchors_ = true
 
 [connection signal="body_entered" from="DreamKillzone" to="BackToRealityPortal" method="_on_dream_killzone_body_entered"]
 [connection signal="body_entered" from="DreamKillzone" to="DreamKillzone" method="_on_body_entered"]

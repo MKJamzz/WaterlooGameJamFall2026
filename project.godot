@@ -24,7 +24,6 @@ RoomTracker="*uid://b6pea2nbxq70x"
 window/size/viewport_width=1024
 window/size/viewport_height=1024
 window/stretch/mode="viewport"
-window/stretch/aspect="expand"
 
 [global_group]
 
