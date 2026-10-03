@@ -37,7 +37,7 @@ var dreamSequences = ["res://scenes/dreamSequence/platformer1.tscn", "res://scen
 
 func send_player_to_dream_sequence() -> void:
 	var dreamSequenceIndex = randi_range(0, dreamSequences.size() - 1)
-	var randomTime = randf_range(30.0, 60.0) #choose a random time from 30 to a minute
+	var randomTime = randf_range(10, 12) #choose a random time from 30 to a minute
 	print("Sleeping in " + str(randomTime) + " seconds....")
 
 	await get_tree().create_timer(randomTime).timeout

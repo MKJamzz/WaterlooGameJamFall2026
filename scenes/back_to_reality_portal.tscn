@@ -1,18 +1,22 @@
 [gd_scene format=3 uid="uid://c4sulyim3p7ar"]
 
 [ext_resource type="Script" uid="uid://cjqt8uq2pn0pt" path="res://scripts/back_to_reality_portal.gd" id="1_sqbgw"]
-[ext_resource type="Texture2D" uid="uid://c4nn48nedeq8m" path="res://sprites/kenney_pixel-platformer/Tiles/tile_0067.png" id="1_y5drh"]
+[ext_resource type="Texture2D" uid="uid://dn0i8lilbx560" path="res://sprites/FantasyCoinsSpritesheet.png" id="2_sqbgw"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_r4pc6"]
 
 [node name="BackToRealityPortal" type="Area2D" unique_id=153807126]
+scale = Vector2(0.5, 0.5)
 script = ExtResource("1_sqbgw")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=182163538]
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("1_y5drh")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_sqbgw")
+region_enabled = true
+region_rect = Rect2(64, 0, 32, 32)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1323458750]
+scale = Vector2(0.5, 0.5)
 shape = SubResource("CircleShape2D_r4pc6")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
