@@ -4,16 +4,30 @@ class_name Player
 @onready var flip_anim: AnimationPlayer = $PlayerSprite/flip_anim
 @onready var sword: Sprite2D = $PlayerSprite/SwordSprite
 @onready var sword_anim: AnimationPlayer = $PlayerSprite/SwordSprite/AnimationPlayer
+@onready var health_bar: ProgressBar = $"../Camera2D/PlayerHealthBar"
 
 var curr_look_dir = "right"
 var can_slash = true
 @export var slash_time = 0.2
 @export var sword_return_time = 0.5
 
+
 func _ready() -> void:
 	super() #so entity _ready method isn't overwritten
 	speed = 150.0
 	damage = 100
+	
+	health_bar.max_value = max_health
+	health_bar.value = current_health
+
+func takeDamage(amount: int) -> void:
+	super(amount)
+	health_bar.value = current_health
+
+func heal(amount: int) -> void:
+	super(amount)
+	health_bar.value = current_health
+	
 
 func _physics_process(delta: float) -> void:
 

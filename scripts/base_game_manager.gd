@@ -5,6 +5,7 @@ extends Node2D
 @onready var room_tracker: RoomTracker = $roomTracker
 @onready var camera: RoomCamera = $Camera2D
 
+
 # Game/Level Startup
 func _ready() -> void:
 	room_tracker.room_entered.connect(_on_room_entered)
@@ -12,6 +13,7 @@ func _ready() -> void:
 	
 	SceneManager.returnBaseGame.connect(send_player_to_dream_sequence)
 	send_player_to_dream_sequence()
+	
 	
 
 func start_level():
