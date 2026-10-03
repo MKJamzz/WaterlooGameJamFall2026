@@ -29,6 +29,7 @@ func explode() -> void:
 	queue_free()
 
 func die() -> void:
+	super()
 	explode()
 
 func _on_hitbox_body_entered(body: Node2D) -> void:

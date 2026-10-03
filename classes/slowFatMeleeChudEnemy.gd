@@ -26,10 +26,6 @@ func meleeAttack() -> void:
 			
 	
 
-func die() -> void:
-	queue_free()
-	
-
 func _on_attack_range_body_entered(body: Node2D) -> void:
 	speed = 0.0
 	await meleeAttack()

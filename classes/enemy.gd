@@ -5,6 +5,7 @@ var knockback: Vector2 = Vector2.ZERO
 var knockback_timer: float = 0.0
 var enemy_active := false
 var my_room: RoomData = null
+var currencyValue: int = 5
 
 
 func _ready() -> void:
@@ -70,3 +71,8 @@ func takeDamage(amount: int) -> void:
 	if is_instance_valid(player):
 		var knockback_direction := (global_position - player.global_position).normalized()
 		knockbackEnemy(knockback_direction, 150.0, 0.12)
+
+func die() -> void:
+	super()
+	RunDataState.currency += currencyValue
+	RunDataState.enemiesKilled += 1

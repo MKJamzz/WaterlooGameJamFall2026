@@ -8,4 +8,5 @@ func _ready() -> void:
 	
 func _on_interact():
 	set_deferred("monitoring", false)  # only trigger once
+	RunDataState.floorsCleared += 1
 	GameState.next_level_requested.emit()

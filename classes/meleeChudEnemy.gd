@@ -21,13 +21,6 @@ func meleeAttack() -> void:
 	await get_tree().create_timer(wait_time).timeout
 
 			
-			
-	
-
-func die() -> void:
-	queue_free()
-	
-
 func _on_attack_range_body_entered(body: Node2D) -> void:
 	speed = 0.0
 	await meleeAttack()

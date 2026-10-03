@@ -94,5 +94,5 @@ func send_player_to_dream_sequence() -> void:
 	await get_tree().create_timer(5.0).timeout
 	
 	player.speed = regularPlayerSpeed
-	
+	RunDataState.timesDrifted += 1
 	SceneManager.enter_dream_scene(dreamSequences[dreamSequenceIndex])
