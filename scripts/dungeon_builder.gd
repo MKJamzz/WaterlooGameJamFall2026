@@ -4,6 +4,7 @@ extends Node2D
 @export_group("Room scenes")
 @export var start_rooms: Array[PackedScene] = []
 @export var normal_rooms: Array[PackedScene] = []
+@export var enemy_rooms: Array[PackedScene] = []
 @export var exit_rooms: Array[PackedScene] = []
 @export var bonus_rooms: Array[PackedScene] = []
 
@@ -70,6 +71,8 @@ func _pick_scene(type: RoomData.Type) -> PackedScene:
 			pool = exit_rooms
 		RoomData.Type.BONUS:
 			pool = bonus_rooms
+		RoomData.Type.ENEMY:
+			pool = enemy_rooms
 
 	if pool.is_empty():
 		pool = normal_rooms
@@ -149,3 +152,16 @@ func _fill_background(rooms: Dictionary) -> void:
 	for x in range(from.x, to.x):
 		for y in range(from.y, to.y):
 			background.set_cell(Vector2i(x, y), void_source_id, void_tile)
+
+## Swaps in the preset's room pools. Empty pools keep the current ones.
+func apply_preset(preset: DungeonPreset) -> void:
+	if not preset.start_rooms.is_empty():
+		start_rooms = preset.start_rooms
+	if not preset.normal_rooms.is_empty():
+		normal_rooms = preset.normal_rooms
+	if not preset.enemy_rooms.is_empty():
+		enemy_rooms = preset.enemy_rooms
+	if not preset.exit_rooms.is_empty():
+		exit_rooms = preset.exit_rooms
+	if not preset.bonus_rooms.is_empty():
+		bonus_rooms = preset.bonus_rooms

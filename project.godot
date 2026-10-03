@@ -18,6 +18,8 @@ config/features=PackedStringArray("4.7", "GL Compatibility")
 
 SceneManager="*uid://bcw27fu5tj74u"
 RoomTracker="*uid://b6pea2nbxq70x"
+GameState="*uid://c2birqeyki1bx"
+LoadingScreen="*uid://lcelsbgtnm00"
 
 [display]
 

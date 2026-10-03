@@ -1,7 +1,7 @@
 extends Node
 class_name RoomData
 
-enum Type {START, NORMAL, EXIT, BONUS}
+enum Type {START, NORMAL, EXIT, BONUS, ENEMY}
 
 var type := Type.NORMAL
 var roomPos : Vector2i
