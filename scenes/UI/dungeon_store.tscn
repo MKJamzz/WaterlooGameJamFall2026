@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://dlsxrt1lkbwvl"]
+
+[node name="Control" type="Control" unique_id=1878271815]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1460491858]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer" unique_id=1932881054]
+layout_mode = 2
+color = Color(0.5375426, 1, 0.7599919, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/ColorRect" unique_id=1657724249]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+theme_override_constants/separation = 30
+
+[node name="Seperator" type="Control" parent="MarginContainer/ColorRect/VBoxContainer" unique_id=1686838102]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/ColorRect/VBoxContainer" unique_id=1479755520]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 128
+text = "SHOP"
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/ColorRect/VBoxContainer" unique_id=1122638064]
+custom_minimum_size = Vector2(750, 700)
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/ColorRect/VBoxContainer/MarginContainer" unique_id=1392627685]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer/ColorRect/VBoxContainer/MarginContainer/HBoxContainer" unique_id=1819710913]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
