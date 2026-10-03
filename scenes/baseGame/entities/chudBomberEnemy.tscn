@@ -84,5 +84,8 @@ shape = SubResource("CircleShape2D_emcct")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ExplosionArea" unique_id=1999275687]
 shape = SubResource("CircleShape2D_4th4q")
 
+[node name="Timer" type="Timer" parent="." unique_id=169460914]
+one_shot = true
+
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
 [connection signal="body_entered" from="ExplosionArea" to="." method="_on_explosion_area_body_entered"]

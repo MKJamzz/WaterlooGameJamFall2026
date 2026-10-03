@@ -2,6 +2,7 @@ extends Enemy
 class_name BomberChudEnemy
 
 @export var wait_time := 2.0
+@onready var timer: Timer = $Timer
 
 
 func _ready() -> void:
@@ -22,8 +23,9 @@ func explode() -> void:
 			
 	scale = Vector2(0.2, 0.2)
 	$AnimatedSprite2D.play("explosion")
-	await get_tree().create_timer(1.0).timeout
-
+	
+	timer.start()
+	await timer.timeout
 	queue_free()
 
 func die() -> void:
