@@ -17,6 +17,7 @@ config/features=PackedStringArray("4.7", "GL Compatibility")
 [autoload]
 
 SceneManager="*uid://bcw27fu5tj74u"
+RoomTracker="*uid://b6pea2nbxq70x"
 
 [display]
 
@@ -29,6 +30,7 @@ window/stretch/aspect="expand"
 
 dreamPlayer=""
 baseDungeonPlayer=""
+enemies=""
 
 [input]
 

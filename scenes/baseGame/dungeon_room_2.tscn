@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cscvhb2oeu5fp" path="res://sprites/dungeonPlaceholder/Set 1.0.png" id="1_4gtqb"]
 [ext_resource type="Script" uid="uid://csaalty6xp4xc" path="res://scripts/room.gd" id="1_7eemm"]
-[ext_resource type="PackedScene" uid="uid://ca0avldthqf1s" path="res://scenes/baseGame/meleeChudEnemy.tscn" id="3_75qui"]
+[ext_resource type="PackedScene" uid="uid://ca0avldthqf1s" path="res://scenes/baseGame/entities/meleeChudEnemy.tscn" id="3_75qui"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e3c57"]
 texture = ExtResource("1_4gtqb")

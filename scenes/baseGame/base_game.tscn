@@ -1,9 +1,8 @@
 [gd_scene format=3 uid="uid://b8lvl314men3"]
 
 [ext_resource type="Script" uid="uid://hybkahr57tqc" path="res://scripts/base_game_manager.gd" id="1_te8rr"]
-[ext_resource type="PackedScene" uid="uid://ecwedvcndgh6" path="res://scenes/baseGame/baseDungeonPlayer.tscn" id="1_vo3et"]
+[ext_resource type="PackedScene" uid="uid://ecwedvcndgh6" path="res://scenes/baseGame/entities/baseDungeonPlayer.tscn" id="1_vo3et"]
 [ext_resource type="PackedScene" uid="uid://dw74tlw6i1xmf" path="res://scenes/baseGame/dungeon_generation.tscn" id="2_3rjt0"]
-[ext_resource type="Script" uid="uid://b6pea2nbxq70x" path="res://scripts/room_tracker.gd" id="4_aih72"]
 [ext_resource type="Script" uid="uid://ciyebnxjgs6ko" path="res://scripts/camera_2d.gd" id="5_50bth"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_50bth"]
@@ -16,9 +15,6 @@ script = ExtResource("1_te8rr")
 unique_name_in_owner = true
 
 [node name="dungeonGeneration" parent="." unique_id=419241453 instance=ExtResource("2_3rjt0")]
-
-[node name="roomTracker" type="Node" parent="." unique_id=345413574]
-script = ExtResource("4_aih72")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1184828920]
 zoom = Vector2(2.45, 2.45)

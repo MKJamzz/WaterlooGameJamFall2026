@@ -1,28 +1,51 @@
-class_name RoomTracker
 extends Node
 
 ## Emitted once each time the player crosses into a different room.
 signal room_entered(room: RoomData)
 
-@onready var player: CharacterBody2D = %Player
-@onready var generator: Node = $"../dungeonGeneration/dungeonGenerationScript"
-
+var player: CharacterBody2D = null
+var generator: Node = null
 var current_room: RoomData = null
 
 
+func _ready() -> void:
+	set_physics_process(false)  # idle until a dungeon calls setup()
+
+
 func _physics_process(_delta: float) -> void:
-	if player == null or generator == null or generator.rooms.is_empty():
+	if not is_instance_valid(player) or not is_instance_valid(generator) or generator.rooms.is_empty():
 		return
 
-	var room: RoomData = generator.rooms.get(world_to_cell(player.global_position))
+	var room: RoomData = room_at(player.global_position)
 	if room != null and room != current_room:
 		current_room = room
 		room_entered.emit(room)
 
 
-## Call when a new floor is generated so the start room counts as "entered".
+## Call after a new floor is generated. Hooks up the new scene's nodes and
+## clears the old room so the start room counts as "entered".
+func setup(new_generator: Node, new_player: CharacterBody2D) -> void:
+	generator = new_generator
+	player = new_player
+	reset()
+	set_physics_process(true)
+
+
 func reset() -> void:
 	current_room = null
+
+
+## Call when leaving the dungeon entirely (e.g. back to a menu or a dream minigame).
+func clear() -> void:
+	set_physics_process(false)
+	generator = null
+	player = null
+	current_room = null
+
+
+## Which room a world position is in, or null. Enemies use this on spawn.
+func room_at(world_pos: Vector2) -> RoomData:
+	return generator.rooms.get(world_to_cell(world_pos))
 
 
 ## Which grid cell of the layout a world position falls in.
