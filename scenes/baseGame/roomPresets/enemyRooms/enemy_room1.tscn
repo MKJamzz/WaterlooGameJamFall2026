@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://csaalty6xp4xc" path="res://scripts/room.gd" id="1_fvtm1"]
 [ext_resource type="Texture2D" uid="uid://cscvhb2oeu5fp" path="res://sprites/dungeonPlaceholder/Set 1.0.png" id="2_uot0d"]
 [ext_resource type="PackedScene" uid="uid://b8x3hnsyfadxa" path="res://scenes/baseGame/entities/chudBomberEnemy.tscn" id="3_5rdff"]
+[ext_resource type="PackedScene" uid="uid://bixx5084vt4j1" path="res://scenes/baseGame/entities/slowFatMeleeChudEnemy.tscn" id="4_iwvg7"]
+[ext_resource type="PackedScene" uid="uid://becfa75dk2531" path="res://scenes/baseGame/entities/fastMeleeChudEnemy.tscn" id="5_gd4h7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_28hfr"]
 texture = ExtResource("2_uot0d")
@@ -123,3 +125,9 @@ position = Vector2(253, 249)
 
 [node name="BomberChudEnemy3" parent="." unique_id=378072195 instance=ExtResource("3_5rdff")]
 position = Vector2(252, 97)
+
+[node name="SlowFatMeleeChudEnemy" parent="." unique_id=679195254 instance=ExtResource("4_iwvg7")]
+position = Vector2(135, 263)
+
+[node name="FastMeleeChudEnemy" parent="." unique_id=1240228766 instance=ExtResource("5_gd4h7")]
+position = Vector2(244, 331)
