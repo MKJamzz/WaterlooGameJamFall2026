@@ -13,7 +13,7 @@ var can_slash = true
 func _ready() -> void:
 	super() #so entity _ready method isn't overwritten
 	speed = 150.0
-	damage = 10
+	damage = 100
 
 	health_changed.connect(_on_health_changed)
 	$HUD/PlayerHealthBar.max_value = max_health
