@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://b8x3hnsyfadxa" path="res://scenes/baseGame/chudBomberEnemy.tscn" id="1_spv60"]
 [ext_resource type="PackedScene" uid="uid://ecwedvcndgh6" path="res://scenes/baseGame/baseDungeonPlayer.tscn" id="2_42opk"]
+[ext_resource type="PackedScene" uid="uid://ca0avldthqf1s" path="res://scenes/baseGame/meleeChudEnemy.tscn" id="3_vxh4v"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_r4pc6"]
 
@@ -20,3 +21,6 @@ position = Vector2(180, -85)
 
 [node name="Player" parent="." unique_id=1264333707 instance=ExtResource("2_42opk")]
 position = Vector2(-24, -11)
+
+[node name="MeleeChudEnemy" parent="." unique_id=1335761620 instance=ExtResource("3_vxh4v")]
+position = Vector2(77, -71)
