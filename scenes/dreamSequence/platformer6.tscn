@@ -1,0 +1,287 @@
+[gd_scene format=4 uid="uid://oquxhxp58ffi"]
+
+[ext_resource type="Texture2D" uid="uid://tj83hsn4w3aj" path="res://sprites/kenney_pixel-platformer/Tilemap/tilemap_packed.png" id="1_tdoas"]
+[ext_resource type="PackedScene" uid="uid://4h21r1onpk65" path="res://scenes/dreamSequence/dream_player.tscn" id="2_d3f6c"]
+[ext_resource type="PackedScene" uid="uid://ci7nb8hsuaexo" path="res://scenes/dreamSequence/back_to_reality_portal.tscn" id="3_omfse"]
+[ext_resource type="PackedScene" uid="uid://brqb70bbbda4t" path="res://scenes/dreamSequence/dream_killzone.tscn" id="4_n83x0"]
+[ext_resource type="Texture2D" uid="uid://du7vj03c6ve61" path="res://sprites/Background-Space-Tools/Background Space Tools/seamless_crimson_nebula_space_background-no-tiene-el-mismo-estilo-y-arte-del-anterior.jpg" id="5_tdoas"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n37d3"]
+texture = ExtResource("1_tdoas")
+texture_region_size = Vector2i(18, 18)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+11:0/0 = 0
+12:0/0 = 0
+13:0/0 = 0
+14:0/0 = 0
+15:0/0 = 0
+16:0/0 = 0
+17:0/0 = 0
+18:0/0 = 0
+19:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+10:1/0 = 0
+11:1/0 = 0
+12:1/0 = 0
+13:1/0 = 0
+14:1/0 = 0
+15:1/0 = 0
+16:1/0 = 0
+17:1/0 = 0
+18:1/0 = 0
+19:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+10:2/0 = 0
+11:2/0 = 0
+12:2/0 = 0
+13:2/0 = 0
+14:2/0 = 0
+15:2/0 = 0
+16:2/0 = 0
+17:2/0 = 0
+18:2/0 = 0
+19:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+10:3/0 = 0
+11:3/0 = 0
+12:3/0 = 0
+13:3/0 = 0
+14:3/0 = 0
+15:3/0 = 0
+16:3/0 = 0
+17:3/0 = 0
+18:3/0 = 0
+19:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+11:4/0 = 0
+12:4/0 = 0
+13:4/0 = 0
+14:4/0 = 0
+15:4/0 = 0
+16:4/0 = 0
+17:4/0 = 0
+18:4/0 = 0
+19:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+10:5/0 = 0
+11:5/0 = 0
+12:5/0 = 0
+13:5/0 = 0
+14:5/0 = 0
+15:5/0 = 0
+16:5/0 = 0
+17:5/0 = 0
+18:5/0 = 0
+19:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+9:6/0 = 0
+10:6/0 = 0
+11:6/0 = 0
+12:6/0 = 0
+13:6/0 = 0
+14:6/0 = 0
+15:6/0 = 0
+16:6/0 = 0
+17:6/0 = 0
+18:6/0 = 0
+19:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+8:7/0 = 0
+9:7/0 = 0
+10:7/0 = 0
+11:7/0 = 0
+12:7/0 = 0
+13:7/0 = 0
+13:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-9, -9, 9, -9, 9, 4.6493473, -4.6493473, 4.451502, -9, 0)
+14:7/0 = 0
+14:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-9, -9, 9, -9, 9, 5.143959, -0.19784546, 6.03426, -9, 4.1547356)
+16:7/0 = 0
+16:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-9, -9, 9, -9, 9, 0.09892082, -9, 0.19784355)
+17:7/0 = 0
+18:7/0 = 0
+19:7/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+6:8/0 = 0
+7:8/0 = 0
+8:8/0 = 0
+9:8/0 = 0
+10:8/0 = 0
+11:8/0 = 0
+12:8/0 = 0
+13:8/0 = 0
+14:8/0 = 0
+15:8/0 = 0
+16:8/0 = 0
+17:8/0 = 0
+18:8/0 = 0
+19:8/0 = 0
+15:7/0 = 0
+15:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-9, -9, 9, -9, 9, 9, 9, -2.3741364, 2.2752132, 4.5504246, -9, 4.847193)
+
+[sub_resource type="TileSet" id="TileSet_emcct"]
+tile_size = Vector2i(18, 18)
+physics_layer_0/collision_layer = 2
+physics_layer_0/collision_mask = 0
+sources/0 = SubResource("TileSetAtlasSource_n37d3")
+
+[sub_resource type="Animation" id="Animation_d3f6c"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_omfse"]
+resource_name = "movePlatformsRight"
+length = 2.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(209, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_n83x0"]
+_data = {
+&"RESET": SubResource("Animation_d3f6c"),
+&"movePlatformsRight": SubResource("Animation_omfse")
+}
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_emcct"]
+
+[node name="DreamPlatformer" type="Node2D" unique_id=1195749194]
+
+[node name="StaticPlatforms" type="TileMapLayer" parent="." unique_id=443220340]
+tile_map_data = PackedByteArray("AAD//wAAAAANAAcAAAAAAAAAAAAOAAcAAAABAAAAAAAPAAcAAAAqAAAAAAANAAcAAAArAAAAAAAOAAcAAAAsAAAAAAAPAAcAAAAWAAAAAAAOAAcAAAAXAAAAAAAPAAcAAAAVAAAAAAANAAcAAAA/AAAAAAANAAcAAABAAAAAAAAOAAcAAABBAAAAAAAPAAcAAABVAAAAAAANAAcAAABWAAAAAAAOAAcAAABXAAAAAAAPAAcAAAA=")
+tile_set = SubResource("TileSet_emcct")
+
+[node name="MovingPlatforms" type="TileMapLayer" parent="." unique_id=804623355]
+tile_map_data = PackedByteArray("AAAFAP7/AAANAAcAAAAGAP7/AAAOAAcAAAAHAP7/AAAPAAcAAAAbAAIAAAANAAcAAAAcAAIAAAAOAAcAAAAdAAIAAAAPAAcAAAAwAP7/AAANAAcAAAAxAP7/AAAOAAcAAAAyAP7/AAAPAAcAAABGAAIAAAANAAcAAABHAAIAAAAOAAcAAABIAAIAAAAPAAcAAAA=")
+tile_set = SubResource("TileSet_emcct")
+use_kinematic_bodies = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MovingPlatforms" unique_id=327325359]
+callback_mode_process = 0
+libraries/ = SubResource("AnimationLibrary_n83x0")
+autoplay = &"movePlatformsRight"
+
+[node name="DreamPlayer" parent="." unique_id=1483510926 instance=ExtResource("2_d3f6c")]
+position = Vector2(0, -12)
+
+[node name="BackToRealityPortal" parent="." unique_id=153807126 instance=ExtResource("3_omfse")]
+position = Vector2(1556, -25)
+
+[node name="BottomDreamKillzone" parent="." unique_id=579491709 instance=ExtResource("4_n83x0")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomDreamKillzone" unique_id=1582010267]
+position = Vector2(281, 317)
+shape = SubResource("WorldBoundaryShape2D_emcct")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=581771309]
+layer = -1
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer" unique_id=117393228]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+texture = ExtResource("5_tdoas")
+expand_mode = 1
+stretch_mode = 6
+metadata/_edit_use_anchors_ = true
+
+[connection signal="body_entered" from="BottomDreamKillzone" to="BackToRealityPortal" method="_on_dream_killzone_body_entered"]
+[connection signal="body_entered" from="BottomDreamKillzone" to="BottomDreamKillzone" method="_on_body_entered"]

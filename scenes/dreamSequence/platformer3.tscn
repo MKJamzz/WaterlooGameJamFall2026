@@ -163,13 +163,11 @@ texture_region_size = Vector2i(18, 18)
 11:7/0 = 0
 12:7/0 = 0
 13:7/0 = 0
-13:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-9, -9, 9, -9, 9, 9, -9, 9)
+13:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-9, -9, 9, -9, 9, 4.6493473, -4.6493473, 4.451502, -9, 0)
 14:7/0 = 0
-14:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-9, -9, 9, -9, 9, 9, -9, 9)
-15:7/0 = 0
-15:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-9, -9, 9, -9, 9, 9, -9, 9)
+14:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-9, -9, 9, -9, 9, 5.143959, -0.19784546, 6.03426, -9, 4.1547356)
 16:7/0 = 0
-16:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-9, -9, 9, -9, 9, 9, -9, 9)
+16:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-9, -9, 9, -9, 9, 0.09892082, -9, 0.19784355)
 17:7/0 = 0
 18:7/0 = 0
 19:7/0 = 0
@@ -193,6 +191,8 @@ texture_region_size = Vector2i(18, 18)
 17:8/0 = 0
 18:8/0 = 0
 19:8/0 = 0
+15:7/0 = 0
+15:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-9, -9, 9, -9, 9, 9, 9, -2.3741364, 2.2752132, 4.5504246, -9, 4.847193)
 
 [sub_resource type="TileSet" id="TileSet_emcct"]
 tile_size = Vector2i(18, 18)

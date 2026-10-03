@@ -58,7 +58,7 @@ func _on_room_entered(room: RoomData) -> void:
 	camera.move_to(RoomTracker.room_center(room))
 
 
-var dreamSequences = ["res://scenes/dreamSequence/platformer1.tscn", "res://scenes/dreamSequence/platformer2.tscn", "res://scenes/dreamSequence/platformer3.tscn"]
+var dreamSequences = ["res://scenes/dreamSequence/platformer1.tscn", "res://scenes/dreamSequence/platformer2.tscn", "res://scenes/dreamSequence/platformer3.tscn", "res://scenes/dreamSequence/platformer4.tscn", "res://scenes/dreamSequence/platformer5.tscn", "res://scenes/dreamSequence/platformer6.tscn"]
 
 
 func send_player_to_dream_sequence() -> void:
