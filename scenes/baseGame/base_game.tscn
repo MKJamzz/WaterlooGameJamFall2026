@@ -67,6 +67,16 @@ offset_right = 96.0
 offset_bottom = -48.0
 text = "Your eyes feel heavy....."
 horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="ReturnSayingLabel" type="Label" parent="Camera2D" unique_id=114896658]
+offset_left = -81.0
+offset_top = -130.0
+offset_right = 64.0
+offset_bottom = -107.0
+text = "ReturnSayingLabel"
+horizontal_alignment = 1
+autowrap_mode = 2
 
 [node name="Fade" parent="Camera2D" unique_id=827314745 instance=ExtResource("5_l000x")]
 script = ExtResource("6_l000x")
