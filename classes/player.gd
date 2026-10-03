@@ -13,7 +13,7 @@ var can_slash = true
 func _ready() -> void:
 	super() #so entity _ready method isn't overwritten
 	speed = 150.0
-	damage = 10
+	damage = 100
 
 func _physics_process(delta: float) -> void:
 

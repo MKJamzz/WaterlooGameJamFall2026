@@ -17,4 +17,5 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	body.takeDamage(weapon_damage)
+	print("ENEMY HIT" + str(body.current_health))
 	pass # Replace with function body.
