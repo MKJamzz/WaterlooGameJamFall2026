@@ -6,6 +6,9 @@
 [ext_resource type="Script" uid="uid://b6pea2nbxq70x" path="res://scripts/room_tracker.gd" id="4_aih72"]
 [ext_resource type="Script" uid="uid://ciyebnxjgs6ko" path="res://scripts/camera_2d.gd" id="5_50bth"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_50bth"]
+bg_color = Color(0.6763817, 0.47588587, 0.9693298, 1)
+
 [node name="baseGame" type="Node2D" unique_id=474322110]
 script = ExtResource("1_te8rr")
 
@@ -26,4 +29,5 @@ offset_left = -46.0
 offset_top = -194.0
 offset_right = 59.0
 offset_bottom = -167.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_50bth")
 show_percentage = false
