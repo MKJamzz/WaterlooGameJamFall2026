@@ -21,10 +21,10 @@ func _physics_process(delta: float) -> void:
 	velocity = direction * speed;
 	move_and_slide()
 	
-	if curr_look_dir == "right" and get_global_mouse_position().x > global_position.x :
+	if curr_look_dir == "right" and get_global_mouse_position().x < global_position.x :
 		flip_anim.play("look_left")
 		curr_look_dir = "left"
-	elif curr_look_dir == "left" and get_global_mouse_position().x < global_position.x :
+	elif curr_look_dir == "left" and get_global_mouse_position().x > global_position.x :
 		flip_anim.play("look_right")
 		curr_look_dir = "right"
 	

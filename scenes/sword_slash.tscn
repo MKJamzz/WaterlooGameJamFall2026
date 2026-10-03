@@ -1,3 +1,112 @@
 [gd_scene format=3 uid="uid://pb5q61oattgo"]
 
+[ext_resource type="Texture2D" uid="uid://cteeme15vy1l4" path="res://sprites/placeSlash-Sheet.png" id="1_0mfkk"]
+
+[sub_resource type="Animation" id="Animation_0mfkk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Area2D/CollisionShape2D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_e3omh"]
+resource_name = "sword_slash"
+length = 0.7
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.25, 0.4, 0.55),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.6, 0.7),
+"transitions": PackedFloat32Array(0.5, 2, 2, 0.5),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Area2D/CollisionShape2D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nenib"]
+_data = {
+&"RESET": SubResource("Animation_0mfkk"),
+&"sword_slash": SubResource("Animation_e3omh")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0mfkk"]
+size = Vector2(24, 12)
+
 [node name="swordSlash" type="Node2D" unique_id=1640474626]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1372928596]
+z_index = 2
+texture_filter = 1
+texture = ExtResource("1_0mfkk")
+offset = Vector2(12, 0)
+hframes = 6
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D" unique_id=1610216746]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_nenib")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=880616804]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1675416313]
+position = Vector2(12, 0)
+shape = SubResource("RectangleShape2D_0mfkk")
+disabled = true
