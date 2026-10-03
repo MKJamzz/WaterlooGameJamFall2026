@@ -23,5 +23,4 @@ bridge_vertical = ExtResource("7_yas74")
 
 [node name="dungeonGenerationScript" type="Node" parent="." unique_id=793466661 node_paths=PackedStringArray("builder")]
 script = ExtResource("7_8i62c")
-room_count = 20
 builder = NodePath("../dungeonBuilderScript")
