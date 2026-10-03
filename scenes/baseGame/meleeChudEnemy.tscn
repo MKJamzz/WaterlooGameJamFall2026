@@ -32,8 +32,8 @@ radius = 8.0
 radius = 8.246211
 
 [node name="MeleeChudEnemy" type="CharacterBody2D" unique_id=1965983404]
-collision_layer = 4
-collision_mask = 4
+collision_layer = 6
+collision_mask = 6
 script = ExtResource("1_8ypvg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1426468864]
