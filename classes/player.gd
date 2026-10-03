@@ -28,6 +28,13 @@ func heal(amount: int) -> void:
 	super(amount)
 	health_bar.value = current_health
 	
+func increaseSpeed (amount: int) -> void:
+	speed += 20
+
+func increaseMaxHealth (amount: int) -> void:
+	max_health += 20
+	heal(20)
+	health_bar.value = current_health
 
 func _physics_process(delta: float) -> void:
 
