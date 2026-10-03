@@ -17,6 +17,7 @@ func _ready() -> void:
 
 	SceneManager.returnBaseGame.connect(send_player_to_dream_sequence)
 	send_player_to_dream_sequence()
+	RunDataState.resetRunStats()
 	
 	label.visible = false #initally hide label
 	
