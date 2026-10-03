@@ -41,8 +41,13 @@ func _physics_process(delta: float) -> void:
 		sword_anim.play("slash")
 		can_slash = false
 
+const sword_slash_preload = preload("res://scenes/sword_slash.tscn")
 func spawn_slash():
-	pass
+	var sword_slash_var = sword_slash_preload.instantiate()
+	sword_slash_var.get_node("Sprite2D/AnimationPlayer").speed_scale = sword_slash_var.get_node("Sprite2D/AnimationPlayer").get_animation("sword_slash").length / slash_time
+	sword_slash_var.get_node("Sprite2D").flip_v = false if get_global_mouse_position().x > global_position.x else true
+	sword_slash_var.weapon_damage = damage
+	add_child(sword_slash_var)
 
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
