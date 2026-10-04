@@ -1,6 +1,7 @@
 [gd_resource type="Resource" script_class="ShopItem" format=3 uid="uid://bnatrp46arbhk"]
 
 [ext_resource type="Script" uid="uid://0cxcitic4gtu" path="res://scripts/shop_item.gd" id="1_amuqy"]
+[ext_resource type="Texture2D" uid="uid://dl8k8e80ah53h" path="res://sprites/v1.1 dungeon crawler 16X16 pixel pack/props_itens/potion_red.png" id="1_k8fh5"]
 
 [resource]
 script = ExtResource("1_amuqy")
@@ -8,6 +9,7 @@ id = &"6"
 title = "Heal"
 description = "just heal
 some"
+icon = ExtResource("1_k8fh5")
 price = 5
 effect = &"shop_heal"
 metadata/_custom_type_script = "uid://0cxcitic4gtu"

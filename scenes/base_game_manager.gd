@@ -14,6 +14,7 @@ extends Node2D
 var transitioning := false
 var justReturnedFromDream := false
 var justReturnedFromNightmare := false
+var in_shop := false
 
 
 # Game/Level Startup
@@ -71,6 +72,7 @@ func place_player_in_start_room() -> void:
 func _on_room_entered(room: RoomData) -> void:
 	print("Entered ", RoomData.Type.keys()[room.type], " at ", room.roomPos)
 	camera.move_to(RoomTracker.room_center(room))
+	in_shop = room.type == RoomData.Type.BONUS
 
 func reset_stats() -> void:
 	label.visible = false
@@ -190,7 +192,12 @@ func send_player_to_dream_sequence() -> void:
 	var dreamSequenceIndex = randi_range(0, dreamSequences.size() - 1)
 	var randomTime = randf_range(30, 50) #choose a random time from 30 to a minute
 	
-	await get_tree().create_timer(randomTime - 5.0).timeout
+	var remaining :float = randomTime - 5.0
+	while remaining > 0.0:
+		await get_tree().process_frame
+		if not in_shop:
+			remaining -= get_process_delta_time()
+	
 	var sleepTextSayingsIndex = randi_range(0, sleepTextSayings.size() - 1)
 	label.visible = true
 	label.text = sleepTextSayings[sleepTextSayingsIndex]
