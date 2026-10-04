@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://3qigeug4hhnv" path="res://scenes/baseGame/roomPresets/normalRooms/dungeon_room_1.tscn" id="7_2h50e"]
 [ext_resource type="PackedScene" uid="uid://b7cmkblrry87c" path="res://scenes/baseGame/roomPresets/normalRooms/dungeon_room_2.tscn" id="8_d0asw"]
 [ext_resource type="PackedScene" uid="uid://bi887ppkiymkl" path="res://scenes/baseGame/roomPresets/normalRooms/dungeon_room_3.tscn" id="9_ovjo3"]
+[ext_resource type="PackedScene" uid="uid://bw8usjcje5ka0" path="res://scenes/baseGame/roomPresets/startRooms/spawn_room_2.tscn" id="11_7bnji"]
 
 [resource]
 script = ExtResource("1_d1yty")
@@ -17,7 +18,7 @@ display_name = "Floor 3"
 room_count = 9
 double_door_chance = 0.157
 enemy_room_count = 4
-start_rooms = Array[PackedScene]([ExtResource("2_kty0l")])
+start_rooms = Array[PackedScene]([ExtResource("2_kty0l"), ExtResource("11_7bnji")])
 normal_rooms = Array[PackedScene]([ExtResource("7_2h50e"), ExtResource("8_d0asw"), ExtResource("9_ovjo3")])
 enemy_rooms = Array[PackedScene]([ExtResource("3_bhopd"), ExtResource("4_qh6cm"), ExtResource("5_h186q")])
 exit_rooms = Array[PackedScene]([ExtResource("6_b2pyk")])

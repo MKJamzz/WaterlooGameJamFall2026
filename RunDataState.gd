@@ -12,7 +12,7 @@ const SHOP_POOL: ShopItemPool = preload("res://data/shop/shop_pool.tres")
 const SHOP_SIZE := 3
 
 # Variables
-var currency: int = 100:
+var currency: int = 0:
 	set(value):
 		currency = value
 		currency_changed.emit(currency)
@@ -36,7 +36,7 @@ var _shop_floor := -1
 
 # Resets all stats in run to base
 func resetRunStats():
-	currency = 100
+	currency = 0
 	enemiesKilled = 0
 	attackRange = 1.0
 	attackEnemiesPerAtk = 1

@@ -10,6 +10,7 @@ func _ready() -> void:
 	current_health = max_health
 	speed = 150
 	damage = 10
+	currencyValue = 2
 	
 
 	

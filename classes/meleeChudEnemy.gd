@@ -8,7 +8,7 @@ func _ready() -> void:
 	super() #so entity _ready method isn't overwritten
 	speed = 40
 	damage = 20
-	
+	currencyValue = 3
 
 	
 func meleeAttack() -> void: 

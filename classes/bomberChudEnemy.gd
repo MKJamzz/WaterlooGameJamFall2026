@@ -10,6 +10,7 @@ func _ready() -> void:
 	super() #so entity _ready method isn't overwritten
 	speed = 100
 	damage = 30
+	currencyValue = 3
 	
 
 	
