@@ -8,7 +8,7 @@ func _ready() -> void:
 	super() #so entity _ready method isn't overwritten
 	max_health = 20
 	current_health = max_health
-	speed = 150.0
+	speed = 150
 	damage = 10
 	
 
@@ -26,6 +26,6 @@ func meleeAttack() -> void:
 			
 
 func _on_attack_range_body_entered(body: Node2D) -> void:
-	speed = 0.0
+	speed = 0
 	await meleeAttack()
-	speed = 150.0
+	speed = 150

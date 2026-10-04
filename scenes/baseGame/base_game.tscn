@@ -63,19 +63,19 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Label" type="Label" parent="Camera2D" unique_id=637991831]
-offset_left = -85.0
-offset_top = -71.0
-offset_right = 96.0
-offset_bottom = -48.0
+offset_left = -177.0
+offset_top = -78.0
+offset_right = 185.0
+offset_bottom = -55.0
 text = "Your eyes feel heavy....."
 horizontal_alignment = 1
 autowrap_mode = 2
 
 [node name="ReturnSayingLabel" type="Label" parent="Camera2D" unique_id=114896658]
-offset_left = -81.0
-offset_top = -130.0
-offset_right = 64.0
-offset_bottom = -107.0
+offset_left = -169.0
+offset_top = -132.0
+offset_right = 166.0
+offset_bottom = -109.0
 text = "ReturnSayingLabel"
 horizontal_alignment = 1
 autowrap_mode = 2

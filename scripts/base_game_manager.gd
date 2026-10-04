@@ -86,11 +86,19 @@ var dreamSequencesValueMap = {
 }
 
 
-var sleepTextSayings = ["Your eyes start to feel heavy...", "You feel yourself drifting off...", "You feel the urge to close your eyes..."]
+var sleepTextSayings = ["Your eyes start to feel heavy as you drift away...", "Sleep pulls you under. You feel the dungeon drifting away...", "You feel the urge to close your eyes. Your mind starts to drift...", "Your sword start to feel heavy, you start to drift...", "The feeling of needing to close your eyes wins as you drift out of reality...", "The floor gives way beneath your thoughts, you drift away..."]
 
 var dreamBuffStatSaying = ""
 var dreamTextDreamBuffs = [ "increaseMaxHealth", "heal", "increaseSpeed", "increaseDamage"]
-var dreamTextReturnSayings = ["You feel refreshed ", "Energy flows through your veins ", "You feel alert "]
+var dreamTextReturnSayings = ["You feel refreshed ", 
+							"Energy flows through your veins ", 
+							"You worries seem smaller now ",
+							"Your head feels clear and focused ",
+							"Your muscles feel loose and ready ",
+							"You grab your weapon with renewed confidence ",
+							"You stand up, ready for whatever's next ",
+							"You feel hoperful for what's ahead "
+							]
 
 func chooseDreamBuff() -> void:
 	
@@ -121,7 +129,15 @@ func chooseDreamBuff() -> void:
 	
 var nightmareDebuffStatSaying = ""
 var nightmareTextNightmareDebuffs = ["decreaseMaxHealth", "decreaseSpeed", "decreaseDamage"]
-var nightmareTextReturnSayings = ["A chill flows through your spine ", "A daunting feeling looms over you ", "You feel drained as exhaustion pounds your head "]
+var nightmareTextReturnSayings = ["Your hands are still trembling ", 
+									"The shadows look a little darker now ", 
+									"You feel drained as exhaustion pounds your head ",
+									"You aren't sure the nightmare is really over ",
+									"The silence feels heavier than before ",
+									"The air feels colder than before ",
+									"Something feels out of place ",
+									"The nightmare replays everytime you blink "
+									]
 	
 func chooseNightmareDebuff() -> void:
 	

@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://oquxhxp58ffi"]
 
+[ext_resource type="Script" uid="uid://y6fis6hp5vxc" path="res://scripts/nightmareSayings.gd" id="1_d3f6c"]
 [ext_resource type="Texture2D" uid="uid://tj83hsn4w3aj" path="res://sprites/kenney_pixel-platformer/Tilemap/tilemap_packed.png" id="1_tdoas"]
 [ext_resource type="PackedScene" uid="uid://4h21r1onpk65" path="res://scenes/dreamSequence/dream_player.tscn" id="2_d3f6c"]
 [ext_resource type="PackedScene" uid="uid://ci7nb8hsuaexo" path="res://scenes/dreamSequence/back_to_reality_portal.tscn" id="3_omfse"]
@@ -241,10 +242,21 @@ _data = {
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_emcct"]
 
 [node name="DreamPlatformer" type="Node2D" unique_id=1195749194]
+script = ExtResource("1_d3f6c")
 
 [node name="StaticPlatforms" type="TileMapLayer" parent="." unique_id=443220340]
 tile_map_data = PackedByteArray("AAD//wAAAAANAAcAAAAAAAAAAAAOAAcAAAABAAAAAAAPAAcAAAAqAAAAAAANAAcAAAArAAAAAAAOAAcAAAAsAAAAAAAPAAcAAAAWAAAAAAAOAAcAAAAXAAAAAAAPAAcAAAAVAAAAAAANAAcAAAA/AAAAAAANAAcAAABAAAAAAAAOAAcAAABBAAAAAAAPAAcAAABVAAAAAAANAAcAAABWAAAAAAAOAAcAAABXAAAAAAAPAAcAAAA=")
 tile_set = SubResource("TileSet_emcct")
+
+[node name="Quote" type="Label" parent="." unique_id=783772045]
+offset_left = -122.0
+offset_top = -111.0
+offset_right = 103.0
+offset_bottom = 32.0
+theme_override_font_sizes/font_size = 20
+text = "QUOTE
+"
+horizontal_alignment = 1
 
 [node name="MovingPlatforms" type="TileMapLayer" parent="." unique_id=804623355]
 tile_map_data = PackedByteArray("AAAFAP7/AAANAAcAAAAGAP7/AAAOAAcAAAAHAP7/AAAPAAcAAAAbAAIAAAANAAcAAAAcAAIAAAAOAAcAAAAdAAIAAAAPAAcAAAAwAP7/AAANAAcAAAAxAP7/AAAOAAcAAAAyAP7/AAAPAAcAAABGAAIAAAANAAcAAABHAAIAAAAOAAcAAABIAAIAAAAPAAcAAAA=")
