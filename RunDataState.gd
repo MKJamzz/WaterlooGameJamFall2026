@@ -12,7 +12,7 @@ const SHOP_POOL: ShopItemPool = preload("res://data/shop/shop_pool.tres")
 const SHOP_SIZE := 3
 
 # Variables
-var currency: int = 0:
+var currency: int = 100:
 	set(value):
 		currency = value
 		currency_changed.emit(currency)
@@ -36,7 +36,7 @@ var _shop_floor := -1
 
 # Resets all stats in run to base
 func resetRunStats():
-	currency = 0
+	currency = 100
 	enemiesKilled = 0
 	attackSpeed = 1
 	attackRange = 1
@@ -75,4 +75,6 @@ func tryBuy(item: ShopItem) -> bool:
 	_shop_sold.append(item)
 	item_purchased.emit(item)  # player can listen and call item.apply(self)
 	shop_stock_changed.emit()
+	var player = get_tree().get_first_node_in_group("player")
+	item.apply(player)
 	return true

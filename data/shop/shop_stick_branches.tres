@@ -11,4 +11,5 @@ more branches
 from your stick,
 hitting more foes"
 price = 15
+effect = &"stick_branches"
 metadata/_custom_type_script = "uid://0cxcitic4gtu"

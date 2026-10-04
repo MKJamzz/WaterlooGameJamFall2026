@@ -21,6 +21,7 @@ RoomTracker="*uid://b6pea2nbxq70x"
 GameState="*uid://c2birqeyki1bx"
 LoadingScreen="*uid://lcelsbgtnm00"
 RunDataState="*uid://bjkxsjt0g3gmt"
+ShopUpgradeEffects="*uid://d1eavfmg6wkas"
 
 [display]
 
