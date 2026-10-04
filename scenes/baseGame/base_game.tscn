@@ -20,12 +20,6 @@ script = ExtResource("1_te8rr")
 
 [node name="Player" parent="." unique_id=1264333707 instance=ExtResource("1_vo3et")]
 unique_name_in_owner = true
-slash_time = null
-sword_return_time = null
-max_health = null
-speed = null
-damage = null
-flash_time = null
 
 [node name="dungeonGeneration" parent="." unique_id=419241453 instance=ExtResource("2_3rjt0")]
 

@@ -9,6 +9,10 @@ class_name RunEndScreen
 @export var zoom_time := 1.2
 @export var message_hold_time := 1.8  # how long the message stays up
 
+@export var count_time := 0.6        # seconds each stat takes to roll up
+@export var total_count_time := 1.5  # the total rolls slower for drama
+@export var line_pause := 0.15       # gap between lines
+
 @onready var flash: ColorRect = $FlashRed
 @onready var message: Label = $Message
 @onready var results: Control = $Results
@@ -66,22 +70,66 @@ func play_win() -> void:
 
 func show_results(won: bool) -> void:
 	var s := RunDataState
-	var multiplier := 1.0 if won else RunDataState.DEATH_MULTIPLIER
-
 	title_label.text = "You Escaped" if won else "Run Over"
-	stats_label.text = "\n".join([
-		"Coins: %d  x5   = %d" % [s.currency, s.currency * 5],
-		"Enemies killed: %d  x30 = %d" % [s.enemiesKilled, s.enemiesKilled * 30],
-		"Times drifted: %d  x20 = %d" % [s.timesDrifted, s.timesDrifted * 20],
-		"Floors cleared: x%d" % s.floorsCleared,
-		"" if won else "Death penalty:    x%.1f" % multiplier,
-	])
-	total_label.text = "Total Score: %d" % s.calculateScore(won)
+	stats_label.text = ""
+	total_label.text = ""
+	continue_button.disabled = true
 
 	results.modulate.a = 0.0
 	results.show()
-	create_tween().tween_property(results, "modulate:a", 1.0, 0.5)
+	var fade := create_tween()
+	fade.tween_property(results, "modulate:a", 1.0, 0.4)
+	await fade.finished
+
+	# [label, count, points each]
+	var rows := [
+		["Coins", s.currency, 5],
+		["Enemies killed", s.enemiesKilled, 30],
+		["Times drifted", s.timesDrifted, 20],
+	]
+	var lines := []  # finished lines stay on screen while the next one rolls
+
+	for row in rows:
+		await _roll(row[1], count_time, func(v: int) -> void:
+			stats_label.text = "\n".join(lines + [_row_text(row[0], v, row[2])]))
+		lines.append(_row_text(row[0], row[1], row[2]))
+		await get_tree().create_timer(line_pause, true).timeout
+
+	lines.append("Floors cleared:   x%d" % s.floorsCleared)
+	stats_label.text = "\n".join(lines)
+	await get_tree().create_timer(line_pause * 2, true).timeout
+
+	if not won:
+		lines.append("Death penalty:    x%.1f" % RunDataState.DEATH_MULTIPLIER)
+		stats_label.text = "\n".join(lines)
+		await get_tree().create_timer(line_pause * 2, true).timeout
+
+	await _roll(s.calculateScore(won), total_count_time, func(v: int) -> void:
+		total_label.text = "Total Score: %d" % v)
+
+	# little gold flash when the total lands
+	var pop := create_tween()
+	pop.tween_property(total_label, "modulate", Color.GOLD, 0.08)
+	pop.tween_property(total_label, "modulate", Color.WHITE, 0.4)
+
+	continue_button.disabled = false
 	continue_button.grab_focus()
+
+
+## Counts from 0 to target, fast at first and slowing down as it lands.
+func _roll(target: int, duration: float, update: Callable) -> void:
+	if target <= 0:
+		update.call(0)
+		return
+	var t := create_tween()
+	t.tween_method(func(v: float) -> void: update.call(int(v)), 0.0, float(target), duration) \
+		.set_trans(Tween.TRANS_QUART).set_ease(Tween.EASE_OUT)
+	await t.finished
+	update.call(target)  # make sure it ends on the exact number
+
+
+func _row_text(label: String, count: int, points: int) -> String:
+	return "%-16s %d  x%d  = %d" % [label + ":", count, points, count * points]
 
 
 func _on_continue_pressed() -> void:
