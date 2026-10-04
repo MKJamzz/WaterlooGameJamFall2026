@@ -1,5 +1,6 @@
 extends Node
 @onready var quote: Label = $Quote
+@onready var background_music: AudioStreamPlayer = $BackgroundMusic
 
 var nightmareQuotes = ["You feel a chill through your spine...", 
 						"Your heart begins to pound...",
@@ -22,3 +23,4 @@ func chooseQuote() -> void:
 
 func _ready() -> void:
 	chooseQuote()
+	background_music.play()
