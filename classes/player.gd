@@ -9,6 +9,7 @@ class_name Player
 @onready var end_screen: RunEndScreen = $"../RunEndScreen"
 @onready var being_hit_sound_effect: AudioStreamPlayer2D = $BeingHitSoundEffect
 @onready var sword_swing_effect: AudioStreamPlayer2D = $SwordSwingEffect
+@onready var player_sprite: AnimatedSprite2D = $PlayerSprite
 
 var is_dead := false
 var footstep_counter := 0.0
@@ -86,13 +87,54 @@ func _physics_process(delta: float) -> void:
 	velocity = direction * speed;
 	move_and_slide()
 	
-	if curr_look_dir == "right" and get_global_mouse_position().x < global_position.x :
+	var to_mouse := get_global_mouse_position() - global_position #mouse position
+	
+	# change sprite based on mouse
+	if curr_look_dir == "right" and to_mouse.x < 0:
 		flip_anim.play("look_left")
 		curr_look_dir = "left"
-	elif curr_look_dir == "left" and get_global_mouse_position().x > global_position.x :
+	elif curr_look_dir == "left" and to_mouse.x > 0:
 		flip_anim.play("look_right")
 		curr_look_dir = "right"
 	
+	
+	#change sprite based on movement
+	if abs(to_mouse.x) > abs(to_mouse.y):
+		
+		if direction == Vector2.ZERO:
+			player_sprite.play("idle_side")
+			
+		elif Input.is_action_pressed("fire") and can_slash:
+			playSwordEffects()
+			player_sprite.play("slash_side")
+			
+		else:
+			player_sprite.play("walk_side")
+			
+	elif to_mouse.y < 0:
+		
+		if direction == Vector2.ZERO:
+			player_sprite.play("idle_up")
+			
+		elif Input.is_action_pressed("fire") and can_slash:
+			playSwordEffects()
+			player_sprite.play("slash_up")
+		else:
+			player_sprite.play("walk_up")
+			
+	else:
+		
+		if direction == Vector2.ZERO:
+			player_sprite.play("idle_down")
+		
+		elif Input.is_action_pressed("fire") and can_slash:
+			playSwordEffects()
+			player_sprite.play("slash_down")
+			
+		else:
+			player_sprite.play("walk_down")
+		
+		
 	if get_global_mouse_position().y > global_position.y:
 		sword.show_behind_parent = false
 		#$PlayerSprite.frame = 0
@@ -101,12 +143,8 @@ func _physics_process(delta: float) -> void:
 		#$PlayerSprite.frame = 1
 		
 	# SWORD SLASHING
-	if Input.is_action_pressed("fire") and can_slash:
-		sword_anim.speed_scale = sword_anim.get_animation("slash").length / slash_time
-		sword_anim.play("slash")
-		sword_swing_effect.play()
+	#if Input.is_action_pressed("fire") and can_slash:
 		
-		can_slash = false
 	
 	#footstep sounds
 	
@@ -136,3 +174,9 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 		sword_anim.play("sword_return")
 	else:
 		can_slash = true
+
+func playSwordEffects():
+	sword_anim.speed_scale = sword_anim.get_animation("slash").length / slash_time
+	sword_anim.play("slash")
+	sword_swing_effect.play()
+	can_slash = false
