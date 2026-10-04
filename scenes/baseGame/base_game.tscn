@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://b7ti8mhfxasw1" path="res://scripts/currency_label.gd" id="6_7wlg5"]
 [ext_resource type="Script" uid="uid://dfwvpjadsf2y4" path="res://scenes/baseGame/fade.gd" id="6_l000x"]
 [ext_resource type="Texture2D" uid="uid://7jrkjxtvcr8a" path="res://sprites/dungeonPlaceholder/Potion 4.png" id="7_1ujai"]
+[ext_resource type="AudioStream" uid="uid://d14yvlolj6dum" path="res://audio/music/Narcoleptic_Knight_OST__Main_Theme.wav" id="10_xengh"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_50bth"]
 bg_color = Color(0.6763817, 0.47588587, 0.9693298, 1)
@@ -85,3 +86,8 @@ autowrap_mode = 2
 
 [node name="Fade" parent="Camera2D" unique_id=827314745 instance=ExtResource("5_l000x")]
 script = ExtResource("6_l000x")
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="." unique_id=1689730206]
+stream = ExtResource("10_xengh")
+volume_db = 2.959
+autoplay = true
