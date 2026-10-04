@@ -5,11 +5,15 @@ class_name Player
 @onready var sword: Sprite2D = $PlayerSprite/SwordSprite
 @onready var sword_anim: AnimationPlayer = $PlayerSprite/SwordSprite/AnimationPlayer
 @onready var health_bar: ProgressBar = $"../Camera2D/PlayerHealthBar"
+@onready var camera: Camera2D = $"../Camera2D"
+@onready var end_screen: RunEndScreen = $"../RunEndScreen"
+
+var is_dead := false
 
 var curr_look_dir = "right"
 var can_slash = true
-@export var slash_time = 0.2
-@export var sword_return_time = 0.5
+@export var slash_time: float  = 0.2
+@export var sword_return_time:float  = 0.5
 
 
 func _ready() -> void:
@@ -22,8 +26,19 @@ func _ready() -> void:
 	health_bar.value = current_health
 
 func takeDamage(amount: int) -> void:
-	super(amount)
+	if is_dead:
+		return
+	super(amount)  # Entity calls die() here when health reaches 0
 	health_bar.value = current_health
+
+func die() -> void:
+	if is_dead:
+		return
+	is_dead = true
+	died.emit()  # anything listening for the player's death still hears it
+	velocity = Vector2.ZERO
+	set_physics_process(false)
+	end_screen.play_death(self, camera)
 
 func heal(amount: int) -> void:
 	super(amount)
