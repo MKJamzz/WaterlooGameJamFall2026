@@ -19,8 +19,7 @@ var currency: int = 100:
 
 var enemiesKilled = 0
 
-var attackSpeed = 1
-var attackRange = 1
+var attackRange: float = 1.0
 
 var attackEnemiesPerAtk = 1
 
@@ -38,8 +37,7 @@ var _shop_floor := -1
 func resetRunStats():
 	currency = 100
 	enemiesKilled = 0
-	attackSpeed = 1
-	attackRange = 1
+	attackRange = 1.0
 	attackEnemiesPerAtk = 1
 	timesDrifted = 0
 	floorsCleared = 0

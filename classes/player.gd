@@ -17,6 +17,7 @@ func _ready() -> void:
 	speed = 150
 	damage = 30
 	
+	add_to_group("player")
 	health_bar.max_value = max_health
 	health_bar.value = current_health
 
@@ -71,7 +72,12 @@ func spawn_slash():
 	sword_slash_var.get_node("Sprite2D/AnimationPlayer").speed_scale = sword_slash_var.get_node("Sprite2D/AnimationPlayer").get_animation("sword_slash").length / slash_time
 	sword_slash_var.get_node("Sprite2D").flip_v = false if get_global_mouse_position().x > global_position.x else true
 	sword_slash_var.weapon_damage = damage
+	sword_slash_var.scale *= RunDataState.attackRange
 	add_child(sword_slash_var)
+	
+func reduceSlashTime():
+	slash_time /= 1.2;
+	sword_return_time /= 1.2
 
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:

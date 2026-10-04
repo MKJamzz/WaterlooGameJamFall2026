@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ShopItem" format=3 uid="uid://dbm3o16l00xbw"]
+
+[ext_resource type="Script" uid="uid://0cxcitic4gtu" path="res://scripts/shop_item.gd" id="1_pt6ja"]
+
+[resource]
+script = ExtResource("1_pt6ja")
+id = &"5"
+title = "Thicc Sticc"
+description = "Wow
+That is a pretty
+big stick...
+It probably
+hits hard"
+price = 15
+effect = &"thicc_sticc"
+metadata/_custom_type_script = "uid://0cxcitic4gtu"

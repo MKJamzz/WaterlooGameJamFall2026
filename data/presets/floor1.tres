@@ -10,8 +10,7 @@
 
 [resource]
 script = ExtResource("1_kh0sw")
-room_count = 3
-enemy_room_count = 0
+room_count = 4
 start_rooms = Array[PackedScene]([ExtResource("7_u2emf")])
 normal_rooms = Array[PackedScene]([ExtResource("4_el33w"), ExtResource("5_svany")])
 enemy_rooms = Array[PackedScene]([ExtResource("2_3g327")])
