@@ -187,10 +187,13 @@ func send_player_to_dream_sequence() -> void:
 	label.visible = true
 	label.text = sleepTextSayings[sleepTextSayingsIndex]
 	
+	
+	
 	var regularPlayerSpeed = player.speed
 	player.speed = 30
 	fade.fade(1.0, 5.0)
 
+	freeze_enemies(5.0)
 	await get_tree().create_timer(5.0).timeout
 	
 	player.speed = regularPlayerSpeed
@@ -203,7 +206,7 @@ func send_player_to_dream_sequence() -> void:
 	
 	SceneManager.enter_dream_scene(dreamSequencesValue)
 
-func freeze_enemies() -> void:
+func freeze_enemies(duration: float = 1.0) -> void:
 	for node in find_children("*", "", true, false):
 		if node is Enemy:
-			node.freeze(1.0)	
+			node.freeze(duration)	
