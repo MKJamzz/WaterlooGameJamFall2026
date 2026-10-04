@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://ci7nb8hsuaexo" path="res://scenes/dreamSequence/back_to_reality_portal.tscn" id="3_omfse"]
 [ext_resource type="PackedScene" uid="uid://brqb70bbbda4t" path="res://scenes/dreamSequence/dream_killzone.tscn" id="4_n83x0"]
 [ext_resource type="Texture2D" uid="uid://du7vj03c6ve61" path="res://sprites/Background-Space-Tools/Background Space Tools/seamless_crimson_nebula_space_background-no-tiene-el-mismo-estilo-y-arte-del-anterior.jpg" id="5_tdoas"]
+[ext_resource type="AudioStream" uid="uid://ct45jqtsuk8yh" path="res://audio/music/Narcoleptic_Knight_OST__Nightmare_Theme.wav" id="7_omfse"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n37d3"]
 texture = ExtResource("1_tdoas")
@@ -294,6 +295,10 @@ texture = ExtResource("5_tdoas")
 expand_mode = 1
 stretch_mode = 6
 metadata/_edit_use_anchors_ = true
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="." unique_id=686780781]
+stream = ExtResource("7_omfse")
+volume_db = -0.448
 
 [connection signal="body_entered" from="BottomDreamKillzone" to="BackToRealityPortal" method="_on_dream_killzone_body_entered"]
 [connection signal="body_entered" from="BottomDreamKillzone" to="BottomDreamKillzone" method="_on_body_entered"]

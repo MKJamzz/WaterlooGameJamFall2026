@@ -59,7 +59,8 @@ libraries/ = SubResource("AnimationLibrary_r8wis")
 autoplay = &"portal spin"
 
 [node name="interactable" parent="." unique_id=530298727 instance=ExtResource("2_pcyl8")]
-interact_name = "Leave Level"
+interact_name = "Press E to Interact 
+Leave Level"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="interactable" unique_id=1383478860]
 shape = SubResource("CircleShape2D_cg0a3")

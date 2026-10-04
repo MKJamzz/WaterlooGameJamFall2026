@@ -102,7 +102,7 @@ var dreamTextReturnSayings = ["You feel refreshed. ",
 							"Your muscles feel loose and ready. ",
 							"You grab your weapon with renewed confidence. ",
 							"You stand up, ready for whatever's next. ",
-							"You feel hoperful for what's ahead. "
+							"You feel hopeful for what's ahead. "
 							]
 
 func chooseDreamBuff() -> void:

@@ -22,6 +22,5 @@ shape = SubResource("CircleShape2D_r4pc6")
 
 [node name="TeleportSound" type="AudioStreamPlayer2D" parent="." unique_id=620841831]
 stream = ExtResource("3_7xajv")
-volume_db = -15.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

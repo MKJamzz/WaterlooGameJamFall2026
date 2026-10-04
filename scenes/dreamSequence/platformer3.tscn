@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://ci7nb8hsuaexo" path="res://scenes/dreamSequence/back_to_reality_portal.tscn" id="3_vsudi"]
 [ext_resource type="PackedScene" uid="uid://brqb70bbbda4t" path="res://scenes/dreamSequence/dream_killzone.tscn" id="5_fgfqh"]
 [ext_resource type="Texture2D" uid="uid://cgxq1o81jqvyj" path="res://sprites/Background-Space-Tools/Background Space Tools/seamless_crimson_nebula_space_background-mas-variaciones-por-favor-ahora-en-tonos-morados.jpg" id="5_pqqxd"]
+[ext_resource type="AudioStream" uid="uid://cb2d0x0n0wrdc" path="res://audio/music/Narcoleptic_Knight_OST__Dream_Theme.wav" id="7_3yx5f"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n37d3"]
 texture = ExtResource("1_r54qu")
@@ -358,6 +359,10 @@ texture = ExtResource("5_pqqxd")
 expand_mode = 1
 stretch_mode = 6
 metadata/_edit_use_anchors_ = true
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="." unique_id=366356638]
+stream = ExtResource("7_3yx5f")
+volume_db = -0.448
 
 [connection signal="body_entered" from="TopKillzone" to="TopKillzone" method="_on_body_entered"]
 [connection signal="body_entered" from="BottomDreamKillzone" to="BackToRealityPortal" method="_on_dream_killzone_body_entered"]
