@@ -5,7 +5,6 @@ extends Node
 func extendo_grip(player: Node, item: ShopItem) -> void:
 	RunDataState.attackRange += 0.25
 
-
 func truffle_bar(player: Node, item: ShopItem) -> void:
 	player.changeMaxHealth(20)
 
@@ -13,9 +12,14 @@ func truffle_bar(player: Node, item: ShopItem) -> void:
 func hot_hands(player: Node, item: ShopItem) -> void:
 	player.reduceSlashTime()
 
-
 func stick_branches(player: Node, item: ShopItem) -> void:
 	RunDataState.attackEnemiesPerAtk += 1;
 
 func thicc_sticc(player: Node, item: ShopItem) -> void:
 	player.changeDamage(15)
+	
+func shop_heal(player: Node, item: ShopItem) -> void:
+	player.heal(20)
+	
+func strange_mushroom(player: Node, item: ShopItem) -> void:
+	player.heal(randi_range(-20, 80))

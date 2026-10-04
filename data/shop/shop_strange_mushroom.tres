@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ShopItem" format=3 uid="uid://cae8hxk55xi7i"]
+
+[ext_resource type="Script" uid="uid://0cxcitic4gtu" path="res://scripts/shop_item.gd" id="1_wsqj8"]
+
+[resource]
+script = ExtResource("1_wsqj8")
+id = &"6"
+title = "Strange Mushroom"
+description = "Huh..
+Looks like it
+could be tasty"
+price = 15
+min_floor = 2
+effect = &"strange_mushroom"
+metadata/_custom_type_script = "uid://0cxcitic4gtu"

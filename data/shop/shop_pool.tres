@@ -6,8 +6,11 @@
 [ext_resource type="Resource" uid="uid://b21kuo4uyg3u2" path="res://data/shop/shop_extendo_grip.tres" id="3_oiaxk"]
 [ext_resource type="Resource" uid="uid://b1x21rrwhi8mr" path="res://data/shop/shop_stick_branches.tres" id="4_6ojrm"]
 [ext_resource type="Resource" uid="uid://wy62rbp3jkug" path="res://data/shop/shop_truffle_bar.tres" id="5_3yolo"]
+[ext_resource type="Resource" uid="uid://dbm3o16l00xbw" path="res://data/shop/shop_thicc_sticc.tres" id="6_g8dod"]
+[ext_resource type="Resource" uid="uid://bnatrp46arbhk" path="res://data/shop/shop_heal.tres" id="7_aj5tk"]
+[ext_resource type="Resource" uid="uid://cae8hxk55xi7i" path="res://data/shop/shop_strange_mushroom.tres" id="8_gdypy"]
 
 [resource]
 script = ExtResource("2_jak8y")
-items = Array[ExtResource("1_xb604")]([ExtResource("2_3a3h8"), ExtResource("3_oiaxk"), ExtResource("4_6ojrm"), ExtResource("5_3yolo")])
+items = Array[ExtResource("1_xb604")]([ExtResource("2_3a3h8"), ExtResource("3_oiaxk"), ExtResource("4_6ojrm"), ExtResource("5_3yolo"), ExtResource("6_g8dod"), ExtResource("7_aj5tk"), ExtResource("8_gdypy")])
 metadata/_custom_type_script = "uid://cdvlsdsblrfxj"

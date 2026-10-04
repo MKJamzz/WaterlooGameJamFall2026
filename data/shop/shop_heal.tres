@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ShopItem" format=3 uid="uid://bnatrp46arbhk"]
+
+[ext_resource type="Script" uid="uid://0cxcitic4gtu" path="res://scripts/shop_item.gd" id="1_amuqy"]
+
+[resource]
+script = ExtResource("1_amuqy")
+id = &"6"
+title = "Heal"
+description = "just heal
+some"
+price = 5
+effect = &"shop_heal"
+metadata/_custom_type_script = "uid://0cxcitic4gtu"
