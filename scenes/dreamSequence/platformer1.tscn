@@ -256,5 +256,8 @@ metadata/_edit_use_anchors_ = true
 stream = ExtResource("7_chl2f")
 volume_db = -0.448
 
+[node name="SpawnPoint" type="Marker2D" parent="." unique_id=140070223]
+position = Vector2(10, 0)
+
 [connection signal="body_entered" from="DreamKillzone" to="BackToRealityPortal" method="_on_dream_killzone_body_entered"]
 [connection signal="body_entered" from="DreamKillzone" to="DreamKillzone" method="_on_body_entered"]

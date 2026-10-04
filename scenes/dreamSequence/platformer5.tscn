@@ -252,5 +252,8 @@ metadata/_edit_use_anchors_ = true
 stream = ExtResource("7_cau6c")
 volume_db = -0.448
 
+[node name="SpawnPoint" type="Marker2D" parent="BackgroundMusic" unique_id=18566251]
+position = Vector2(10, 0)
+
 [connection signal="body_entered" from="BottomDreamKillzone" to="BackToRealityPortal" method="_on_dream_killzone_body_entered"]
 [connection signal="body_entered" from="BottomDreamKillzone" to="BottomDreamKillzone" method="_on_body_entered"]
