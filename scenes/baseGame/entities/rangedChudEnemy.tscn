@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://08of7pl682ef"]
+
+[ext_resource type="Script" uid="uid://bhq1occvs3fkt" path="res://classes/rangedChudEnemy.gd" id="1_0ch6w"]
+[ext_resource type="Texture2D" uid="uid://dxohaq0tyr7lm" path="res://sprites/v1.1 dungeon crawler 16X16 pixel pack/enemies/goblin/goblin_run_anim_f0.png" id="2_0ch6w"]
+[ext_resource type="Texture2D" uid="uid://cux4vtmhxai4w" path="res://sprites/v1.1 dungeon crawler 16X16 pixel pack/enemies/goblin/goblin_run_anim_f1.png" id="3_f28j4"]
+[ext_resource type="Texture2D" uid="uid://c3citv0brtjek" path="res://sprites/v1.1 dungeon crawler 16X16 pixel pack/enemies/goblin/goblin_run_anim_f2.png" id="4_8nekh"]
+[ext_resource type="Texture2D" uid="uid://f4l2xaiedvdn" path="res://sprites/v1.1 dungeon crawler 16X16 pixel pack/enemies/goblin/goblin_run_anim_f3.png" id="5_5iny6"]
+[ext_resource type="Texture2D" uid="uid://dfmo4uoxjl0o4" path="res://sprites/v1.1 dungeon crawler 16X16 pixel pack/enemies/goblin/goblin_run_anim_f4.png" id="6_ssm2d"]
+[ext_resource type="Texture2D" uid="uid://bmmm8p0ggo32p" path="res://sprites/v1.1 dungeon crawler 16X16 pixel pack/enemies/goblin/goblin_run_anim_f5.png" id="7_pkyct"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_emcct"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_0ch6w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_f28j4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_8nekh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_5iny6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ssm2d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_pkyct")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_r4pc6"]
+radius = 6.0827627
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_emcct"]
+radius = 8.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ci86a"]
+radius = 98.32599
+
+[node name="RangedChudEnemy" type="CharacterBody2D" unique_id=1965983404]
+collision_layer = 6
+collision_mask = 6
+script = ExtResource("1_0ch6w")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1426468864]
+position = Vector2(-0.5, 5.5)
+scale = Vector2(0.9375, 0.9375)
+sprite_frames = SubResource("SpriteFrames_emcct")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1182157984]
+position = Vector2(0, 5)
+shape = SubResource("CircleShape2D_r4pc6")
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=655379431]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=591248466]
+position = Vector2(0, 5)
+shape = SubResource("CircleShape2D_emcct")
+
+[node name="AttackRange" type="Area2D" parent="." unique_id=2120802449]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackRange" unique_id=1834912504]
+position = Vector2(0, 5)
+shape = SubResource("CircleShape2D_ci86a")
+
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
+[connection signal="body_entered" from="AttackRange" to="." method="_on_attack_range_body_entered"]
