@@ -183,9 +183,8 @@ func send_player_to_dream_sequence() -> void:
 		chooseNightmareDebuff()
 	
 	var dreamSequenceIndex = randi_range(0, dreamSequences.size() - 1)
-	var randomTime = randf_range(10, 10) #choose a random time from 30 to a minute
-	print("Sleeping in " + str(randomTime) + " seconds....")
-
+	var randomTime = randf_range(30, 50) #choose a random time from 30 to a minute
+	
 	await get_tree().create_timer(randomTime - 5.0).timeout
 	var sleepTextSayingsIndex = randi_range(0, sleepTextSayings.size() - 1)
 	label.visible = true

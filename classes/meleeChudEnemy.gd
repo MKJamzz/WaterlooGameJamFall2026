@@ -16,7 +16,6 @@ func meleeAttack() -> void:
 	for body in $AttackRange.get_overlapping_bodies():
 		if body is Player and body != self:
 			body.takeDamage(damage)
-			print(body.current_health)
 			
 	await get_tree().create_timer(wait_time).timeout
 

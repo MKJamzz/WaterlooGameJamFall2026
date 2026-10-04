@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://dfwvpjadsf2y4" path="res://scenes/baseGame/fade.gd" id="6_l000x"]
 [ext_resource type="Texture2D" uid="uid://7jrkjxtvcr8a" path="res://sprites/dungeonPlaceholder/Potion 4.png" id="7_1ujai"]
 [ext_resource type="AudioStream" uid="uid://b8plyb4q7p5wg" path="res://sounds/fallingAsleepSound.mp3" id="10_xengh"]
+[ext_resource type="AudioStream" uid="uid://d14yvlolj6dum" path="res://audio/music/Narcoleptic_Knight_OST__Main_Theme.wav" id="11_ec1q4"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_50bth"]
 
@@ -92,9 +93,7 @@ script = ExtResource("6_l000x")
 [node name="fallingAsleepSound" type="AudioStreamPlayer2D" parent="." unique_id=368984774]
 stream = ExtResource("10_xengh")
 
-
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="." unique_id=1689730206]
-stream = ExtResource("10_xengh")
+stream = ExtResource("11_ec1q4")
 volume_db = -0.448
 autoplay = true
-

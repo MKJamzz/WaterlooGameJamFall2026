@@ -20,7 +20,6 @@ func explode() -> void:
 	for body in $ExplosionArea.get_overlapping_bodies():
 		if body is Player and body != self:
 			body.takeDamage(damage)
-			print(body.current_health)
 			
 	scale = Vector2(0.2, 0.2)
 	$AnimatedSprite2D.play("explosion")
@@ -38,6 +37,5 @@ func die() -> void:
 func _on_hitbox_body_entered(body: Node2D) -> void:
 	if body is Player:
 		explode.call_deferred()
-		print(body.current_health)
 	
 	
