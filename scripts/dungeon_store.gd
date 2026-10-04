@@ -20,12 +20,14 @@ func _ready() -> void:
 
 
 func open() -> void:
+	print("opened")
 	_refresh()
 	show()
 	get_tree().paused = true
 
 
 func close() -> void:
+	print("Closed")
 	hide()
 	get_tree().paused = false
 	closed.emit()

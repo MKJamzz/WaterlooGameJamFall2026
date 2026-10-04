@@ -31,6 +31,7 @@ offset_top = -195.0
 offset_right = -149.0
 offset_bottom = -155.0
 offset_transform_enabled = true
+mouse_filter = 2
 texture = ExtResource("7_1ujai")
 
 [node name="CurrencyLabel" type="Label" parent="Camera2D" unique_id=485791038]
@@ -47,6 +48,7 @@ offset_left = -46.0
 offset_top = -194.0
 offset_right = 59.0
 offset_bottom = -167.0
+mouse_filter = 2
 theme_override_styles/fill = SubResource("StyleBoxFlat_50bth")
 show_percentage = false
 
