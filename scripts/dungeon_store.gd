@@ -12,6 +12,7 @@ signal closed
 	$MarginContainer/ColorRect/MarginContainer/ExitButton
 
 @onready var purchase_sound_effect: AudioStreamPlayer2D = $purchaseSoundEffect
+@onready var shop_music: AudioStreamPlayer2D = $shopMusic
 
 
 
@@ -20,18 +21,21 @@ func _ready() -> void:
 	hide()
 	exit_button.pressed.connect(close)
 	RunDataState.shop_stock_changed.connect(_refresh)
+	
 
 
 func open() -> void:
 	print("opened")
 	_refresh()
 	show()
+	shop_music.play()
 	get_tree().paused = true
 
 
 func close() -> void:
 	print("Closed")
 	hide()
+	shop_music.stop()
 	get_tree().paused = false
 	closed.emit()
 

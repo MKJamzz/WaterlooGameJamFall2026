@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dksvkrlf4hrxl" path="res://scripts/dungeon_store.gd" id="1_uxvob"]
 [ext_resource type="PackedScene" uid="uid://co4vb6a03m3ui" path="res://scenes/UI/shop_card.tscn" id="2_uxvob"]
 [ext_resource type="AudioStream" uid="uid://dhefohu6h7tgn" path="res://sounds/purchaseSound.mp3" id="3_5go3r"]
+[ext_resource type="AudioStream" uid="uid://bmw3itf3dc3d8" path="res://audio/music/Narcoleptic_Knight_OST__Cat_Shop_Theme.wav" id="4_v57ws"]
 
 [node name="dungeonStorePopup" type="Control" unique_id=1878271815]
 z_index = 1000
@@ -96,3 +97,6 @@ text = "X"
 [node name="purchaseSoundEffect" type="AudioStreamPlayer2D" parent="." unique_id=1642283177]
 stream = ExtResource("3_5go3r")
 volume_db = 10.0
+
+[node name="shopMusic" type="AudioStreamPlayer2D" parent="." unique_id=536590530]
+stream = ExtResource("4_v57ws")
