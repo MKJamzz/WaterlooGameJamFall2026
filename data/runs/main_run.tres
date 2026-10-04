@@ -5,8 +5,11 @@
 [ext_resource type="Resource" uid="uid://8hhbem1djkev" path="res://data/presets/floor1.tres" id="2_vlkgj"]
 [ext_resource type="Resource" uid="uid://dvc6tnmujbqig" path="res://data/presets/floor2.tres" id="3_1buia"]
 [ext_resource type="Resource" uid="uid://cke2aqu4hacuo" path="res://data/presets/floor3.tres" id="4_1buia"]
+[ext_resource type="Resource" uid="uid://b3p7ei7405b3k" path="res://data/presets/floor4.tres" id="5_kyx7g"]
+[ext_resource type="Resource" uid="uid://diq0s325htmnt" path="res://data/presets/floor5.tres" id="6_rvmbw"]
+[ext_resource type="Resource" uid="uid://c4npy4xy51mbd" path="res://data/presets/floor6.tres" id="7_53e72"]
 
 [resource]
 script = ExtResource("2_hde7x")
-levels = Array[ExtResource("1_cfgs5")]([ExtResource("2_vlkgj"), ExtResource("3_1buia"), ExtResource("4_1buia")])
+levels = Array[ExtResource("1_cfgs5")]([ExtResource("2_vlkgj"), ExtResource("3_1buia"), ExtResource("4_1buia"), ExtResource("5_kyx7g"), ExtResource("6_rvmbw"), ExtResource("7_53e72")])
 metadata/_custom_type_script = "uid://wexd8yn40fms"

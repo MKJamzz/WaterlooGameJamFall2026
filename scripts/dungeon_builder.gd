@@ -152,7 +152,7 @@ func _stamp(scene: PackedScene, anchor: Vector2i) -> void:
 				source.get_cell_atlas_coords(cell),
 				source.get_cell_alternative_tile(cell)
 			)
-
+	_check_stamp(scene, anchor, layers)
 	bridge.free()
 
 
@@ -234,3 +234,67 @@ func apply_preset(preset: DungeonPreset) -> void:
 		exit_rooms = preset.exit_rooms
 	if not preset.bonus_rooms.is_empty():
 		bonus_rooms = preset.bonus_rooms
+
+# ------------------------------------------------------------ DEBUG
+
+## After a bridge is stamped, finds any colliding tiles left in the
+## bridge's walkable path (cells where the bridge itself has no collision).
+func _check_stamp(scene: PackedScene, anchor: Vector2i, layers: Array[TileMapLayer]) -> void:
+	# Walkable path = cells the bridge uses where none of its layers collide.
+	var walkable := {}
+	for source in layers:
+		for cell in source.get_used_cells():
+			walkable[cell] = true
+	for source in layers:
+		for cell in walkable.keys():
+			if _has_collision(source, cell):
+				walkable.erase(cell)
+
+	var problems := {}  # room_cell -> Array of strings
+	for cell in walkable:
+		var world: Vector2i = anchor + cell
+		var room_cell := Vector2i(
+			floori(world.x / float(ROOM_TILES)),
+			floori(world.y / float(ROOM_TILES))
+		)
+		var node: Node = room_nodes.get(room_cell)
+		if node == null:
+			problems.get_or_add(room_cell, []).append("no room in this cell (bridge leads nowhere)")
+			continue
+		if not node is Room:
+			problems.get_or_add(room_cell, []).append("root isn't a Room, so the bridge was skipped")
+			continue
+
+		var local: Vector2i = world - room_cell * ROOM_TILES
+		# Recursive: catches layers nested deeper than direct children too.
+		for layer in node.find_children("*", "TileMapLayer", true, false):
+			if _has_collision(layer, local):
+				problems.get_or_add(room_cell, []).append(
+					"layer '%s' blocks %s (path: %s)" % [layer.name, local, node.get_path_to(layer)]
+				)
+
+	for room_cell in problems:
+		var node: Node = room_nodes.get(room_cell)
+		var file: String = node.scene_file_path if node else "-"
+		var msgs: Array = problems[room_cell]
+		push_warning("BLOCKED DOORWAY  bridge=%s  room=%s  scene=%s" % [
+			scene.resource_path.get_file(), room_cell, file
+		])
+		# Dedupe so a wide wall doesn't spam 20 lines per layer.
+		var seen := {}
+		for m in msgs:
+			if not seen.has(m):
+				seen[m] = true
+				print("    ", m)
+
+
+func _has_collision(layer: TileMapLayer, cell: Vector2i) -> bool:
+	if layer.tile_set == null:
+		return false
+	var td := layer.get_cell_tile_data(cell)
+	if td == null:
+		return false
+	for p in layer.tile_set.get_physics_layers_count():
+		if td.get_collision_polygons_count(p) > 0:
+			return true
+	return false

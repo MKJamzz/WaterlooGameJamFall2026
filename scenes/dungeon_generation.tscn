@@ -4,9 +4,10 @@
 [ext_resource type="Script" uid="uid://dm2620a76sjfn" path="res://scripts/dungeon_builder.gd" id="2_3n6r7"]
 [ext_resource type="PackedScene" uid="uid://c5nluw7g00i2x" path="res://scenes/baseGame/roomPresets/startRooms/spawn_room_1.tscn" id="3_6ql6x"]
 [ext_resource type="PackedScene" uid="uid://3qigeug4hhnv" path="res://scenes/baseGame/roomPresets/normalRooms/dungeon_room_1.tscn" id="4_xv7sc"]
-[ext_resource type="PackedScene" uid="uid://gsivabqn4k4g" path="res://scenes/baseGame/roomPresets/normalRooms/dungeon_room_2.tscn" id="5_d5f4e"]
+[ext_resource type="PackedScene" uid="uid://b7cmkblrry87c" path="res://scenes/baseGame/roomPresets/normalRooms/dungeon_room_2.tscn" id="5_d5f4e"]
 [ext_resource type="PackedScene" uid="uid://bj6q17rkn8axf" path="res://scenes/baseGame/roomPresets/exitRooms/exit_room_1.tscn" id="6_pean0"]
-[ext_resource type="PackedScene" uid="uid://duvaia8o6rws8" path="res://scenes/bonus_room_1.tscn" id="7_eedw3"]
+[ext_resource type="PackedScene" uid="uid://b5ggnx3lxeq38" path="res://scenes/baseGame/v_bridge_1.tscn" id="6_xv7sc"]
+[ext_resource type="PackedScene" uid="uid://2uqkrwtv2hnk" path="res://scenes/baseGame/h_bridge_1.tscn" id="7_d5f4e"]
 
 [node name="dungeonGeneration" type="Node2D" unique_id=419241453]
 
@@ -15,7 +16,8 @@ script = ExtResource("2_3n6r7")
 start_rooms = Array[PackedScene]([ExtResource("3_6ql6x")])
 normal_rooms = Array[PackedScene]([ExtResource("4_xv7sc"), ExtResource("5_d5f4e")])
 exit_rooms = Array[PackedScene]([ExtResource("6_pean0")])
-bonus_rooms = Array[PackedScene]([ExtResource("7_eedw3")])
+bridge_horizontal = ExtResource("6_xv7sc")
+bridge_vertical = ExtResource("7_d5f4e")
 
 [node name="dungeonGeneration" type="Node" parent="." unique_id=793466661 node_paths=PackedStringArray("builder")]
 script = ExtResource("1_0muje")
