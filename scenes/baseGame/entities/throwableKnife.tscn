@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://4c53cjsr0wvh"]
+
+[ext_resource type="Script" uid="uid://bawtah3uoq7sw" path="res://classes/ThrowableKnife.gd" id="1_8o58f"]
+[ext_resource type="Texture2D" uid="uid://03vvuhdc1lub" path="res://sprites/v1.1 dungeon crawler 16X16 pixel pack/heroes/knight/weapon_sword_1.png" id="1_vxvof"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_r4pc6"]
+radius = 3.1848693
+height = 19.0
+
+[node name="ThrowableKnife" type="Area2D" unique_id=1401050454]
+script = ExtResource("1_8o58f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=326047285]
+position = Vector2(-1.4210855e-14, 1.4210855e-14)
+rotation = 0.7958701
+shape = SubResource("CapsuleShape2D_r4pc6")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=359557265]
+texture = ExtResource("1_vxvof")

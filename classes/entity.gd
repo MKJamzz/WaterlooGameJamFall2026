@@ -7,7 +7,7 @@ signal died # signal is how you can setup the ability to call methods/functions 
 
 @export var max_health := 100
 var current_health: int
-@export var speed := 100.0
+@export var speed := 100
 @export var damage := 1
 
 @export var sprite: CanvasItem

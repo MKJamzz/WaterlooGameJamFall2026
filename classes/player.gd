@@ -14,7 +14,7 @@ var can_slash = true
 
 func _ready() -> void:
 	super() #so entity _ready method isn't overwritten
-	speed = 150.0
+	speed = 150
 	damage = 30
 	
 	health_bar.max_value = max_health
