@@ -200,7 +200,7 @@ func send_player_to_dream_sequence() -> void:
 	
 	var regularPlayerSpeed = player.speed
 	player.speed = 30
-	fade.fade(1.0, 3.0)
+	fade.fade(1.0, 2.5)
 	
 	
 	freeze_enemies(5.0)
