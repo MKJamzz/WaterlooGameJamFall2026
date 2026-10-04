@@ -4,8 +4,9 @@
 [ext_resource type="Script" uid="uid://wexd8yn40fms" path="res://scripts/dungeon_run.gd" id="2_hde7x"]
 [ext_resource type="Resource" uid="uid://8hhbem1djkev" path="res://data/presets/floor1.tres" id="2_vlkgj"]
 [ext_resource type="Resource" uid="uid://dvc6tnmujbqig" path="res://data/presets/floor2.tres" id="3_1buia"]
+[ext_resource type="Resource" uid="uid://cke2aqu4hacuo" path="res://data/presets/floor3.tres" id="4_1buia"]
 
 [resource]
 script = ExtResource("2_hde7x")
-levels = Array[ExtResource("1_cfgs5")]([ExtResource("2_vlkgj"), ExtResource("3_1buia")])
+levels = Array[ExtResource("1_cfgs5")]([ExtResource("2_vlkgj"), ExtResource("3_1buia"), ExtResource("4_1buia")])
 metadata/_custom_type_script = "uid://wexd8yn40fms"

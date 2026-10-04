@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="DungeonPreset" format=3 uid="uid://diq0s325htmnt"]
+
+[ext_resource type="PackedScene" uid="uid://cmgmrrkql7mhy" path="res://scenes/baseGame/roomPresets/bonusRooms/bonus_room_1.tscn" id="1_6ka8a"]
+[ext_resource type="PackedScene" uid="uid://b3f7743inhem4" path="res://scenes/baseGame/roomPresets/bonusRooms/bonus_room_2.tscn" id="2_7v704"]
+[ext_resource type="PackedScene" uid="uid://cjwgcbbnmult7" path="res://scenes/baseGame/roomPresets/enemyRooms/enemy_room4.tscn" id="4_6j44u"]
+[ext_resource type="PackedScene" uid="uid://cf24osrrmec2f" path="res://scenes/baseGame/roomPresets/enemyRooms/enemy_room5.tscn" id="5_rfcq5"]
+[ext_resource type="PackedScene" uid="uid://ddvkqpyw6cw46" path="res://scenes/baseGame/roomPresets/enemyRooms/enemy_room6.tscn" id="6_3sh50"]
+[ext_resource type="PackedScene" uid="uid://dpvafo0j2843e" path="res://scenes/baseGame/roomPresets/enemyRooms/enemy_room8.tscn" id="6_6ka8a"]
+[ext_resource type="PackedScene" uid="uid://bj6q17rkn8axf" path="res://scenes/baseGame/roomPresets/exitRooms/exit_room_1.tscn" id="7_frh71"]
+[ext_resource type="PackedScene" uid="uid://3qigeug4hhnv" path="res://scenes/baseGame/roomPresets/normalRooms/dungeon_room_1.tscn" id="8_sp6sd"]
+[ext_resource type="PackedScene" uid="uid://b7cmkblrry87c" path="res://scenes/baseGame/roomPresets/normalRooms/dungeon_room_2.tscn" id="9_n7wx8"]
+[ext_resource type="PackedScene" uid="uid://bi887ppkiymkl" path="res://scenes/baseGame/roomPresets/normalRooms/dungeon_room_3.tscn" id="10_stvd6"]
+[ext_resource type="Script" uid="uid://ep7vicllkeib" path="res://scripts/dungeon_preset.gd" id="11_l0rh1"]
+[ext_resource type="PackedScene" uid="uid://c5nluw7g00i2x" path="res://scenes/baseGame/roomPresets/startRooms/spawn_room_1.tscn" id="12_j88jq"]
+
+[resource]
+script = ExtResource("11_l0rh1")
+display_name = "Floor 5"
+room_count = 13
+double_door_chance = 0.157
+enemy_room_count = 8
+start_rooms = Array[PackedScene]([ExtResource("12_j88jq")])
+normal_rooms = Array[PackedScene]([ExtResource("8_sp6sd"), ExtResource("9_n7wx8"), ExtResource("10_stvd6")])
+enemy_rooms = Array[PackedScene]([ExtResource("4_6j44u"), ExtResource("5_rfcq5"), ExtResource("6_3sh50"), ExtResource("6_6ka8a")])
+exit_rooms = Array[PackedScene]([ExtResource("7_frh71")])
+bonus_rooms = Array[PackedScene]([ExtResource("1_6ka8a"), ExtResource("2_7v704")])
+metadata/_custom_type_script = "uid://ep7vicllkeib"
