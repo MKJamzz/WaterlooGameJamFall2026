@@ -113,7 +113,6 @@ func _physics_process(delta: float) -> void:
 	if direction != Vector2.ZERO: #only trigger when character IS moving
 		footstep_counter += delta
 		if footstep_counter >= 0.35:
-			print(footstep_sounds.pick_random())
 			footstep_sounds.pick_random().play()
 			footstep_counter = 0.0
 
