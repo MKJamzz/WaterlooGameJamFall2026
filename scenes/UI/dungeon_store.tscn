@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dksvkrlf4hrxl" path="res://scripts/dungeon_store.gd" id="1_uxvob"]
 [ext_resource type="PackedScene" uid="uid://co4vb6a03m3ui" path="res://scenes/UI/shop_card.tscn" id="2_uxvob"]
+[ext_resource type="AudioStream" uid="uid://dhefohu6h7tgn" path="res://sounds/purchaseSound.mp3" id="3_5go3r"]
 
 [node name="dungeonStorePopup" type="Control" unique_id=1878271815]
 z_index = 1000
@@ -91,3 +92,6 @@ size_flags_horizontal = 8
 size_flags_vertical = 0
 theme_override_font_sizes/font_size = 48
 text = "X"
+
+[node name="purchaseSoundEffect" type="AudioStreamPlayer2D" parent="." unique_id=1642283177]
+stream = ExtResource("3_5go3r")

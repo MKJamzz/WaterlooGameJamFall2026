@@ -11,6 +11,9 @@ signal closed
 @onready var exit_button: Button = \
 	$MarginContainer/ColorRect/MarginContainer/ExitButton
 
+@onready var purchase_sound_effect: AudioStreamPlayer2D = $purchaseSoundEffect
+
+
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS  # keep working while the game is paused
@@ -55,3 +58,5 @@ func _refresh() -> void:
 func _on_buy_pressed(item: ShopItem) -> void:
 	if not RunDataState.tryBuy(item):
 		pass  # not enough coins: shake the card, play a sound, etc.
+	else:
+		purchase_sound_effect.play()
