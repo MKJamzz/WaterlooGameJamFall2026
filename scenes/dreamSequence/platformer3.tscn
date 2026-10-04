@@ -364,7 +364,7 @@ metadata/_edit_use_anchors_ = true
 stream = ExtResource("7_3yx5f")
 volume_db = -0.448
 
-[node name="SpawnPoint" type="Marker2D" parent="BackgroundMusic" unique_id=88957085]
+[node name="SpawnPoint" type="Marker2D" parent="." unique_id=88957085]
 position = Vector2(10, 0)
 
 [connection signal="body_entered" from="TopKillzone" to="TopKillzone" method="_on_body_entered"]

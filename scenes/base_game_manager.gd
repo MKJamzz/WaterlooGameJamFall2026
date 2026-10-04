@@ -82,9 +82,9 @@ func reset_stats() -> void:
 
 var dreamSequences = ["res://scenes/dreamSequence/platformer1.tscn", 
 					"res://scenes/dreamSequence/platformer2.tscn", 
-					#"res://scenes/dreamSequence/platformer3.tscn", 
-					#"res://scenes/dreamSequence/platformer4.tscn", 
-					#"res://scenes/dreamSequence/platformer5.tscn", 
+					"res://scenes/dreamSequence/platformer3.tscn", 
+					"res://scenes/dreamSequence/platformer4.tscn", 
+					"res://scenes/dreamSequence/platformer5.tscn", 
 					"res://scenes/dreamSequence/platformer6.tscn"]
 var dreamSequencesValueMap = {
 	"res://scenes/dreamSequence/platformer1.tscn" : "nightmare",
