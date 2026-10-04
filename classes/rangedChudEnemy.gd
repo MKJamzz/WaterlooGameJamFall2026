@@ -10,7 +10,8 @@ var fire_cooldown := 0.0 # current cooldown
 
 func _ready() -> void:
 	super()
-	speed = 10	
+	speed = 20	
+	damage = 10
 
 func _physics_process(delta: float) -> void:
 	super(delta)
