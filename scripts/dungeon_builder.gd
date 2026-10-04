@@ -92,10 +92,15 @@ func _stamp_bridges(data: RoomData) -> void:
 		_stamp(bridge_vertical, origin + Vector2i(slot, ROOM_TILES))
 
 
-## Copies every tile of every TileMapLayer in the bridge scene into whichever
-## room it lands in. `anchor` is where the bridge's tile (0, 0) goes, in
-## dungeon tiles. Layers are stamped in scene order, so later layers overwrite
-## earlier ones where they overlap.
+## Copies every TileMapLayer of the bridge scene into whichever room it lands
+## in. `anchor` is where the bridge's tile (0, 0) goes, in dungeon tiles.
+##
+## Each bridge layer goes into the room's TileMapLayer with the same name
+## (bridge "Trees" -> room "Trees"). For those name-matched layers the bridge
+## owns its whole footprint: cells the bridge layer leaves empty are ERASED in
+## the room layer, so walls under the doorway are removed.
+## Bridge layers with no matching room layer fall back to the room's main
+## `tiles` layer and only overwrite the cells they use.
 func _stamp(scene: PackedScene, anchor: Vector2i) -> void:
 	if scene == null:
 		return
@@ -103,36 +108,61 @@ func _stamp(scene: PackedScene, anchor: Vector2i) -> void:
 	var layers := _find_tile_layers(bridge)
 	if layers.is_empty():
 		push_warning("Bridge scene has no TileMapLayer.")
+		bridge.free()
+		return
 
+	# Footprint: every cell used by any layer of the bridge.
+	var footprint := {}
 	for source in layers:
 		for cell in source.get_used_cells():
-			var world := anchor + cell
+			footprint[cell] = true
+
+	for source in layers:
+		for cell in footprint:
+			var world: Vector2i = anchor + cell
 			var room_cell := Vector2i(
 				floori(world.x / float(ROOM_TILES)),
 				floori(world.y / float(ROOM_TILES))
 			)
 			var room := room_nodes.get(room_cell) as Room
-			if room == null or room.tiles == null:
+			if room == null:
+				continue
+			var target := _target_layer(room, source.name)
+			if target == null:
+				continue
+			var local: Vector2i = world - room_cell * ROOM_TILES
+			var name_matched := target.name == source.name
+
+			var bridge_src := source.get_cell_source_id(cell)
+			if bridge_src == -1:
+				# Empty in this bridge layer: clear the room's tile here, but only
+				# in a name-matched layer (never wipe the fallback main layer).
+				if name_matched:
+					target.erase_cell(local)
 				continue
 
 			# The bridge and the room may use different TileSets, so translate
 			# the source ID into the room's TileSet by matching textures.
-			var src_id := _remap_source(
-				source.tile_set,
-				room.tiles.tile_set,
-				source.get_cell_source_id(cell)
-			)
+			var src_id := _remap_source(source.tile_set, target.tile_set, bridge_src)
 			if src_id == -1:
 				continue
-
-			room.tiles.set_cell(
-				world - room_cell * ROOM_TILES,
+			target.set_cell(
+				local,
 				src_id,
 				source.get_cell_atlas_coords(cell),
 				source.get_cell_alternative_tile(cell)
 			)
 
 	bridge.free()
+
+
+## The room layer a bridge layer should be stamped into: a TileMapLayer
+## child of the room with the same name, otherwise the room's main layer.
+func _target_layer(room: Room, layer_name: StringName) -> TileMapLayer:
+	var named := room.get_node_or_null(NodePath(String(layer_name))) as TileMapLayer
+	if named:
+		return named
+	return room.tiles
 
 
 ## Returns the node itself (if it's a TileMapLayer) plus every direct child
