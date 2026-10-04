@@ -15,7 +15,7 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
-	var player := RoomTracker.player
+	var player: Node2D = RoomTracker.player
 	if is_instance_valid(player):
 		velocity = global_position.direction_to(player.global_position) * speed
 
@@ -67,7 +67,7 @@ func knockbackEnemy(direction: Vector2, force: float, knockback_duration: float)
 func takeDamage(amount: int) -> void:
 	super(amount)
 	activate()  # wake up if hit before the player enters (e.g. shot through a doorway)
-	var player := RoomTracker.player
+	var player: Node2D = RoomTracker.player
 	if is_instance_valid(player):
 		var knockback_direction := (global_position - player.global_position).normalized()
 		knockbackEnemy(knockback_direction, 150.0, 0.12)

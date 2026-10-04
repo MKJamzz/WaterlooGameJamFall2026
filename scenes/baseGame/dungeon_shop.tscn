@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://6bf50ihx2c2n" path="res://scripts/dungeon_shop.gd" id="1_huvo0"]
 [ext_resource type="Texture2D" uid="uid://e1frugpvsuk" path="res://sprites/dungeonPlaceholder/Vase Shine Anim.png" id="1_vg3e5"]
 [ext_resource type="PackedScene" uid="uid://clkiylnsdasls" path="res://scenes/interactable.tscn" id="2_0i8uj"]
+[ext_resource type="PackedScene" uid="uid://dlsxrt1lkbwvl" path="res://scenes/UI/dungeon_store.tscn" id="4_rbsyh"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cg0a3"]
 radius = 19.0
@@ -20,3 +21,9 @@ interact_name = "E to Open Shop"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="interactable" unique_id=1455076908]
 shape = SubResource("CircleShape2D_cg0a3")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2076634532]
+
+[node name="dungeonStorePopup" parent="CanvasLayer" unique_id=1878271815 instance=ExtResource("4_rbsyh")]
+size_flags_horizontal = 4
+size_flags_vertical = 4

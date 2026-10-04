@@ -1,7 +1,15 @@
 extends Node
+## Autoload "RunDataState": everything specific to the current run.
+## Now also owns the shop state (replaces the separate GameState autoload).
 
 # Signals
 signal currency_changed(new_amount: int)
+signal shop_stock_changed
+signal item_purchased(item: ShopItem)
+
+# Shop config. Change the path to wherever your pool .tres lives.
+const SHOP_POOL: ShopItemPool = preload("res://data/shop/shop_pool.tres")
+const SHOP_SIZE := 3
 
 # Variables
 var currency: int = 0:
@@ -13,11 +21,18 @@ var enemiesKilled = 0
 
 var attackSpeed = 1
 var attackRange = 1
+
 var attackEnemiesPerAtk = 1
 
 var timesDrifted = 0
 var floorsCleared = 0
 var died = false
+
+# Shop state (rolled once per floor)
+var _shop_stock: Array[ShopItem] = []
+var _shop_sold: Array[ShopItem] = []
+var _shop_floor := -1
+
 
 # Resets all stats in run to base
 func resetRunStats():
@@ -29,4 +44,35 @@ func resetRunStats():
 	timesDrifted = 0
 	floorsCleared = 0
 	died = false
+	_shop_stock = []
+	_shop_sold = []
+	_shop_floor = -1
 	print("Reset Stats")
+
+
+func getCurrentFloor() -> int:
+	return floorsCleared + 1
+
+
+# Rolls new stock the first time it's asked for on a new floor,
+# then returns the same items for the rest of that floor.
+func getShopStock() -> Array[ShopItem]:
+	if _shop_floor != getCurrentFloor():
+		_shop_floor = getCurrentFloor()
+		_shop_stock = SHOP_POOL.roll(SHOP_SIZE, _shop_floor)
+		_shop_sold = []
+	return _shop_stock
+
+
+func isSold(item: ShopItem) -> bool:
+	return item in _shop_sold
+
+
+func tryBuy(item: ShopItem) -> bool:
+	if item not in getShopStock() or isSold(item) or currency < item.price:
+		return false
+	currency -= item.price
+	_shop_sold.append(item)
+	item_purchased.emit(item)  # player can listen and call item.apply(self)
+	shop_stock_changed.emit()
+	return true

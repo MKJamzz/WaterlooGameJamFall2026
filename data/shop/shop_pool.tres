@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ShopItemPool" format=3 uid="uid://bwlydst6egl1i"]
+
+[ext_resource type="Script" uid="uid://0cxcitic4gtu" path="res://scripts/shop_item.gd" id="1_xb604"]
+[ext_resource type="Resource" uid="uid://ck20noaoqueuy" path="res://data/shop/shop_hot_hands.tres" id="2_3a3h8"]
+[ext_resource type="Script" uid="uid://cdvlsdsblrfxj" path="res://scripts/shop_item_pool.gd" id="2_jak8y"]
+[ext_resource type="Resource" uid="uid://b21kuo4uyg3u2" path="res://data/shop/shop_extendo_grip.tres" id="3_oiaxk"]
+
+[resource]
+script = ExtResource("2_jak8y")
+items = Array[ExtResource("1_xb604")]([ExtResource("2_3a3h8"), ExtResource("3_oiaxk")])
+metadata/_custom_type_script = "uid://cdvlsdsblrfxj"

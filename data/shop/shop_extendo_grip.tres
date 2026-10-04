@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ShopItem" format=3 uid="uid://b21kuo4uyg3u2"]
+
+[ext_resource type="Texture2D" uid="uid://cbs13f480k02e" path="res://sprites/Healthbar-Example/NewObject-1-12.png" id="1_8nx71"]
+[ext_resource type="Script" uid="uid://0cxcitic4gtu" path="res://scripts/shop_item.gd" id="1_pdokt"]
+
+[resource]
+script = ExtResource("1_pdokt")
+id = &"1"
+title = "Extendo Grip"
+description = "This gives
+you the extra
+reach of 
+someone cool"
+icon = ExtResource("1_8nx71")
+metadata/_custom_type_script = "uid://0cxcitic4gtu"

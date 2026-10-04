@@ -1,12 +1,17 @@
 [gd_scene format=3 uid="uid://dlsxrt1lkbwvl"]
 
-[node name="Control" type="Control" unique_id=1878271815]
+[ext_resource type="Script" uid="uid://dksvkrlf4hrxl" path="res://scripts/dungeon_store.gd" id="1_uxvob"]
+[ext_resource type="PackedScene" uid="uid://co4vb6a03m3ui" path="res://scenes/UI/shop_card.tscn" id="2_uxvob"]
+
+[node name="dungeonStorePopup" type="Control" unique_id=1878271815]
+z_index = 1000
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_uxvob")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1460491858]
 layout_mode = 1
@@ -49,11 +54,35 @@ custom_minimum_size = Vector2(750, 700)
 layout_mode = 2
 size_flags_vertical = 8
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/ColorRect/VBoxContainer/MarginContainer" unique_id=1392627685]
+[node name="HBoxCards" type="HBoxContainer" parent="MarginContainer/ColorRect/VBoxContainer/MarginContainer" unique_id=1392627685]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_override_constants/separation = 60
 
-[node name="ColorRect" type="ColorRect" parent="MarginContainer/ColorRect/VBoxContainer/MarginContainer/HBoxContainer" unique_id=1819710913]
-custom_minimum_size = Vector2(30, 30)
+[node name="shopCard3" parent="MarginContainer/ColorRect/VBoxContainer/MarginContainer/HBoxCards" unique_id=279400614 instance=ExtResource("2_uxvob")]
 layout_mode = 2
+
+[node name="shopCard2" parent="MarginContainer/ColorRect/VBoxContainer/MarginContainer/HBoxCards" unique_id=2084206119 instance=ExtResource("2_uxvob")]
+layout_mode = 2
+
+[node name="shopCard" parent="MarginContainer/ColorRect/VBoxContainer/MarginContainer/HBoxCards" unique_id=953226658 instance=ExtResource("2_uxvob")]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/ColorRect" unique_id=511962267]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+
+[node name="ExitButton" type="Button" parent="MarginContainer/ColorRect/MarginContainer" unique_id=415370813]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 48
+text = "X"

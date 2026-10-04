@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ShopItem" format=3 uid="uid://ck20noaoqueuy"]
+
+[ext_resource type="Texture2D" uid="uid://bc76i1pok8lk7" path="res://sprites/dungeonPlaceholder/Potion 2.png" id="1_10n8c"]
+[ext_resource type="Script" uid="uid://0cxcitic4gtu" path="res://scripts/shop_item.gd" id="1_rdwqv"]
+
+[resource]
+script = ExtResource("1_rdwqv")
+id = &"2"
+title = "Hot Hands"
+description = "These new
+gloves give
+you some haste
+in your slashes"
+icon = ExtResource("1_10n8c")
+price = 5
+metadata/_custom_type_script = "uid://0cxcitic4gtu"
