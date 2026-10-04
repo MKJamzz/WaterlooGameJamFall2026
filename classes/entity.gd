@@ -12,6 +12,7 @@ var current_health: int
 
 @export var sprite: CanvasItem
 @export var flash_time := 0.3
+const DEATH_EFFECT = preload("uid://btcukwakl31nm")
 
 var flash_tween: Tween
 
@@ -41,3 +42,7 @@ func heal(amount: int) -> void:
 func die() -> void:
 	died.emit() # emit is how you call that signal
 	queue_free()
+	
+	var deathExplosion: Node2D = DEATH_EFFECT.instantiate()
+	get_parent().add_child(deathExplosion)
+	deathExplosion.global_position = global_position

@@ -1,25 +1,33 @@
 [gd_scene format=3 uid="uid://ca0avldthqf1s"]
 
 [ext_resource type="Script" uid="uid://1r5yrkx385rt" path="res://classes/meleeChudEnemy.gd" id="1_8ypvg"]
-[ext_resource type="Texture2D" uid="uid://dy15heaejc6a8" path="res://sprites/kenney_pixel-platformer/Tiles/Characters/tile_0015.png" id="2_50qnq"]
-[ext_resource type="Texture2D" uid="uid://br07dmg0v7mnb" path="res://sprites/kenney_pixel-platformer/Tiles/Characters/tile_0016.png" id="3_khop0"]
-[ext_resource type="Texture2D" uid="uid://ct1nynguvaqxf" path="res://sprites/kenney_pixel-platformer/Tiles/Characters/tile_0017.png" id="4_vtodx"]
+[ext_resource type="Texture2D" uid="uid://2rsc81fla8kn" path="res://sprites/v1.1 dungeon crawler 16X16 pixel pack/enemies/slime/slime_run_anim_f1.png" id="2_2yxaj"]
+[ext_resource type="Texture2D" uid="uid://bjh0lyqatlfgh" path="res://sprites/v1.1 dungeon crawler 16X16 pixel pack/enemies/slime/slime_run_anim_f2.png" id="3_aaj85"]
+[ext_resource type="Texture2D" uid="uid://bmjn0550do40i" path="res://sprites/v1.1 dungeon crawler 16X16 pixel pack/enemies/slime/slime_run_anim_f3.png" id="4_uhueg"]
+[ext_resource type="Texture2D" uid="uid://dt3q0n881yroc" path="res://sprites/v1.1 dungeon crawler 16X16 pixel pack/enemies/slime/slime_run_anim_f4.png" id="5_k3fs0"]
+[ext_resource type="Texture2D" uid="uid://ioq7p0wn1cro" path="res://sprites/v1.1 dungeon crawler 16X16 pixel pack/enemies/slime/slime_run_anim_f5.png" id="6_8xgjq"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_emcct"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_50qnq")
+"texture": ExtResource("2_2yxaj")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_khop0")
+"texture": ExtResource("3_aaj85")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_vtodx")
+"texture": ExtResource("4_uhueg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_k3fs0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_8xgjq")
 }],
 "loop": 1,
 "name": &"default",
-"speed": 5.0
+"speed": 10.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_r4pc6"]
@@ -37,6 +45,7 @@ collision_mask = 6
 script = ExtResource("1_8ypvg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1426468864]
+position = Vector2(0, 4)
 sprite_frames = SubResource("SpriteFrames_emcct")
 autoplay = "default"
 

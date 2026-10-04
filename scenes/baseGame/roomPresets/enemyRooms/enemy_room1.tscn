@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://b8x3hnsyfadxa" path="res://scenes/baseGame/entities/chudBomberEnemy.tscn" id="3_5rdff"]
 [ext_resource type="PackedScene" uid="uid://bixx5084vt4j1" path="res://scenes/baseGame/entities/slowFatMeleeChudEnemy.tscn" id="4_iwvg7"]
 [ext_resource type="PackedScene" uid="uid://becfa75dk2531" path="res://scenes/baseGame/entities/fastMeleeChudEnemy.tscn" id="5_gd4h7"]
+[ext_resource type="PackedScene" uid="uid://ca0avldthqf1s" path="res://scenes/baseGame/entities/meleeChudEnemy.tscn" id="6_blfeb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_28hfr"]
 texture = ExtResource("2_uot0d")
@@ -120,14 +121,14 @@ tile_set = SubResource("TileSet_ktlgg")
 [node name="BomberChudEnemy" parent="." unique_id=1965983404 instance=ExtResource("3_5rdff")]
 position = Vector2(152, 128)
 
-[node name="BomberChudEnemy2" parent="." unique_id=1103767797 instance=ExtResource("3_5rdff")]
-position = Vector2(253, 249)
-
-[node name="BomberChudEnemy3" parent="." unique_id=378072195 instance=ExtResource("3_5rdff")]
-position = Vector2(252, 97)
-
 [node name="SlowFatMeleeChudEnemy" parent="." unique_id=679195254 instance=ExtResource("4_iwvg7")]
 position = Vector2(135, 263)
 
 [node name="FastMeleeChudEnemy" parent="." unique_id=1240228766 instance=ExtResource("5_gd4h7")]
 position = Vector2(244, 331)
+
+[node name="MeleeChudEnemy" parent="." unique_id=1599734005 instance=ExtResource("6_blfeb")]
+position = Vector2(191, 224)
+
+[node name="MeleeChudEnemy2" parent="." unique_id=1718955720 instance=ExtResource("6_blfeb")]
+position = Vector2(198, 293)

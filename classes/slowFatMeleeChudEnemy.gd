@@ -26,6 +26,13 @@ func meleeAttack() -> void:
 			
 	
 
+func _physics_process(delta: float) -> void:
+	var player: Node2D = RoomTracker.player
+	
+	if is_instance_valid(player):
+		velocity = global_position.direction_to(player.global_position) * speed
+		
+	move_and_slide()
 func _on_attack_range_body_entered(body: Node2D) -> void:
 	speed = 0
 	await meleeAttack()

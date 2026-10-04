@@ -6,7 +6,7 @@ class_name FastMeleeChudEnemy
 
 func _ready() -> void:
 	super() #so entity _ready method isn't overwritten
-	max_health = 20
+	max_health = 40
 	current_health = max_health
 	speed = 150
 	damage = 10
