@@ -30,14 +30,23 @@ func heal(amount: int) -> void:
 	
 func changeSpeed (amount: int) -> void:
 	speed += amount
+	
+	if speed < 100:
+		speed = 100 #set minimum speed to 100 so it doesn't go to negative
 
 func changeMaxHealth (amount: int) -> void:
 	max_health += amount
 	heal(amount)
 	health_bar.value = current_health
+	
+	if max_health < 50:
+		max_health = 50 #set minimum maxhealth to 50 so it doesn't go to negative
 
 func changeDamage (amount: int) -> void:
 	damage += amount
+	
+	if damage < 10:
+		damage = 10 #set minimum damage to 10 so it doesn't go to negative
 
 func _physics_process(delta: float) -> void:
 

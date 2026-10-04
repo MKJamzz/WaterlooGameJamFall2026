@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://btcukwakl31nm"]
+
+[ext_resource type="Texture2D" uid="uid://dp4kpgj4q6noy" path="res://sprites/v1.1 dungeon crawler 16X16 pixel pack/effects (new)/enemy_afterdead_explosion_anim_f0.png" id="1_mtrw2"]
+[ext_resource type="Texture2D" uid="uid://b052fsf17pr03" path="res://sprites/v1.1 dungeon crawler 16X16 pixel pack/effects (new)/enemy_afterdead_explosion_anim_f1.png" id="2_55fn2"]
+[ext_resource type="Texture2D" uid="uid://6o3dkxmurqt3" path="res://sprites/v1.1 dungeon crawler 16X16 pixel pack/effects (new)/enemy_afterdead_explosion_anim_f2.png" id="3_oaqfo"]
+[ext_resource type="Texture2D" uid="uid://b6y022lnax7nv" path="res://sprites/v1.1 dungeon crawler 16X16 pixel pack/effects (new)/enemy_afterdead_explosion_anim_f3.png" id="4_c5jjj"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wfry5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_mtrw2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_55fn2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_oaqfo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_c5jjj")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="DeathEffect" type="AnimatedSprite2D" unique_id=429342454]
+sprite_frames = SubResource("SpriteFrames_wfry5")
+autoplay = "default"

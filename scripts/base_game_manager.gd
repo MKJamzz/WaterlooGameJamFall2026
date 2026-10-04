@@ -90,14 +90,14 @@ var sleepTextSayings = ["Your eyes start to feel heavy as you drift away...", "S
 
 var dreamBuffStatSaying = ""
 var dreamTextDreamBuffs = [ "increaseMaxHealth", "heal", "increaseSpeed", "increaseDamage"]
-var dreamTextReturnSayings = ["You feel refreshed ", 
-							"Energy flows through your veins ", 
-							"You worries seem smaller now ",
-							"Your head feels clear and focused ",
-							"Your muscles feel loose and ready ",
-							"You grab your weapon with renewed confidence ",
-							"You stand up, ready for whatever's next ",
-							"You feel hoperful for what's ahead "
+var dreamTextReturnSayings = ["You feel refreshed. ", 
+							"Energy flows through your veins. ", 
+							"You worries seem smaller now. ",
+							"Your head feels clear and focused. ",
+							"Your muscles feel loose and ready. ",
+							"You grab your weapon with renewed confidence. ",
+							"You stand up, ready for whatever's next. ",
+							"You feel hoperful for what's ahead. "
 							]
 
 func chooseDreamBuff() -> void:
@@ -129,14 +129,14 @@ func chooseDreamBuff() -> void:
 	
 var nightmareDebuffStatSaying = ""
 var nightmareTextNightmareDebuffs = ["decreaseMaxHealth", "decreaseSpeed", "decreaseDamage"]
-var nightmareTextReturnSayings = ["Your hands are still trembling ", 
-									"The shadows look a little darker now ", 
-									"You feel drained as exhaustion pounds your head ",
-									"You aren't sure the nightmare is really over ",
-									"The silence feels heavier than before ",
-									"The air feels colder than before ",
-									"Something feels out of place ",
-									"The nightmare replays everytime you blink "
+var nightmareTextReturnSayings = ["Your hands are still trembling. ", 
+									"The shadows look a little darker now. ", 
+									"You feel drained as exhaustion pounds your head. ",
+									"You aren't sure the nightmare is really over. ",
+									"The silence feels heavier than before. ",
+									"The air feels colder than before. ",
+									"Something feels out of place. ",
+									"The nightmare replays everytime you blink. "
 									]
 	
 func chooseNightmareDebuff() -> void:
