@@ -51,4 +51,4 @@ position_smoothing_enabled = true
 
 [node name="Jump" type="AudioStreamPlayer2D" parent="." unique_id=277221091]
 stream = ExtResource("3_k6ts3")
-volume_db = -30.0
+volume_db = -10.0

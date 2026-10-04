@@ -95,3 +95,4 @@ text = "X"
 
 [node name="purchaseSoundEffect" type="AudioStreamPlayer2D" parent="." unique_id=1642283177]
 stream = ExtResource("3_5go3r")
+volume_db = 10.0
