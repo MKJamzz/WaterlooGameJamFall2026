@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://byfculm3ayu3v" path="res://scripts/character_body_2d.gd" id="1_boayo"]
 [ext_resource type="Texture2D" uid="uid://s1noqfh0e6vw" path="res://sprites/kenney_pixel-platformer/Tilemap/tilemap-characters.png" id="1_edgf2"]
+[ext_resource type="AudioStream" uid="uid://c7cvn5mhqhhvl" path="res://sounds/jump.wav" id="3_k6ts3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_boayo"]
 atlas = ExtResource("1_edgf2")
@@ -47,3 +48,7 @@ shape = SubResource("CircleShape2D_r4pc6")
 zoom = Vector2(2, 2)
 limit_bottom = 100
 position_smoothing_enabled = true
+
+[node name="Jump" type="AudioStreamPlayer2D" parent="." unique_id=277221091]
+stream = ExtResource("3_k6ts3")
+volume_db = -30.0

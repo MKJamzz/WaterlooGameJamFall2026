@@ -3,6 +3,7 @@ class_name BomberChudEnemy
 
 @export var wait_time := 2.0
 @onready var timer: Timer = $Timer
+@onready var explosion_sound_effect: AudioStreamPlayer2D = $ExplosionSoundEffect
 
 
 func _ready() -> void:
@@ -23,6 +24,8 @@ func explode() -> void:
 			
 	scale = Vector2(0.2, 0.2)
 	$AnimatedSprite2D.play("explosion")
+	explosion_sound_effect.play()
+	
 	
 	timer.start()
 	await timer.timeout

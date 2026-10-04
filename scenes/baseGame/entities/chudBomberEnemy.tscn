@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://b0lsuj6c5kvwc" path="res://sprites/VFX Free Pack/Effect_Explosion2/30fps/Frames/Effect_Explosion2_1/Effect_Explosion2_1_015.png" id="8_mig35"]
 [ext_resource type="Texture2D" uid="uid://b5rdflqhgueuw" path="res://sprites/VFX Free Pack/Effect_Explosion2/30fps/Frames/Effect_Explosion2_1/Effect_Explosion2_1_020.png" id="9_pgt3p"]
 [ext_resource type="Texture2D" uid="uid://b4bcx3jfay8j5" path="res://sprites/VFX Free Pack/Effect_Explosion2/30fps/Frames/Effect_Explosion2_1/Effect_Explosion2_1_024.png" id="10_qo0ig"]
+[ext_resource type="AudioStream" uid="uid://ccxtdoquuf2uh" path="res://sounds/explosion.wav" id="11_irvb3"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_emcct"]
 animations = [{
@@ -86,6 +87,10 @@ shape = SubResource("CircleShape2D_4th4q")
 
 [node name="Timer" type="Timer" parent="." unique_id=169460914]
 one_shot = true
+
+[node name="ExplosionSoundEffect" type="AudioStreamPlayer2D" parent="." unique_id=664348771]
+stream = ExtResource("11_irvb3")
+volume_db = -20.0
 
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
 [connection signal="body_entered" from="ExplosionArea" to="." method="_on_explosion_area_body_entered"]

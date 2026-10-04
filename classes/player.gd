@@ -7,13 +7,26 @@ class_name Player
 @onready var health_bar: ProgressBar = $"../Camera2D/PlayerHealthBar"
 @onready var camera: Camera2D = $"../Camera2D"
 @onready var end_screen: RunEndScreen = $"../RunEndScreen"
+@onready var being_hit_sound_effect: AudioStreamPlayer2D = $BeingHitSoundEffect
+@onready var sword_swing_effect: AudioStreamPlayer2D = $SwordSwingEffect
 
 var is_dead := false
+var footstep_counter := 0.0
 
 var curr_look_dir = "right"
 var can_slash = true
 @export var slash_time: float  = 0.2
 @export var sword_return_time:float  = 0.5
+
+# sound
+var footstepSoundCounter: int = 0
+@onready var footsteps_sound_1: AudioStreamPlayer2D = $footstepsSound1
+@onready var footsteps_sound_2: AudioStreamPlayer2D = $footstepsSound2
+@onready var footsteps_sound_3: AudioStreamPlayer2D = $footstepsSound3
+
+@onready var footstep_sounds: Array[AudioStreamPlayer2D] = [
+	$footstepsSound1, $footstepsSound2, $footstepsSound3
+]
 
 
 func _ready() -> void:
@@ -30,6 +43,7 @@ func takeDamage(amount: int) -> void:
 		return
 	super(amount)  # Entity calls die() here when health reaches 0
 	health_bar.value = current_health
+	being_hit_sound_effect.play()
 
 func die() -> void:
 	if is_dead:
@@ -66,6 +80,8 @@ func changeDamage (amount: int) -> void:
 
 func _physics_process(delta: float) -> void:
 
+	
+
 	var direction := Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	velocity = direction * speed;
 	move_and_slide()
@@ -88,7 +104,18 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_pressed("fire") and can_slash:
 		sword_anim.speed_scale = sword_anim.get_animation("slash").length / slash_time
 		sword_anim.play("slash")
+		sword_swing_effect.play()
+		
 		can_slash = false
+	
+	#footstep sounds
+	
+	if direction != Vector2.ZERO: #only trigger when character IS moving
+		footstep_counter += delta
+		if footstep_counter >= 0.35:
+			print(footstep_sounds.pick_random())
+			footstep_sounds.pick_random().play()
+			footstep_counter = 0.0
 
 const sword_slash_preload = preload("res://scenes/sword_slash.tscn")
 func spawn_slash():

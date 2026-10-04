@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cjqt8uq2pn0pt" path="res://scripts/back_to_reality_portal.gd" id="1_sqbgw"]
 [ext_resource type="Texture2D" uid="uid://dn0i8lilbx560" path="res://sprites/FantasyCoinsSpritesheet.png" id="2_mwltg"]
+[ext_resource type="AudioStream" uid="uid://di1eefep5cf8y" path="res://sounds/dreamToBase.wav" id="3_7xajv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mnpsv"]
 atlas = ExtResource("2_mwltg")
@@ -18,5 +19,9 @@ texture = SubResource("AtlasTexture_mnpsv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1323458750]
 shape = SubResource("CircleShape2D_r4pc6")
+
+[node name="TeleportSound" type="AudioStreamPlayer2D" parent="." unique_id=620841831]
+stream = ExtResource("3_7xajv")
+volume_db = -15.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
