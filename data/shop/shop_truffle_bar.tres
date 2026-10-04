@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ShopItem" format=3 uid="uid://wy62rbp3jkug"]
+
+[ext_resource type="Script" uid="uid://0cxcitic4gtu" path="res://scripts/shop_item.gd" id="1_dk6xj"]
+
+[resource]
+script = ExtResource("1_dk6xj")
+id = &"4"
+title = "Truffle Bar"
+description = "This weridly
+convienient bar
+that makes
+you feel 
+strong!"
+metadata/_custom_type_script = "uid://0cxcitic4gtu"

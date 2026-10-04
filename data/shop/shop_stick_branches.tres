@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ShopItem" format=3 uid="uid://b1x21rrwhi8mr"]
+
+[ext_resource type="Script" uid="uid://0cxcitic4gtu" path="res://scripts/shop_item.gd" id="1_4qfiw"]
+
+[resource]
+script = ExtResource("1_4qfiw")
+id = &"3"
+title = "Extra Branches"
+description = "This grows
+more branches
+from your stick,
+hitting more foes"
+price = 15
+metadata/_custom_type_script = "uid://0cxcitic4gtu"
