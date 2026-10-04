@@ -6,6 +6,7 @@ var knockback_timer: float = 0.0
 var enemy_active := false
 var my_room: RoomData = null
 var currencyValue: int = 5
+var freeze_timer := 0.0
 
 
 func _ready() -> void:
@@ -15,6 +16,11 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
+	
+	if freeze_timer > 0.0:
+		freeze_timer -= delta
+		return #this return resets to the top of the code, freezing the enemy until the freeze timer is 0
+	
 	var player: Node2D = RoomTracker.player
 	if is_instance_valid(player):
 		velocity = global_position.direction_to(player.global_position) * speed
@@ -71,6 +77,9 @@ func takeDamage(amount: int) -> void:
 	if is_instance_valid(player):
 		var knockback_direction := (global_position - player.global_position).normalized()
 		knockbackEnemy(knockback_direction, 150.0, 0.12)
+
+func freeze(duration: float) -> void:
+	freeze_timer = duration
 
 func die() -> void:
 	super()

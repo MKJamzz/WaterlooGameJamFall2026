@@ -19,6 +19,7 @@ func _ready() -> void:
 	start_level()
 
 	SceneManager.returnBaseGame.connect(send_player_to_dream_sequence)
+	SceneManager.returnBaseGame.connect(freeze_enemies)
 	send_player_to_dream_sequence()
 	RunDataState.resetRunStats()
 	
@@ -201,3 +202,8 @@ func send_player_to_dream_sequence() -> void:
 	justReturnedFromNightmare = dreamSequencesValueMap[dreamSequencesValue] == "nightmare"
 	
 	SceneManager.enter_dream_scene(dreamSequencesValue)
+
+func freeze_enemies() -> void:
+	for node in find_children("*", "", true, false):
+		if node is Enemy:
+			node.freeze(1.0)	
