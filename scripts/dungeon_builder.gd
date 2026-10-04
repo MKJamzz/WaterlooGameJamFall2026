@@ -92,15 +92,19 @@ func _stamp_bridges(data: RoomData) -> void:
 		_stamp(bridge_vertical, origin + Vector2i(slot, ROOM_TILES))
 
 
-## Copies every tile of the bridge scene into whichever room it lands in.
-## `anchor` is where the bridge's tile (0, 0) goes, in dungeon tiles.
+## Copies every tile of every TileMapLayer in the bridge scene into whichever
+## room it lands in. `anchor` is where the bridge's tile (0, 0) goes, in
+## dungeon tiles. Layers are stamped in scene order, so later layers overwrite
+## earlier ones where they overlap.
 func _stamp(scene: PackedScene, anchor: Vector2i) -> void:
 	if scene == null:
 		return
 	var bridge := scene.instantiate()
-	var source := _find_tile_layer(bridge)
+	var layers := _find_tile_layers(bridge)
+	if layers.is_empty():
+		push_warning("Bridge scene has no TileMapLayer.")
 
-	if source:
+	for source in layers:
 		for cell in source.get_used_cells():
 			var world := anchor + cell
 			var room_cell := Vector2i(
@@ -110,25 +114,59 @@ func _stamp(scene: PackedScene, anchor: Vector2i) -> void:
 			var room := room_nodes.get(room_cell) as Room
 			if room == null or room.tiles == null:
 				continue
+
+			# The bridge and the room may use different TileSets, so translate
+			# the source ID into the room's TileSet by matching textures.
+			var src_id := _remap_source(
+				source.tile_set,
+				room.tiles.tile_set,
+				source.get_cell_source_id(cell)
+			)
+			if src_id == -1:
+				continue
+
 			room.tiles.set_cell(
 				world - room_cell * ROOM_TILES,
-				source.get_cell_source_id(cell),
+				src_id,
 				source.get_cell_atlas_coords(cell),
 				source.get_cell_alternative_tile(cell)
 			)
-	else:
-		push_warning("Bridge scene has no TileMapLayer.")
 
 	bridge.free()
 
 
-func _find_tile_layer(node: Node) -> TileMapLayer:
+## Returns the node itself (if it's a TileMapLayer) plus every direct child
+## that is a TileMapLayer.
+func _find_tile_layers(node: Node) -> Array[TileMapLayer]:
+	var out: Array[TileMapLayer] = []
 	if node is TileMapLayer:
-		return node
+		out.append(node)
 	for child in node.get_children():
 		if child is TileMapLayer:
-			return child
-	return null
+			out.append(child)
+	return out
+
+
+## Finds the source in `dst` that uses the same texture as `source_id` in `src`.
+## Returns -1 (and warns) if the room's TileSet doesn't have that atlas.
+func _remap_source(src: TileSet, dst: TileSet, source_id: int) -> int:
+	if src == null or dst == null:
+		return -1
+	if src == dst:
+		return source_id
+
+	var a := src.get_source(source_id) as TileSetAtlasSource
+	if a == null or a.texture == null:
+		return -1
+
+	for i in dst.get_source_count():
+		var id := dst.get_source_id(i)
+		var b := dst.get_source(id) as TileSetAtlasSource
+		if b and b.texture and b.texture.resource_path == a.texture.resource_path:
+			return id
+
+	push_warning("Room TileSet has no atlas for %s" % a.texture.resource_path)
+	return -1
 
 
 # ------------------------------------------------------------ BACKGROUND
@@ -152,6 +190,7 @@ func _fill_background(rooms: Dictionary) -> void:
 	for x in range(from.x, to.x):
 		for y in range(from.y, to.y):
 			background.set_cell(Vector2i(x, y), void_source_id, void_tile)
+
 
 ## Swaps in the preset's room pools. Empty pools keep the current ones.
 func apply_preset(preset: DungeonPreset) -> void:

@@ -45,6 +45,7 @@ offset_top = -185.0
 offset_right = -110.0
 offset_bottom = -162.0
 text = "0"
+vertical_alignment = 1
 script = ExtResource("6_7wlg5")
 
 [node name="PlayerHealthBar" type="ProgressBar" parent="Camera2D" unique_id=2022358425]
@@ -52,6 +53,8 @@ offset_left = -46.0
 offset_top = -194.0
 offset_right = 59.0
 offset_bottom = -167.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
 mouse_filter = 2
 theme_override_styles/fill = SubResource("StyleBoxFlat_50bth")
 show_percentage = false
