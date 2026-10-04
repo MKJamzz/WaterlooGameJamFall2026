@@ -13,5 +13,7 @@ you some haste
 in your slashes"
 icon = ExtResource("1_10n8c")
 price = 5
+weight = null
+min_floor = null
 effect = &"hot_hands"
 metadata/_custom_type_script = "uid://0cxcitic4gtu"

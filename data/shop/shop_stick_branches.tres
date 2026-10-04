@@ -11,5 +11,7 @@ more branches
 from your stick,
 hitting more foes"
 price = 15
+weight = null
+min_floor = null
 effect = &"stick_branches"
 metadata/_custom_type_script = "uid://0cxcitic4gtu"

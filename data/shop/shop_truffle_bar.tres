@@ -11,5 +11,8 @@ convienient bar
 that makes
 you feel 
 strong!"
+price = null
+weight = null
+min_floor = null
 effect = &"truffle_bar"
 metadata/_custom_type_script = "uid://0cxcitic4gtu"

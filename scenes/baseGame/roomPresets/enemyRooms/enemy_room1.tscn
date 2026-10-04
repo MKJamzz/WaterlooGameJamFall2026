@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bixx5084vt4j1" path="res://scenes/baseGame/entities/slowFatMeleeChudEnemy.tscn" id="4_iwvg7"]
 [ext_resource type="PackedScene" uid="uid://becfa75dk2531" path="res://scenes/baseGame/entities/fastMeleeChudEnemy.tscn" id="5_gd4h7"]
 [ext_resource type="PackedScene" uid="uid://ca0avldthqf1s" path="res://scenes/baseGame/entities/meleeChudEnemy.tscn" id="6_blfeb"]
+[ext_resource type="PackedScene" uid="uid://08of7pl682ef" path="res://scenes/baseGame/entities/rangedChudEnemy.tscn" id="7_c4k4m"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_28hfr"]
 texture = ExtResource("2_uot0d")
@@ -132,3 +133,6 @@ position = Vector2(191, 224)
 
 [node name="MeleeChudEnemy2" parent="." unique_id=1718955720 instance=ExtResource("6_blfeb")]
 position = Vector2(198, 293)
+
+[node name="RangedChudEnemy" parent="." unique_id=1082335431 instance=ExtResource("7_c4k4m")]
+position = Vector2(221, 158)
