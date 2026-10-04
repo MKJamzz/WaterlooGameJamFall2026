@@ -1,0 +1,100 @@
+[gd_scene format=3 uid="uid://brcuj47r6e50a"]
+
+[ext_resource type="Script" uid="uid://broqoby6gdatp" path="res://scripts/run_end_screen.gd" id="1_ojn5d"]
+
+[node name="RunEndScreen" type="CanvasLayer" unique_id=1124901438]
+script = ExtResource("1_ojn5d")
+
+[node name="FlashRed" type="ColorRect" parent="." unique_id=584466686]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.92941177, 0, 0, 1)
+
+[node name="Message" type="Label" parent="." unique_id=1119873620]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = 88.0
+offset_right = 300.0
+offset_bottom = 203.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 64
+text = "Your mind drifts
+beyond return..."
+horizontal_alignment = 1
+
+[node name="Results" type="Control" parent="." unique_id=862343159]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Dim" type="ColorRect" parent="Results" unique_id=1329902249]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.68235296)
+
+[node name="PanelContainer" type="PanelContainer" parent="Results" unique_id=677721264]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Results/PanelContainer" unique_id=80699581]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Title" type="Label" parent="Results/PanelContainer/VBoxContainer" unique_id=342384152]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 128
+text = "Title"
+
+[node name="Stats" type="Label" parent="Results/PanelContainer/VBoxContainer" unique_id=1131699009]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "Whole bunch
+Stats here"
+horizontal_alignment = 1
+
+[node name="Total" type="Label" parent="Results/PanelContainer/VBoxContainer" unique_id=977469969]
+layout_mode = 2
+theme_override_font_sizes/font_size = 96
+text = "XXXX Points"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Results/PanelContainer" unique_id=480757887]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/separation = 98
+
+[node name="Button" type="Button" parent="Results/PanelContainer/VBoxContainer2" unique_id=931658594]
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 64
+text = "Continue"
+
+[node name="Seperator" type="Control" parent="Results/PanelContainer/VBoxContainer2" unique_id=2138209255]
+layout_mode = 2

@@ -18,7 +18,6 @@ var currency: int = 100:
 		currency_changed.emit(currency)
 
 var enemiesKilled = 0
-
 var attackRange: float = 1.0
 
 var attackEnemiesPerAtk = 1
@@ -26,6 +25,8 @@ var attackEnemiesPerAtk = 1
 var timesDrifted = 0
 var floorsCleared = 0
 var died = false
+
+const DEATH_MULTIPLIER:= 0.8
 
 # Shop state (rolled once per floor)
 var _shop_stock: Array[ShopItem] = []
@@ -76,3 +77,9 @@ func tryBuy(item: ShopItem) -> bool:
 	var player = get_tree().get_first_node_in_group("player")
 	item.apply(player)
 	return true
+	
+
+func calculateScore(won: bool) -> int:
+	var base :int = currency * 5 + enemiesKilled * 30 + timesDrifted * 20
+	var multiplier := 1.0 if won else DEATH_MULTIPLIER
+	return int(base * floorsCleared * multiplier)

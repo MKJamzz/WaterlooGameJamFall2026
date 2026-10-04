@@ -43,7 +43,7 @@ func go_to_next_level() -> void:
 	if transitioning:
 		return
 	if not GameState.has_next_level():
-		print("Run complete!")
+		get_tree().get_first_node_in_group("run_end_screen").play_win()
 		return
 
 	transitioning = true
