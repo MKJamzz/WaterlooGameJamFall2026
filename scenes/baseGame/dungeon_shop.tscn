@@ -1,25 +1,34 @@
 [gd_scene format=3 uid="uid://dpv3btvsortba"]
 
 [ext_resource type="Script" uid="uid://6bf50ihx2c2n" path="res://scripts/dungeon_shop.gd" id="1_huvo0"]
-[ext_resource type="Texture2D" uid="uid://e1frugpvsuk" path="res://sprites/dungeonPlaceholder/Vase Shine Anim.png" id="1_vg3e5"]
 [ext_resource type="PackedScene" uid="uid://clkiylnsdasls" path="res://scenes/interactable.tscn" id="2_0i8uj"]
+[ext_resource type="Texture2D" uid="uid://c5tiypmshswpl" path="res://sprites/Mr_shop_keepa.png" id="2_rbsyh"]
 [ext_resource type="PackedScene" uid="uid://dlsxrt1lkbwvl" path="res://scenes/UI/dungeon_store.tscn" id="4_rbsyh"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_qe6cc"]
+radius = 28.0
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_cg0a3"]
-radius = 19.0
+radius = 12.251657
 
 [node name="dungeonShop" type="Node2D" unique_id=367501796]
 script = ExtResource("1_huvo0")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1034264000]
-texture = ExtResource("1_vg3e5")
-region_enabled = true
-region_rect = Rect2(48, 0, 16, 16)
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1699122708]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1383868196]
+shape = SubResource("CircleShape2D_qe6cc")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1659203351]
+scale = Vector2(1.04, 1.04)
+texture = ExtResource("2_rbsyh")
 
 [node name="interactable" parent="." unique_id=530298727 instance=ExtResource("2_0i8uj")]
 interact_name = "E to Open Shop"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="interactable" unique_id=1455076908]
+position = Vector2(-4.7683716e-07, 17)
+scale = Vector2(3.02, 3.02)
 shape = SubResource("CircleShape2D_cg0a3")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2076634532]

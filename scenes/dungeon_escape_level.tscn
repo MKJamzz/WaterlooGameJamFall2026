@@ -1,8 +1,46 @@
 [gd_scene format=3 uid="uid://ccqiswcrxl5s0"]
 
-[ext_resource type="Texture2D" uid="uid://dn0i8lilbx560" path="res://sprites/FantasyCoinsSpritesheet.png" id="1_knyho"]
 [ext_resource type="Script" uid="uid://cdiw1qc53dr4v" path="res://scripts/dungeon_escape_level.gd" id="1_pcyl8"]
 [ext_resource type="PackedScene" uid="uid://clkiylnsdasls" path="res://scenes/interactable.tscn" id="2_pcyl8"]
+[ext_resource type="Texture2D" uid="uid://bf8xxyh7sdaib" path="res://sprites/grassflor.png" id="2_r8wis"]
+
+[sub_resource type="Animation" id="Animation_r8wis"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-1.3089969]
+}
+
+[sub_resource type="Animation" id="Animation_pcyl8"]
+resource_name = "portal spin"
+length = 5.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(-2, -2),
+"update": 0,
+"values": [-1.3089969, 1.3089969]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_r8wis"]
+_data = {
+&"RESET": SubResource("Animation_r8wis"),
+&"portal spin": SubResource("Animation_pcyl8")
+}
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cg0a3"]
 radius = 41.01219
@@ -11,9 +49,14 @@ radius = 41.01219
 script = ExtResource("1_pcyl8")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1320896570]
-texture = ExtResource("1_knyho")
+rotation = -1.3089969
+texture = ExtResource("2_r8wis")
 region_enabled = true
-region_rect = Rect2(128, 0, 33, 32)
+region_rect = Rect2(0, 48, 48, 48)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D" unique_id=1463712543]
+libraries/ = SubResource("AnimationLibrary_r8wis")
+autoplay = &"portal spin"
 
 [node name="interactable" parent="." unique_id=530298727 instance=ExtResource("2_pcyl8")]
 interact_name = "Leave Level"

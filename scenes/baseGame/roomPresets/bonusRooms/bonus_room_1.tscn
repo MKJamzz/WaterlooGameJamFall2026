@@ -2,14 +2,9 @@
 
 [ext_resource type="Script" uid="uid://csaalty6xp4xc" path="res://scripts/room.gd" id="1_18neq"]
 [ext_resource type="TileSet" uid="uid://bg7pcnjo6v88q" path="res://tilesets/dungeon_tileset.tres" id="3_kr18v"]
-[ext_resource type="PackedScene" uid="uid://dpv3btvsortba" path="res://scenes/baseGame/dungeon_shop.tscn" id="3_vpc40"]
 
-[node name="bonusRoom1" type="Node2D" unique_id=1886844608 node_paths=PackedStringArray("tiles")]
+[node name="bonusRoom1" type="Node2D" unique_id=1886844608]
 script = ExtResource("1_18neq")
-tiles = NodePath("")
-
-[node name="dungeonShop" parent="." unique_id=367501796 instance=ExtResource("3_vpc40")]
-position = Vector2(204, 195)
 
 [node name="Grass" type="TileMapLayer" parent="." unique_id=1849644902]
 z_index = -1

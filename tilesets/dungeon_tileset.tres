@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://cscvhb2oeu5fp" path="res://sprites/dungeonPlaceholder/Set 1.0.png" id="1_xgurb"]
 [ext_resource type="Texture2D" uid="uid://b3sii5qa1c1rl" path="res://sprites/collisionForestTilemap.png" id="2_tgbfk"]
 [ext_resource type="Texture2D" uid="uid://bf8xxyh7sdaib" path="res://sprites/grassflor.png" id="3_t3fg3"]
+[ext_resource type="Texture2D" uid="uid://bdl2b5mh55ymq" path="res://sprites/potions_and_more_tree.png" id="4_tgbfk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_28hfr"]
 texture = ExtResource("1_xgurb")
@@ -421,7 +422,6 @@ texture = ExtResource("2_tgbfk")
 18:11/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 19:11/0 = 0
 19:11/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-9:7/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7u3uj"]
 texture = ExtResource("3_t3fg3")
@@ -465,9 +465,44 @@ texture = ExtResource("3_t3fg3")
 8:5/0 = 0
 9:5/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t3fg3"]
+texture = ExtResource("4_tgbfk")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+
 [resource]
 physics_layer_0/collision_layer = 3
 physics_layer_0/collision_mask = 3
 sources/0 = SubResource("TileSetAtlasSource_28hfr")
 sources/1 = SubResource("TileSetAtlasSource_07hg4")
 sources/2 = SubResource("TileSetAtlasSource_7u3uj")
+sources/4 = SubResource("TileSetAtlasSource_t3fg3")
