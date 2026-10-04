@@ -1,28 +1,33 @@
 [gd_scene format=3 uid="uid://4h21r1onpk65"]
 
 [ext_resource type="Script" uid="uid://byfculm3ayu3v" path="res://scripts/character_body_2d.gd" id="1_boayo"]
-[ext_resource type="Texture2D" uid="uid://s1noqfh0e6vw" path="res://sprites/kenney_pixel-platformer/Tilemap/tilemap-characters.png" id="1_edgf2"]
+[ext_resource type="Texture2D" uid="uid://csylruobyu4l3" path="res://sprites/playerTileMap.png" id="2_k6ts3"]
 [ext_resource type="AudioStream" uid="uid://c7cvn5mhqhhvl" path="res://sounds/jump.wav" id="3_k6ts3"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_boayo"]
-atlas = ExtResource("1_edgf2")
-region = Rect2(100, 0, 25, 24)
+[sub_resource type="AtlasTexture" id="AtlasTexture_k6ts3"]
+atlas = ExtResource("2_k6ts3")
+region = Rect2(0, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_v621a"]
-atlas = ExtResource("1_edgf2")
-region = Rect2(125, 0, 25, 24)
+[sub_resource type="AtlasTexture" id="AtlasTexture_mnpsv"]
+atlas = ExtResource("2_k6ts3")
+region = Rect2(64, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4th4q"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_boayo")
+"texture": SubResource("AtlasTexture_k6ts3")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_v621a")
+"texture": SubResource("AtlasTexture_mnpsv")
 }],
 "loop": 1,
 "name": &"default",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": 1,
+"name": &"new_animation",
 "speed": 5.0
 }]
 
@@ -32,16 +37,16 @@ radius = 9.0
 [node name="DreamPlayer" type="Node2D" unique_id=1483510926]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1930452343]
+scale = Vector2(1.5, 1.5)
 collision_mask = 2
 floor_snap_length = 24.5
 script = ExtResource("1_boayo")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=1527955286]
 sprite_frames = SubResource("SpriteFrames_4th4q")
-frame_progress = 0.87643325
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=182361755]
-position = Vector2(0, 2)
+position = Vector2(0, -0.66666675)
 shape = SubResource("CircleShape2D_r4pc6")
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=1218367622]

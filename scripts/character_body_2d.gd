@@ -1,5 +1,6 @@
 extends CharacterBody2D
 @onready var jump: AudioStreamPlayer2D = $"../Jump"
+@onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 
 const SPEED = 200.0
@@ -24,4 +25,9 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
+	if direction < 0:
+		sprite.flip_h = true
+	elif direction > 0:
+		sprite.flip_h = false
+		
 	move_and_slide()
